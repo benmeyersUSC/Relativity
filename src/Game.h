@@ -12,7 +12,7 @@
 
 #include <vector>
 using std::vector;
-
+using Math::Vector2;
 class Actor;
 
 class Game

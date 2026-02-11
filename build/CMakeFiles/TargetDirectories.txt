@@ -1,0 +1,3 @@
+/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir
+/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/edit_cache.dir
+/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/rebuild_cache.dir
