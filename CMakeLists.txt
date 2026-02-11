@@ -3,4 +3,6 @@ project(Relativity)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Relativity src/main.cpp)
+add_executable(Relativity src/main.cpp
+        src/Game.cpp
+        src/Game.h)
