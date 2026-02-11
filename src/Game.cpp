@@ -98,9 +98,10 @@ void Game::ProcessInput()
 
 void Game::UpdateGame()
 {
-	/*
-	 * Instead of game dying and window closing, let's plot the
-	 */
+	// plot VELO (x) vs time (y) !
+
+	// and then at certain points in the vertical plot, plot a rotated vector!
+	// use trig...straight up is at rest, then max velo is rightward pointing...
 
 	mFramesElapsed++;
 	if (mFramesElapsed > FRAME_LIFE) {
