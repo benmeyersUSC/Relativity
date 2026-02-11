@@ -119,14 +119,14 @@ void Game::MovePaddle(float deltaTime)
 
 	Vector2 paddlePos = mPaddle->GetTransform().GetPosition();
 	// add change to x (could be negative)
-	float newX = paddlePos.X() + deltaTime * mPaddleMoveDir;
+	float newX = paddlePos.x + deltaTime * mPaddleMoveDir;
 	// ensure it's still on screen
 	newX = Math::Max( // max of farthest_left_pos and valid_pos_to_the_right
 		PADDLE_WIDTH /
 			HALF_DIVISOR, // valid_pos_to_the_right is just min of newX and farthest_right_pos
 		Math::Min(WINDOW_WIDTH - PADDLE_WIDTH / HALF_DIVISOR, newX));
 	// update paddle
-	mPaddle->GetTransform().SetPosition(Vector2(newX, paddlePos.Y()));
+	mPaddle->GetTransform().SetPosition(Vector2(newX, paddlePos.y));
 	// reset move dir to 0
 	mPaddleMoveDir = 0;
 }
@@ -165,14 +165,14 @@ void Game::BallCollision()
 void Game::MoveBall(float deltaTime)
 {
 	Vector2 newBall = mBall->GetTransform().GetPosition() +
-					  Vector2(deltaTime * mBallVelo.X(), deltaTime * mBallVelo.Y());
+					  Vector2(deltaTime * mBallVelo.x, deltaTime * mBallVelo.y);
 	mBall->GetTransform().SetPosition(newBall);
 
 	// handle ball collisions separately
 	BallCollision();
 
 	// if ball's y coordinate is below (higher nominally) than height, you lose
-	if (mBall->GetTransform().GetPosition().Y() > WINDOW_HEIGHT)
+	if (mBall->GetTransform().GetPosition().y > WINDOW_HEIGHT)
 	{
 		mContinueRunning = false;
 	}
@@ -215,8 +215,8 @@ void Game::GenerateOutput()
 
 	// course website suggested this function:
 	//									minus 4 because text is 8   subtract a quarter so middle 8 (of 15) is text
-	SDL_RenderDebugTextFormat(mSdlRenderer, paddleRect.X() - HALF_CHAR_PIXELS,
-							  paddleRect.Y() - WALL_WIDTH / HALF_CHAR_PIXELS, "%i", mScore);
+	SDL_RenderDebugTextFormat(mSdlRenderer, paddleRect.x - HALF_CHAR_PIXELS,
+							  paddleRect.y - WALL_WIDTH / HALF_CHAR_PIXELS, "%i", mScore);
 	SDL_RenderPresent(mSdlRenderer);
 }
 

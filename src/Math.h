@@ -4,23 +4,70 @@
 
 #ifndef RELATIVITY_MATH_H
 #define RELATIVITY_MATH_H
+#include <cmath>
 namespace Math {
     class Vector2 {
-        float mX;
-        float mY;
     public:
-        Vector2():mX(0.0f), mY(0.0f){}
-        Vector2(float x, float y): mX(x), mY(y){}
-        [[nodiscard]] float X() const{return mX;}
-        [[nodiscard]] float Y() const{return mY;}
+        float x;
+        float y;
+
+        Vector2():x(0.0f), y(0.0f){}
+        Vector2(float x, float y): x(x), y(y){}
+
+        [[nodiscard]] friend Vector2 operator+(const Vector2& a, const Vector2& b)
+        {
+            return {a.x + b.x, a.y + b.y};
+        }
+
+        [[nodiscard]] friend Vector2 operator-(const Vector2& a, const Vector2& b)
+        {
+            return {a.x - b.x, a.y - b.y};
+        }
+
+        [[nodiscard]] friend Vector2 operator*(const Vector2& a, const Vector2& b)
+        {
+            return {a.x * b.x, a.y * b.y};
+        }
+
+        [[nodiscard]] friend Vector2 operator*(const Vector2& a, const float& b)
+        {
+            return {a.x * b, a.y * b};
+        }
+
+        [[nodiscard]] friend Vector2 operator*(const float& a, const Vector2& b)
+        {
+            return {a * b.x, a * b.y};
+        }
+
+        Vector2& operator*= (float sc) {
+            x *= sc;
+            y *= sc;
+            return *this;
+        }
+
     };
 
-    inline float Max(float a, float b) {
-        return a >= b ? a : b;
+    template <typename T>
+    [[nodiscard]] constexpr T Max(T a, T b)
+    {
+        return (a < b ? b : a);
     }
 
-    inline float Min(float a, float b) {
-        return a <= b ? a : b;
+    template <typename T>
+    [[nodiscard]] constexpr T Min(T a, T b)
+    {
+        return (a < b ? a : b);
+    }
+
+    template <typename T>
+    [[nodiscard]] constexpr T Clamp(T value, T lower, T upper)
+    {
+        return Min(upper, Max(lower, value));
+    }
+
+    [[nodiscard]] inline float Abs(float value)
+    {
+        return std::abs(value);
     }
 }
 #endif //RELATIVITY_MATH_H
