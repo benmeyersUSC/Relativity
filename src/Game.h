@@ -5,7 +5,6 @@
 #ifndef RELATIVITY_GAME_H
 #define RELATIVITY_GAME_H
 
-
 #pragma once
 
 #include "SDL3/SDL.h"

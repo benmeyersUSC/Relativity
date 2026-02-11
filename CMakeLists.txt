@@ -5,4 +5,10 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Relativity src/main.cpp
         src/Game.cpp
-        src/Game.h)
+        src/Game.h
+        src/Math.h
+        src/Actor.cpp
+        src/Actor.h
+        src/Transform.cpp
+        src/Transform.h
+)
