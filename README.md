@@ -1,0 +1,1 @@
+I want to display the invariance in velocity of mass's traversal through spacetime using some skills from my video game programming courses!
