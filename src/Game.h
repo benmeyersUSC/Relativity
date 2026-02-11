@@ -11,28 +11,22 @@
 #include "Math.h"
 
 #include <vector>
+
+#include "Actor.h"
 using std::vector;
 using Math::Vector2;
-class Actor;
+class Paddle;
 
 class Game
 {
+	static constexpr unsigned FRAME_LIFE = 1000;
 public:
 	// window constants
 	static constexpr float WINDOW_WIDTH = 800.0f;
 	static constexpr float WINDOW_HEIGHT = 600.0f;
 
-	// some actor size/speed constants
-	static constexpr float WALL_WIDTH = 15.0f;
-	static constexpr float PADDLE_WIDTH = 100.0f;
-	static constexpr float PADDLE_SPEED = 300.0f;
-
 	// max deltatime for update
 	static constexpr float MAX_DELTA_TIME = 0.033f;
-
-	// base speed for ball velo
-	static constexpr float BALL_SPEED = 100.0f;
-	static constexpr float BALL_SPEED_MULT = 1.25f;
 
 	// constant for full color
 	static constexpr Uint8 MAX_COLOR = 255;
@@ -63,7 +57,8 @@ public:
 	// Called when the game receives an event from SDL
 	void HandleEvent(const SDL_Event* event);
 
-	Actor* CreateActor();
+	template<Actor A>
+	A* CreateActor(unsigned frameLife);
 
 private:
 	// window and renderer
@@ -73,25 +68,19 @@ private:
 	// keep the game going
 	bool mContinueRunning;
 
+	// frames elapsed
+	unsigned mFramesElapsed = 0;
+
 	// actors vector and individual member variables
 	vector<Actor*> mActors;
-	Actor* mBall;
-	Actor* mLeftWall;
-	Actor* mRightWall;
-	Actor* mTopWall;
-	Actor* mPaddle;
+	Paddle* mPaddle;
 
 	// prev time for delta calcs
 	Uint64 mPreviousTime;
 
 	// will be +/- 1 or 0, defaulted and always reset to 0 after update
 	float mPaddleMoveDir;
-
-	// ball velo
-	Vector2 mBallVelo;
-
-	// keeping track of score!
-	unsigned mScore;
+	float mPaddleVelo;
 
 	void ProcessInput();
 	void UpdateGame();
@@ -100,9 +89,6 @@ private:
 	void LoadData();
 	void UnloadData();
 
-	void MovePaddle(float deltaTime);
-	void MoveBall(float deltaTime);
-	void BallCollision();
 };
 
 extern Game gGame;
