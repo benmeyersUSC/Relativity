@@ -69,5 +69,16 @@ namespace Math {
     {
         return std::abs(value);
     }
+
+    [[nodiscard]] inline bool NearlyZero(float val, float epsilon = 0.001f)
+    {
+        return Abs(val) <= epsilon;
+    }
+
+    [[nodiscard]] inline bool NearlyEqual(float a, float b, float epsilon = 0.001f)
+    {
+        return Abs(a - b) <= epsilon;
+    }
+
 }
 #endif //RELATIVITY_MATH_H

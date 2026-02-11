@@ -98,12 +98,24 @@ void Game::ProcessInput()
 
 void Game::UpdateGame()
 {
+	/*
+	 * Instead of game dying and window closing, let's plot the
+	 */
+
 	mFramesElapsed++;
 	if (mFramesElapsed > FRAME_LIFE) {
 		mContinueRunning = false;
 		std::cout << "Game done after " << mFramesElapsed << "frames!\n";
 		auto x = mPaddle->GetVelos();
-		for (size_t i = 0; i < 10;++i ) {
+		for (size_t i = 0; i < FRAME_LIFE;++i ) {
+			for (int j = 0; j < Math::Abs((x[i]) / 100); ++j) {
+				if (x[i] < 0) {
+					std::cout << "<";
+				}
+				else {
+					std::cout << ">";
+				}
+			}
 			std::cout << x[i] << "\n";
 		}
 		return;
@@ -126,7 +138,7 @@ void Game::UpdateGame()
 void Game::GenerateOutput()
 {
 	// lowkey white background
-	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR, MAX_COLOR, MAX_COLOR, MAX_COLOR);
+	SDL_SetRenderDrawColor(mSdlRenderer, 0,0,0,0);
 	SDL_RenderClear(mSdlRenderer);
 	// now set to blue
 	SDL_SetRenderDrawColor(mSdlRenderer, 0, 0, MAX_COLOR, MAX_COLOR);
@@ -152,10 +164,12 @@ void Game::LoadData()
 {
 	// re-used, so let's store these
 	float halfWidth = WINDOW_WIDTH / HALF_DIVISOR;
+	float halfHeight = WINDOW_HEIGHT / HALF_DIVISOR;
 
 
 	mPaddle = CreateActor<Paddle>();
-	mPaddle->GetTransform().SetPosition(Vector2(halfWidth, WINDOW_HEIGHT - 10.0f));
+	mPaddle->GetTransform().SetPosition(Vector2(halfWidth, halfHeight ));
+
 }
 
 void Game::UnloadData()

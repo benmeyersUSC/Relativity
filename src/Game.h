@@ -22,7 +22,7 @@ class Game
 	static constexpr unsigned FRAME_LIFE = 1000;
 public:
 	// window constants
-	static constexpr float WINDOW_WIDTH = 800.0f;
+	static constexpr float WINDOW_WIDTH = 1200.0f;
 	static constexpr float WINDOW_HEIGHT = 600.0f;
 
 	// max deltatime for update

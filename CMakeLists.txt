@@ -11,6 +11,8 @@ add_executable(Relativity src/main.cpp
         src/Math.h
         src/Actor.cpp
         src/Actor.h
+        src/Paddle.cpp
+        src/Paddle.h
         src/Transform.cpp
         src/Transform.h
 )
