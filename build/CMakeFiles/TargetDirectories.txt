@@ -1,3 +1,8 @@
 /Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir
 /Users/benmeyers/Desktop/Relativity/build/CMakeFiles/edit_cache.dir
 /Users/benmeyers/Desktop/Relativity/build/CMakeFiles/rebuild_cache.dir
+/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3-shared.dir
+/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3_test.dir
+/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir
+/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/edit_cache.dir
+/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/rebuild_cache.dir

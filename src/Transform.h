@@ -10,13 +10,15 @@
 using Math::Vector2;
 class Transform {
 public:
-    const Vector2& GetPosition() const { return mPosition; }
-    const Vector2& GetSize() const { return mSize; }
+    [[nodiscard]] const Vector2& GetPosition() const { return mPosition; }
+    [[nodiscard]] const Vector2& GetSize() const { return mSize; }
 
     void SetPosition(const Vector2& pos) { mPosition = pos; }
+    void PositionDelta(float x, float y){mPosition.x += x; mPosition.y += y;}
+    void PositionScale(float x, float y){mPosition.x *= x; mPosition.y *= y;}
     void SetSize(const Vector2& sz) { mSize = sz; }
 
-    SDL_FRect GetRect() const;
+    [[nodiscard]] SDL_FRect GetRect() const;
 
 private:
     // x, y

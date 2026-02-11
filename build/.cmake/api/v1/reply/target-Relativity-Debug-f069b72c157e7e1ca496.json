@@ -10,7 +10,8 @@
 	{
 		"commands" : 
 		[
-			"add_executable"
+			"add_executable",
+			"target_link_libraries"
 		],
 		"files" : 
 		[
@@ -24,7 +25,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 6,
+				"line" : 8,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 18,
 				"parent" : 0
 			}
 		]
@@ -36,6 +43,17 @@
 			[
 				{
 					"fragment" : "-g -std=gnu++20 -arch arm64"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/benmeyers/Desktop/Relativity/SDL3/include"
 				}
 			],
 			"language" : "CXX",
@@ -56,6 +74,13 @@
 			]
 		}
 	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "SDL3-shared::@61f02b296a88846ad5eb"
+		}
+	],
 	"id" : "Relativity::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
@@ -68,6 +93,15 @@
 			{
 				"fragment" : "-Wl,-search_paths_first -Wl,-headerpad_max_install_names",
 				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/Users/benmeyers/Desktop/Relativity/build/SDL3",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "SDL3/libSDL3.0.dylib",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"

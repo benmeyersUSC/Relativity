@@ -9,17 +9,20 @@
 
 class Actor {
 public:
+    virtual ~Actor() = default;
+
     Transform& GetTransform() { return mTransform; }
     [[nodiscard]] const Transform& GetTransform() const { return mTransform; }
 
-    explicit Actor(const unsigned frameLife){mVelos.reserve(frameLife);}
-    void HandleUpdate(float deltaTime);
-    void HandleInput(const bool* keyboardInput);
+    explicit Actor( unsigned frameLife);
+    virtual void HandleUpdate(float deltaTime);
+    virtual void HandleInput(const bool* keyboardInput);
+
+    [[nodiscard]] const std::vector<float>& GetVelos()const{return mVelos;}
 protected:
     Transform mTransform;
     float mVelo = 0.0f;
     std::vector<float> mVelos;
-
 
 };
 

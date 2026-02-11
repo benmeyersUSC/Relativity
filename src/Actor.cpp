@@ -3,3 +3,14 @@
 //
 
 #include "Actor.h"
+
+Actor::Actor(unsigned frameLife) {
+    mVelos.reserve(frameLife);
+}
+
+void Actor::HandleUpdate(float deltaTime) {
+}
+
+void Actor::HandleInput(const bool *keyboardInput) {
+}
+

@@ -1,4 +1,7 @@
 #include "Game.h"
+
+#include <iostream>
+
 #include "Actor.h"
 #include "Paddle.h"
 
@@ -17,8 +20,6 @@ Game::Game()
 	mPaddle = nullptr;
 
 	mPreviousTime = 0;
-
-	mPaddleMoveDir = 0;
 
 }
 
@@ -98,6 +99,16 @@ void Game::ProcessInput()
 void Game::UpdateGame()
 {
 	mFramesElapsed++;
+	if (mFramesElapsed > FRAME_LIFE) {
+		mContinueRunning = false;
+		std::cout << "Game done after " << mFramesElapsed << "frames!\n";
+		auto x = mPaddle->GetVelos();
+		for (size_t i = 0; i < 10;++i ) {
+			std::cout << x[i] << "\n";
+		}
+		return;
+	}
+
 	// calculate deltatime
 	Uint64 currTimeMs = SDL_GetTicks();
 	Uint64 uIntDiff = currTimeMs - mPreviousTime;
@@ -141,10 +152,9 @@ void Game::LoadData()
 {
 	// re-used, so let's store these
 	float halfWidth = WINDOW_WIDTH / HALF_DIVISOR;
-	float halfHeight = WINDOW_HEIGHT / HALF_DIVISOR;
 
 
-	mPaddle = CreateActor<Paddle>(FRAME_LIFE);
+	mPaddle = CreateActor<Paddle>();
 	mPaddle->GetTransform().SetPosition(Vector2(halfWidth, WINDOW_HEIGHT - 10.0f));
 }
 
@@ -158,11 +168,3 @@ void Game::UnloadData()
 	mActors.clear();
 }
 
-template <Actor A>
-Actor* Game::CreateActor()
-{
-	// create actor on heap, save pointer to vector
-	Actor* a = new A(FRAME_LIFE);
-	mActors.push_back(a);
-	return a;
-}

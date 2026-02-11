@@ -1,0 +1,120 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "4.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "SDL3",
+					"jsonFile" : "directory-SDL3-Debug-dbd27e8b186bf1aa1215.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.17"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "SDL3",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Relativity",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "SDL3",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Relativity::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Relativity-Debug-f069b72c157e7e1ca496.json",
+					"name" : "Relativity",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL3-shared::@61f02b296a88846ad5eb",
+					"jsonFile" : "target-SDL3-shared-Debug-2d21ab06559a283723b0.json",
+					"name" : "SDL3-shared",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL3_test::@61f02b296a88846ad5eb",
+					"jsonFile" : "target-SDL3_test-Debug-044c3fb282a94c6c6069.json",
+					"name" : "SDL3_test",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL_uclibc::@61f02b296a88846ad5eb",
+					"jsonFile" : "target-SDL_uclibc-Debug-803ce2b6669d8adc370b.json",
+					"name" : "SDL_uclibc",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/benmeyers/Desktop/Relativity/build",
+		"source" : "/Users/benmeyers/Desktop/Relativity"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

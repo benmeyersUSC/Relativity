@@ -83,6 +83,14 @@
 				"cxxm",
 				"c++m"
 			]
+		},
+		{
+			"compiler" : 
+			{
+				"implicit" : {},
+				"path" : "/usr/bin/clang"
+			},
+			"language" : "OBJC"
 		}
 	],
 	"version" : 

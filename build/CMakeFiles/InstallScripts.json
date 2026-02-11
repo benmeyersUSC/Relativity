@@ -1,7 +1,8 @@
 {
 	"InstallScripts" : 
 	[
-		"/Users/benmeyers/Desktop/Relativity/build/cmake_install.cmake"
+		"/Users/benmeyers/Desktop/Relativity/build/cmake_install.cmake",
+		"/Users/benmeyers/Desktop/Relativity/build/SDL3/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

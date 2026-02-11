@@ -57,8 +57,13 @@ public:
 	// Called when the game receives an event from SDL
 	void HandleEvent(const SDL_Event* event);
 
-	template<Actor A>
-	A* CreateActor(unsigned frameLife);
+	template<typename A>
+	A* CreateActor() {
+		// create actor on heap, save pointer to vector
+		A* a = new A(FRAME_LIFE);
+		mActors.push_back(a);
+		return a;
+	}
 
 private:
 	// window and renderer
@@ -77,10 +82,6 @@ private:
 
 	// prev time for delta calcs
 	Uint64 mPreviousTime;
-
-	// will be +/- 1 or 0, defaulted and always reset to 0 after update
-	float mPaddleMoveDir;
-	float mPaddleVelo;
 
 	void ProcessInput();
 	void UpdateGame();
