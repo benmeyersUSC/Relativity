@@ -139,7 +139,7 @@ void Game::DrawPaddleText() {
 	// pos + velo scaled 2x
 	float posY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y * 2;
 	float veloY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y;
-	DrawFloat(paddleRect.x - CHAR_PIXELS*2, posY, "%.0f", mPaddle->GetTransform().GetPosition().x, 2.0f);
+	DrawFloat(paddleRect.x - CHAR_PIXELS*2, posY, "%.0f", mPaddle->GetTransform().GetPosition().x - HALF_WIDTH, 2.0f);
 	DrawFloat(paddleRect.x - CHAR_PIXELS*2, veloY, "%.0f", mPaddle->GetVelocity(), 2.0f);
 }
 

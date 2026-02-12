@@ -80,12 +80,10 @@ void SpacetimePlot::DrawMouse(float yStep) {
 	SDL_RenderRect(gGame.GetRenderer(), &box);
 
 	// draw text
-	float farShiftMag = (Game::CHAR_PIXELS + 2.0f) * 2;
-	float ageShift = gGame.GetMousePos().y > Game::HALF_HEIGHT ? farShiftMag : 0.0f;
-	float posShift = gGame.GetMousePos().y > Game::HALF_HEIGHT ? 0.0f : -farShiftMag;
-	gGame.DrawFloat(mouseTextX, mouseTextY + posShift, "Space Position: %.1f", mousePos);
-	gGame.DrawFloat(mouseTextX, mouseTextY + Game::CHAR_PIXELS + 2.0f, "Space Velocity: %.1f", mouseVelo);
-	gGame.DrawFloat(mouseTextX, mouseTextY + ageShift, "Aging Factor: %.1f%%", mouseTime);
+	float lineStep = Game::CHAR_PIXELS + 2.0f;
+	gGame.DrawFloat(mouseTextX, mouseTextY, "Space Position: %.1f", mousePos);
+	gGame.DrawFloat(mouseTextX, mouseTextY + lineStep, "Space Velocity: %.1f", mouseVelo);
+	gGame.DrawFloat(mouseTextX, mouseTextY + lineStep * 2, "Aging Factor: %.1f%%", mouseTime);
 }
 
 void SpacetimePlot::DrawSpacetime() {
