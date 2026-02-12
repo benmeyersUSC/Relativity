@@ -16,7 +16,7 @@ either A/D or </> controls. Your time remaining is shown on the blue box.
   will be recorded for later display. My favorite part of this codebase is in [Actor.cpp](./src/Actor.cpp)'s `HandleUpdate` 
   function, where we calculate the **Lorentz Factor** for time dilation. 
   - Here is the code:
-  ``
+  ```cpp
   mVelocities.push_back(mVelo);
   mPositions.push_back(GetTransform().GetPosition().x);
 
@@ -30,7 +30,7 @@ either A/D or </> controls. Your time remaining is shown on the blue box.
     Game::MAX_VELO * Game::MAX_VELO - mVelo * mVelo
    )
   );
-  ``
+  ```
   - Because your spacetime vector is **[SpaceVelocity, TimeVelocity]** and its length must equal ***C***, 
   we can set up the following equality based on the formula for a vector's length:
     - **SpaceVelocity^2** + **TimeVelocity^2** = **C^2**

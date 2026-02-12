@@ -15,15 +15,16 @@
 #include "Actor.h"
 using Math::Vector2;
 class Paddle;
-
+class SpacetimePlot;
 class Game
 {
+public:
+
 	static constexpr float DURATION_SECONDS = 10.0f;
 	static constexpr unsigned ESTIMATED_FPS = 60;
 
 	static constexpr float PLOT_POINT_SIZE = 3.0f;
 	static constexpr float HALF_PLOT_POINT = PLOT_POINT_SIZE/2.0f;
-public:
 	// window constants
 	static constexpr float WINDOW_WIDTH = 1305.0f;
 	static constexpr float WINDOW_HEIGHT = 855.0f;
@@ -73,6 +74,12 @@ public:
 		return a;
 	}
 
+	void DrawFloat(float x, float y, const char* fmt, float value, float scale = 1.0f);
+	void DrawInt(float x, float y, int value, float scale = 1.0f);
+
+	[[nodiscard]] const Vector2& GetMousePos()const{return mMousePos;}
+
+	SDL_Renderer* GetRenderer(){return mSdlRenderer;}
 private:
 	// window and renderer
 	SDL_Window* mSdlWindow;
@@ -88,9 +95,9 @@ private:
 	// actors vector and individual member variables
 	std::vector<Actor*> mActors;
 	Paddle* mPaddle;
-	std::vector<float> mActorPositions;
-	std::vector<float> mActorVelocities;
-	std::vector<float> mActorTimeVelocities;
+	// std::vector<float> mActorPositions;
+	// std::vector<float> mActorVelocities;
+	// std::vector<float> mActorTimeVelocities;
 
 	// prev time for delta calcs
 	Uint64 mPreviousTime;
@@ -117,15 +124,12 @@ private:
 		return f * 100.0f / MAX_VELO;
 	};
 
-	void DrawFloat(float x, float y, const char* fmt, float value, float scale = 1.0f);
-	void DrawInt(float x, float y, int value, float scale = 1.0f);
-
 	void DrawPaddleText();
-	void DrawSpacetime();
-
+	// void DrawSpacetime();
 
 	float mDT = 0.0f;
 	Vector2 mMousePos;
+	std::unique_ptr<SpacetimePlot> mSpacetimePlot;
 };
 
 extern Game gGame;

@@ -15,6 +15,8 @@ add_executable(Relativity src/main.cpp
         src/Paddle.h
         src/Transform.cpp
         src/Transform.h
+        src/SpacetimePlot.cpp
+        src/SpacetimePlot.h
 )
 
 target_link_libraries(Relativity PRIVATE SDL3::SDL3)

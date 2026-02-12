@@ -5,7 +5,8 @@
 #include "Actor.h"
 #include "Paddle.h"
 #include <functional>
-#include <string>
+
+#include "SpacetimePlot.h"
 Game gGame;
 
 Game::Game()
@@ -22,8 +23,8 @@ Game::Game()
 
 	mPreviousTime = 0;
 
-	mActorPositions.reserve(static_cast<unsigned>(WINDOW_HEIGHT / PLOT_POINT_SIZE));
-	mActorVelocities.reserve(static_cast<unsigned>(WINDOW_HEIGHT / PLOT_POINT_SIZE));
+	mSpacetimePlot = std::make_unique<SpacetimePlot>();
+
 }
 
 bool Game::Initialize()
@@ -145,88 +146,6 @@ void Game::DrawPaddleText() {
 	DrawFloat(paddleRect.x - CHAR_PIXELS*2, veloY, "%.0f", mPaddle->GetVelocity(), 2.0f);
 }
 
-void Game::DrawSpacetime() {
-	// plot as many positions fit in the window (we'll accept overlap)
-	float yStep = mActorPositions.empty() ? PLOT_POINT_SIZE
-	              : WINDOW_HEIGHT / static_cast<float>(mActorPositions.size());
-	float y = WINDOW_HEIGHT;
-
-	// Y (time) axis
-	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR,MAX_COLOR,MAX_COLOR,MAX_COLOR);
-	for (size_t i = 0; i < WINDOW_HEIGHT; ++i) {
-		SDL_FRect rect(HALF_WIDTH - 1.0f, i - 1.0f, 2.0f, 2.0f);
-		SDL_RenderFillRect(mSdlRenderer, &rect);
-	}
-
-	// how many time dilation prints do we want
-	auto numTimePrints = 18.0f;
-	auto timePrintInterval = static_cast<unsigned>(static_cast<float>(mActorPositions.size()) / numTimePrints);
-
-	for (size_t i = 0; i < mActorPositions.size(); ++i) {
-		// pos, velo, timeDil for plotting
-		float mSpacetimePos = mActorPositions[i];
-		float mSpacetimeVelo = mActorVelocities[i];
-		// mul by two to make it brighter...magic
-		float veloPct = Math::Abs(2.0f * (mSpacetimeVelo - HALF_WIDTH)) / HALF_WIDTH;
-
-		// for printing dots and text
-		bool neg = mSpacetimeVelo < HALF_WIDTH;
-		unsigned r = neg * MAX_COLOR;
-		unsigned g = !neg * MAX_COLOR;
-		auto alpha = static_cast<unsigned>(MAX_COLOR * veloPct);
-
-		// pos - white dots
-		SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR, MAX_COLOR, MAX_COLOR, MAX_COLOR);
-		SDL_FRect rect(mSpacetimePos - HALF_PLOT_POINT, y - HALF_PLOT_POINT, PLOT_POINT_SIZE, PLOT_POINT_SIZE);
-		SDL_RenderFillRect(mSdlRenderer, &rect);
-
-		// print the time dilation at various times
-		if (i % timePrintInterval == 0 && i != 0){
-			bool negativePosition = mSpacetimePos < HALF_WIDTH;
-			float shiftMag = 30.0f;
-			float shift = static_cast<float>(negativePosition - !negativePosition) * (shiftMag * PLOT_POINT_SIZE);
-			DrawFloat(mSpacetimePos - HALF_PLOT_POINT - HALF_CHAR_PIXELS + shift,
-							  y - HALF_PLOT_POINT, "%.2f%%", mActorTimeVelocities[i], 1.35f);
-		}
-
-		// velocity-gauged velo plotting
-		// - color is direction-gauged
-		// - transparency is magnitude-gauged
-		SDL_SetRenderDrawBlendMode(mSdlRenderer, SDL_BLENDMODE_BLEND);
-		SDL_SetRenderDrawColor(mSdlRenderer, r, g, 0, alpha);
-		SDL_FRect rect2(mSpacetimeVelo - HALF_PLOT_POINT, y - HALF_PLOT_POINT, PLOT_POINT_SIZE, PLOT_POINT_SIZE);
-		SDL_RenderFillRect(mSdlRenderer, &rect2);
-		SDL_SetRenderDrawBlendMode(mSdlRenderer, SDL_BLENDMODE_NONE);
-
-		y -= yStep;
-	}
-
-	// mouse-height(time)-gauged information
-	// index is inverse height (sdl convention), quantized by datapoints, clamped at 0 and max-index
-	auto mouseHeightIndex = static_cast<size_t>(std::clamp((WINDOW_HEIGHT - mMousePos.y) / yStep, 0.0f, static_cast<float>(mActorPositions.size() - 1)));
-	float mouseTime = mActorTimeVelocities[mouseHeightIndex];
-	// de-transforming values so centered in middle of plot
-	float mousePos = mActorPositions[mouseHeightIndex] - HALF_WIDTH;
-	float mouseVelo = mActorVelocities[mouseHeightIndex] - HALF_WIDTH;
-
-	// total magic here--fix
-	float textW = CHAR_PIXELS * 27;
-	float textH = CHAR_PIXELS * 3 + 4.0f;
-	// always put mouse 'inward' (x and y)
-	float mouseTextX = mMousePos.x < HALF_WIDTH ? mMousePos.x + CHAR_PIXELS : mMousePos.x - textW - CHAR_PIXELS;
-	float mouseTextY = mMousePos.y < HALF_HEIGHT ? mMousePos.y + CHAR_PIXELS : mMousePos.y - textH - CHAR_PIXELS;
-
-	// outlined box
-	float pad = 4.0f;
-	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR, MAX_COLOR, MAX_COLOR, MAX_COLOR);
-	SDL_FRect box(mouseTextX - pad, mouseTextY - pad, textW + pad * 2, textH + pad * 2);
-	SDL_RenderRect(mSdlRenderer, &box);
-
-	// draw text
-	DrawFloat(mouseTextX, mouseTextY + (CHAR_PIXELS + 2.0f) * 2, "Space Position: %.1f", mousePos);
-	DrawFloat(mouseTextX, mouseTextY + CHAR_PIXELS + 2.0f, "Space Velocity: %.1f", mouseVelo);
-	DrawFloat(mouseTextX, mouseTextY, "Aging Factor: %.1f%%", mouseTime);
-}
 
 void Game::EndGame() {
 	unsigned numSamples = mPaddle->GetPositions().size();
@@ -237,9 +156,9 @@ void Game::EndGame() {
 	// transform raw samples
 	// - scaled by width
 	// - mapped via aggregation to vertical plotting space!
-	TransformPoints(mPaddle->GetPositions(), mActorPositions, mTransformPosition);
-	TransformPoints(mPaddle->GetVelocities(), mActorVelocities, mTransformVelocity);
-	TransformPoints(mPaddle->GetTimeVelocities(), mActorTimeVelocities, mTransformTimeVelocity, false);
+	TransformPoints(mPaddle->GetPositions(), mSpacetimePlot->GetPositions(), mTransformPosition);
+	TransformPoints(mPaddle->GetVelocities(), mSpacetimePlot->GetVelocities(), mTransformVelocity);
+	TransformPoints(mPaddle->GetTimeVelocities(), mSpacetimePlot->GetTimeVelocities(), mTransformTimeVelocity, false);
 
 	// destroy actors and ditch paddle
 	UnloadData();
@@ -288,7 +207,7 @@ void Game::GenerateOutput()
 	}
 
 	if (mGameDone) {
-		DrawSpacetime();
+		mSpacetimePlot->DrawSpacetime();
 	}
 	else	{
 
