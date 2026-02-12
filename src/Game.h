@@ -22,10 +22,13 @@ class Game
 	static constexpr unsigned ESTIMATED_FPS = 60;
 
 	static constexpr float PLOT_POINT_SIZE = 3.0f;
+	static constexpr float HALF_PLOT_POINT = PLOT_POINT_SIZE/2.0f;
 public:
 	// window constants
-	static constexpr float WINDOW_WIDTH = 1000.0f;
-	static constexpr float WINDOW_HEIGHT = 800.0f;
+	static constexpr float WINDOW_WIDTH = 1305.0f;
+	static constexpr float WINDOW_HEIGHT = 855.0f;
+	static constexpr float HALF_WIDTH = WINDOW_WIDTH/2.0f;
+	static constexpr float HALF_HEIGHT = WINDOW_HEIGHT/2.0f;
 
 	// max deltatime for update
 	static constexpr float MAX_DELTA_TIME = 0.033f;
@@ -101,7 +104,7 @@ private:
 
 	void EndGame();
 
-	void TransformPoints(const std::vector<float>& src, std::vector<float>& dest, const std::function<float(float)>& transformFunc, bool time=true);
+	void TransformPoints(const std::vector<float>& src, std::vector<float>& dest, const std::function<float(float)>& transformFunc, bool notTime=true) const;
 	// these should return [-WIDTH/2, WIDTH/2]
 	std::function<float(float)> mTransformPosition = [](const float position) {
 		return position - WINDOW_WIDTH/2.0f;
@@ -114,8 +117,8 @@ private:
 		return f * 100.0f / MAX_VELO;
 	};
 
-	void DrawText(float x, float y, const char* fmt, float value, float scale = 1.0f);
-	void DrawText(float x, float y, const char* fmt, int value, float scale = 1.0f);
+	void DrawFloat(float x, float y, const char* fmt, float value, float scale = 1.0f);
+	void DrawInt(float x, float y, int value, float scale = 1.0f);
 
 	void DrawPaddleText();
 	void DrawSpacetime();

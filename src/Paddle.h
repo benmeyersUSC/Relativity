@@ -9,7 +9,7 @@ class Paddle : public Actor
 	static constexpr float BRAKE_FACTOR = 0.9f;
 	short mVeloSign = 0.0f;
 public:
-	static constexpr float PADDLE_HEIGHT = 18.0f;
+	static constexpr float PADDLE_HEIGHT = 27.0f;
 	static constexpr float PADDLE_WIDTH = 54.0f;
 	static constexpr float PADDLE_ACCEL = 500.0f;
 

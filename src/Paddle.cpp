@@ -12,10 +12,13 @@ void Paddle::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
 void Paddle::HandleUpdate(float deltaTime) {
     Actor::HandleUpdate(deltaTime);
 
+    // make acceleration asymptotically hard to approach
+    // make it an inverse function of velocity!
+    float realAcceleration = PADDLE_ACCEL;
 
-    mVelo = Math::Clamp(mVelo + mVeloSign * PADDLE_ACCEL * deltaTime, -Game::MAX_VELO, Game::MAX_VELO);
+    mVelo = Math::Clamp(mVelo + static_cast<float>(mVeloSign) * realAcceleration * deltaTime, -Game::MAX_VELO, Game::MAX_VELO);
 
-    mVelo *= Math::NearlyZero(PADDLE_ACCEL * mVeloSign) || PADDLE_ACCEL * mVeloSign * mVelo < 0.0f ? BRAKE_FACTOR
+    mVelo *= Math::NearlyZero(realAcceleration * static_cast<float>(mVeloSign)) || realAcceleration * static_cast<float>(mVeloSign) * mVelo < 0.0f ? BRAKE_FACTOR
                                                                                      : 1.0f;
 
     GetTransform().PositionDelta(mVelo * deltaTime, 0.0f);
