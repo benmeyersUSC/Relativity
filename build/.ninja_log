@@ -257,6 +257,6 @@
 21	840	1770928207970785827	CMakeFiles/Relativity.dir/src/Game.cpp.o	33c6f403f3a1dd60
 602	614	1770928208551873797	SDL3/libSDL3.dylib	8abedc40b156129b
 840	874	1770928208789623787	Relativity	824392a7d738ce01
-15	801	1770929352591918342	build.ninja	32ea588fd2601c93
-15	801	1770929352574799654	/Users/benmeyers/Desktop/Relativity/build/cmake_install.cmake	32ea588fd2601c93
-15	801	1770929352588877796	/Users/benmeyers/Desktop/Relativity/build/SDL3/cmake_install.cmake	32ea588fd2601c93
+15	801	1770931221500362521	build.ninja	32ea588fd2601c93
+15	801	1770931221485302086	/Users/benmeyers/Desktop/Relativity/build/cmake_install.cmake	32ea588fd2601c93
+15	801	1770931221498133893	/Users/benmeyers/Desktop/Relativity/build/SDL3/cmake_install.cmake	32ea588fd2601c93

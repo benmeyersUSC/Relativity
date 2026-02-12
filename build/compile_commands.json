@@ -31,6 +31,12 @@
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/SpacetimePlot.cpp",
+  "file": "/Users/benmeyers/Desktop/Relativity/src/SpacetimePlot.cpp",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
   "command": "/usr/bin/clang -DDLL_EXPORT -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=18 -DSDL_BUILD_MINOR_VERSION=2 -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3/src -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -idirafter/Users/benmeyers/Desktop/Relativity/SDL3/src/video/khronos -Wno-error=deprecated-declarations -D_REENTRANT -fobjc-arc -Winvalid-pch -Xclang -emit-pch -Xclang -include -Xclang /Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3-shared.dir/cmake_pch.h -x c-header -o SDL3/CMakeFiles/SDL3-shared.dir/cmake_pch.h.pch -c /Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3-shared.dir/cmake_pch.h.c",
   "file": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3-shared.dir/cmake_pch.h.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3-shared.dir/cmake_pch.h.pch"

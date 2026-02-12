@@ -89,6 +89,14 @@ build CMakeFiles/Relativity.dir/src/Transform.cpp.o: CXX_COMPILER__Relativity_un
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
 
+build CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o: CXX_COMPILER__Relativity_unscanned_Debug /Users/benmeyers/Desktop/Relativity/src/SpacetimePlot.cpp || cmake_object_order_depends_target_Relativity
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = CMakeFiles/Relativity.dir
+  OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Relativity
@@ -97,7 +105,7 @@ build CMakeFiles/Relativity.dir/src/Transform.cpp.o: CXX_COMPILER__Relativity_un
 #############################################
 # Link the executable Relativity
 
-build Relativity: CXX_EXECUTABLE_LINKER__Relativity_Debug CMakeFiles/Relativity.dir/src/main.cpp.o CMakeFiles/Relativity.dir/src/Game.cpp.o CMakeFiles/Relativity.dir/src/Actor.cpp.o CMakeFiles/Relativity.dir/src/Paddle.cpp.o CMakeFiles/Relativity.dir/src/Transform.cpp.o | SDL3/libSDL3.0.dylib /Users/benmeyers/Desktop/Relativity/SDL3/src/dynapi/SDL_dynapi.sym || SDL3/libSDL3.dylib SDL3/libSDL3.dylib
+build Relativity: CXX_EXECUTABLE_LINKER__Relativity_Debug CMakeFiles/Relativity.dir/src/main.cpp.o CMakeFiles/Relativity.dir/src/Game.cpp.o CMakeFiles/Relativity.dir/src/Actor.cpp.o CMakeFiles/Relativity.dir/src/Paddle.cpp.o CMakeFiles/Relativity.dir/src/Transform.cpp.o CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o | SDL3/libSDL3.0.dylib /Users/benmeyers/Desktop/Relativity/SDL3/src/dynapi/SDL_dynapi.sym || SDL3/libSDL3.dylib SDL3/libSDL3.dylib
   CONFIG = Debug
   FLAGS = -g -arch arm64
   LINK_FLAGS = -Wl,-search_paths_first -Wl,-headerpad_max_install_names

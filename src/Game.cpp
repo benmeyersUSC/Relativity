@@ -22,9 +22,6 @@ Game::Game()
 	mPaddle = nullptr;
 
 	mPreviousTime = 0;
-
-	mSpacetimePlot = std::make_unique<SpacetimePlot>();
-
 }
 
 bool Game::Initialize()
@@ -148,6 +145,9 @@ void Game::DrawPaddleText() {
 
 
 void Game::EndGame() {
+	mSpacetimePlot = std::make_unique<SpacetimePlot>();
+
+
 	unsigned numSamples = mPaddle->GetPositions().size();
 	auto maxPlotPoints = static_cast<unsigned>(WINDOW_HEIGHT / PLOT_POINT_SIZE);
 	// how many samples will we average to meet the ideal/max plot points

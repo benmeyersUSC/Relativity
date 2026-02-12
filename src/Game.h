@@ -95,9 +95,7 @@ private:
 	// actors vector and individual member variables
 	std::vector<Actor*> mActors;
 	Paddle* mPaddle;
-	// std::vector<float> mActorPositions;
-	// std::vector<float> mActorVelocities;
-	// std::vector<float> mActorTimeVelocities;
+
 
 	// prev time for delta calcs
 	Uint64 mPreviousTime;
@@ -125,7 +123,6 @@ private:
 	};
 
 	void DrawPaddleText();
-	// void DrawSpacetime();
 
 	float mDT = 0.0f;
 	Vector2 mMousePos;
