@@ -6,12 +6,14 @@
 
 
 Actor::Actor(unsigned frameLife) {
-    mVelos.reserve(frameLife);
+    mPositions.reserve(frameLife);
+    mVelocities.reserve(frameLife);
 }
 
 void Actor::HandleUpdate(float deltaTime) {
 }
 
-void Actor::HandleInput(const bool *keyboardInput) {
+void Actor::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
+                             const Vector2& relativeMouse) {
 }
 

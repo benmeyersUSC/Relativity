@@ -21,8 +21,8 @@ Game::Game()
 
 	mPreviousTime = 0;
 
-	mSpacetimeVelos.reserve(FRAME_LIFE/4.0f);
-
+	mActorPositions.reserve(FRAME_LIFE/FRAME_AGG);
+	mActorVelocities.reserve(FRAME_LIFE/FRAME_AGG);
 }
 
 bool Game::Initialize()
@@ -92,22 +92,25 @@ void Game::ProcessInput()
 		mContinueRunning = false;
 	}
 
+	// mouse
+	float x = 0.0f;
+	float y = 0.0f;
+	SDL_MouseButtonFlags mouseButtons = SDL_GetRelativeMouseState(&x, &y);
+	Vector2 relativeMouse(x, y);
+
 	for (auto a : mActors) {
-		a->HandleInput(keyboardState);
+		a->HandleInput(keyboardState, mouseButtons, relativeMouse);
 	}
 }
 
-// right now this goes directly to just add the paddle's velos
-// but eventually we want it to fill a vector of transformed
-// space-velo vectors
-void Game::TransformVelos(const std::vector<float>& rawVelos) {
-	auto fun = [](float velo) {
-		return (velo * WINDOW_WIDTH / MAX_VELO) + WINDOW_WIDTH/2.0f;
-	};
-	for (size_t i = 0; i < rawVelos.size() - 3; i += 4) {
-		mSpacetimeVelos.push_back(  (
-			fun(rawVelos[i]) + fun(rawVelos[i+1]) + fun(rawVelos[i+2]) + fun(rawVelos[i+3])
-			)/4.0f);
+void Game::TransformPoints(const std::vector<float>& src, std::vector<float>& dest, const std::function<float(float)>& transformFunc) {
+	for (size_t i = 0; i < src.size() - (FRAME_AGG - 1); i += FRAME_AGG) {
+		float sum = 0.0f;
+		for (size_t x = 0; x < FRAME_AGG; ++x) {
+			sum += transformFunc(src[i + x]);
+		}
+		// now these are transformed for rendering
+		dest.push_back((sum/(FRAME_AGG * 1.0f) + WINDOW_WIDTH/2.0f));
 	}
 }
 
@@ -124,26 +127,32 @@ void Game::DrawPaddleText() {
 
 void Game::DrawSpacetime() {
 
+	float y = WINDOW_HEIGHT;
+	float midX = WINDOW_WIDTH / 2.0f;
 
-	float wid = 4.0f;
-	float y = WINDOW_HEIGHT - 5.0f;
-	for (float mSpacetimeVelo : mSpacetimeVelos) {
-		float vFactor = (1.0f - Math::Abs(mSpacetimeVelo) / MAX_VELO);
-		float displacement = mSpacetimeVelo - wid/2.0f;
-		float midX = WINDOW_WIDTH / 2.0f;
-		unsigned alpha = 255 * vFactor;
-		unsigned r = (displacement < midX) * 255 * vFactor;
-		unsigned g = (displacement > midX) * 255 * vFactor;
-		SDL_SetRenderDrawColor(mSdlRenderer, r, g, 0, alpha);
-
-		SDL_FRect rect(mSpacetimeVelo - wid/2.0f, y - wid/2.0f, wid, wid);
+	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR,MAX_COLOR,MAX_COLOR,MAX_COLOR);
+	for (size_t i = 0; i < WINDOW_HEIGHT; ++i) {
+		SDL_FRect rect(midX - 1.0f, i - 1.0f, 2.0f, 2.0f);
 		SDL_RenderFillRect(mSdlRenderer, &rect);
-		y -= 4.0f;
+	}
+
+	for (float mSpacetimePos : mActorPositions) {
+		float invPctOfMax = (1.0f - Math::Abs(mSpacetimePos) / midX);
+		unsigned alpha = 255 * invPctOfMax;
+		bool neg = mSpacetimePos < midX;
+		unsigned r = neg * 255 * invPctOfMax;
+		unsigned g = (!neg && !Math::NearlyZero(mSpacetimePos)) * 255 * invPctOfMax;
+
+		SDL_SetRenderDrawColor(mSdlRenderer, r, g, 0, alpha);
+		SDL_FRect rect(mSpacetimePos - PLOT_POINT_SIZE/2.0f, y - PLOT_POINT_SIZE/2.0f, PLOT_POINT_SIZE, PLOT_POINT_SIZE);
+		SDL_RenderFillRect(mSdlRenderer, &rect);
+		y -= PLOT_POINT_SIZE;
 	}
 }
 
 void Game::EndGame() {
-	std::vector<float>& velos = mPaddle->GetVelos();
+	std::vector<float>& poss = mPaddle->GetPositions();
+	std::vector<float>& velos = mPaddle->GetVelocities();
 	std::cout << "Game done after " << mFramesElapsed << "frames!\n";
 	for (size_t i = 0; i < FRAME_LIFE;++i ) {
 		for (int j = 0; j < Math::Abs((velos[i]) / 10); ++j) {
@@ -156,7 +165,9 @@ void Game::EndGame() {
 		}
 		std::cout << velos[i] << "\n";
 	}
-	TransformVelos(velos);
+	TransformPoints(poss, mActorPositions, mTransformPosition);
+	TransformPoints(velos, mActorVelocities, mTransformVelocity);
+
 	UnloadData();
 	mPaddle = nullptr;
 }
@@ -190,9 +201,14 @@ void Game::UpdateGame()
 
 void Game::GenerateOutput()
 {
-	// lowkey white background
-	SDL_SetRenderDrawColor(mSdlRenderer, 0,0,0,0);
-	SDL_RenderClear(mSdlRenderer);
+	float hw = WINDOW_WIDTH/2.0f;
+	float hh = WINDOW_HEIGHT/2.0f;
+	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR,MAX_COLOR,MAX_COLOR,MAX_COLOR);
+	for (size_t i = 0; i < WINDOW_WIDTH; ++i) {
+		SDL_FRect rect(i - 1.0f, hh - 1.0f, 2.0f, 2.0f);
+		SDL_RenderFillRect(mSdlRenderer, &rect);
+	}
+
 	// now set to blue
 	SDL_SetRenderDrawColor(mSdlRenderer, 0, 0, MAX_COLOR, MAX_COLOR);
 	// render each actor
@@ -202,24 +218,18 @@ void Game::GenerateOutput()
 		SDL_RenderFillRect(mSdlRenderer, &rect);
 	}
 
-	if (mPaddle) DrawPaddleText();
-
-	if (!mSpacetimeVelos.empty()) {
+	if (mGameDone) {
 		DrawSpacetime();
 	}
+	else	{DrawPaddleText();}
 
 	SDL_RenderPresent(mSdlRenderer);
 }
 
 void Game::LoadData()
 {
-	// re-used, so let's store these
-	float halfWidth = WINDOW_WIDTH / HALF_DIVISOR;
-	float halfHeight = WINDOW_HEIGHT / HALF_DIVISOR;
-
-
 	mPaddle = CreateActor<Paddle>();
-	mPaddle->GetTransform().SetPosition(Vector2(halfWidth, halfHeight ));
+	mPaddle->GetTransform().SetPosition(Vector2(WINDOW_WIDTH / HALF_DIVISOR, WINDOW_HEIGHT / HALF_DIVISOR ));
 }
 
 void Game::UnloadData()

@@ -9,7 +9,7 @@
 
 #include "SDL3/SDL.h"
 #include "Math.h"
-
+#include <functional>
 #include <vector>
 
 #include "Actor.h"
@@ -20,6 +20,9 @@ class Paddle;
 class Game
 {
 	static constexpr unsigned FRAME_LIFE = 1000;
+	static constexpr unsigned FRAME_AGG = 4;
+
+	static constexpr float PLOT_POINT_SIZE = 4.0f;
 public:
 	// window constants
 	static constexpr float WINDOW_WIDTH = 1000.0f;
@@ -82,7 +85,8 @@ private:
 	// actors vector and individual member variables
 	vector<Actor*> mActors;
 	Paddle* mPaddle;
-	std::vector<float> mSpacetimeVelos;
+	std::vector<float> mActorPositions;
+	std::vector<float> mActorVelocities;
 
 	// prev time for delta calcs
 	Uint64 mPreviousTime;
@@ -95,8 +99,16 @@ private:
 	void UnloadData();
 
 	void EndGame();
-	// takes in some vector of Actor's velos and transforms ready for display
-	void TransformVelos(const std::vector<float>& rawVelos);
+
+	static void TransformPoints(const std::vector<float>& src, std::vector<float>& dest, const std::function<float(float)>& transformFunc);
+	// these should return [-WIDTH/2, WIDTH/2]
+	std::function<float(float)> mTransformPosition = [](const float position) {
+		return position - WINDOW_WIDTH/2.0f;
+	};
+	std::function<float(float)> mTransformVelocity = [](const float velo) {
+		// rel of max velo, scaled to WIDTH/2
+		return (velo * WINDOW_WIDTH) / (MAX_VELO * 2.0f);
+	};
 
 	void DrawPaddleText();
 	void DrawSpacetime();
