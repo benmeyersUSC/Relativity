@@ -11,6 +11,7 @@ void Paddle::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
 
 void Paddle::HandleUpdate(float deltaTime) {
     mVelocities.push_back(mVelo);
+    mPositions.push_back(GetTransform().GetPosition().x);
     mVelo = Math::Clamp(mVelo + mVeloSign * PADDLE_ACCEL * deltaTime, -Game::MAX_VELO, Game::MAX_VELO);
 
     mVelo *= Math::NearlyZero(PADDLE_ACCEL * mVeloSign) || PADDLE_ACCEL * mVeloSign * mVelo < 0.0f ? BRAKE_FACTOR

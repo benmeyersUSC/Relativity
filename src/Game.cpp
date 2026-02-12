@@ -115,6 +115,7 @@ void Game::TransformPoints(const std::vector<float>& src, std::vector<float>& de
 }
 
 void Game::DrawPaddleText() {
+	if (mPaddle == nullptr){return;}
 	// now we type in the score onto the paddle
 	Vector2 paddleRect = mPaddle->GetTransform().GetPosition();
 	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR, MAX_COLOR, MAX_COLOR, MAX_COLOR);
@@ -136,16 +137,26 @@ void Game::DrawSpacetime() {
 		SDL_RenderFillRect(mSdlRenderer, &rect);
 	}
 
-	for (float mSpacetimePos : mActorPositions) {
+	for (size_t i = 0; i < mActorPositions.size(); ++i) {
+		float mSpacetimePos = mActorPositions[i];
+		float mSpacetimeVelo = mActorVelocities[i];
 		float invPctOfMax = (1.0f - Math::Abs(mSpacetimePos) / midX);
 		unsigned alpha = 255 * invPctOfMax;
 		bool neg = mSpacetimePos < midX;
 		unsigned r = neg * 255 * invPctOfMax;
 		unsigned g = (!neg && !Math::NearlyZero(mSpacetimePos)) * 255 * invPctOfMax;
 
-		SDL_SetRenderDrawColor(mSdlRenderer, r, g, 0, alpha);
+		// pos - white
+		SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR, MAX_COLOR, MAX_COLOR, MAX_COLOR);
 		SDL_FRect rect(mSpacetimePos - PLOT_POINT_SIZE/2.0f, y - PLOT_POINT_SIZE/2.0f, PLOT_POINT_SIZE, PLOT_POINT_SIZE);
 		SDL_RenderFillRect(mSdlRenderer, &rect);
+
+		// velo - color is velo gauged
+		SDL_SetRenderDrawColor(mSdlRenderer, r, g, 0, invPctOfMax);
+		SDL_FRect rect2(mSpacetimeVelo - PLOT_POINT_SIZE/2.0f, y - PLOT_POINT_SIZE/2.0f, PLOT_POINT_SIZE, PLOT_POINT_SIZE);
+		SDL_RenderFillRect(mSdlRenderer, &rect2);
+
+
 		y -= PLOT_POINT_SIZE;
 	}
 }
@@ -201,7 +212,6 @@ void Game::UpdateGame()
 
 void Game::GenerateOutput()
 {
-	float hw = WINDOW_WIDTH/2.0f;
 	float hh = WINDOW_HEIGHT/2.0f;
 	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR,MAX_COLOR,MAX_COLOR,MAX_COLOR);
 	for (size_t i = 0; i < WINDOW_WIDTH; ++i) {
