@@ -12,9 +12,8 @@ void Paddle::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
 void Paddle::HandleUpdate(float deltaTime) {
     Actor::HandleUpdate(deltaTime);
 
-    // make acceleration asymptotically hard to approach
-    // make it an inverse function of velocity!
-    float realAcceleration = PADDLE_ACCEL;
+    // increasing velocity becomes asymptotically hard as you approach max!
+    float realAcceleration = PADDLE_ACCEL * (1.0f - std::abs(mVelo) / Game::MAX_VELO);
 
     mVelo = Math::Clamp(mVelo + static_cast<float>(mVeloSign) * realAcceleration * deltaTime, -Game::MAX_VELO, Game::MAX_VELO);
 

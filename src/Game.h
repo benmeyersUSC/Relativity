@@ -110,7 +110,7 @@ private:
 		return position - WINDOW_WIDTH/2.0f;
 	};
 	std::function<float(float)> mTransformVelocity = [](const float velo) {
-		// rel of max velo, scaled to WIDTH/2
+		// percentage of max velo, scaled to WIDTH/2
 		return (velo * WINDOW_WIDTH) / (MAX_VELO * 2.0f);
 	};
 	std::function<float(float)> mTransformTimeVelocity = [](float f){

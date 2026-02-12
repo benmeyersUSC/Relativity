@@ -14,6 +14,7 @@ void Actor::HandleUpdate(float deltaTime) {
     mVelocities.push_back(mVelo);
     mPositions.push_back(GetTransform().GetPosition().x);
     
+    // LORENTZ
     // mVelo^2 + timeVelo^2 = MAX_VELO^2
     // timeVelo = SQRT(
     //      MAX_VELO^2 - mVelo^2
