@@ -130,9 +130,10 @@ void Game::DrawSpacetime() {
 	for (float mSpacetimeVelo : mSpacetimeVelos) {
 		float vFactor = (1.0f - Math::Abs(mSpacetimeVelo) / MAX_VELO);
 		float displacement = mSpacetimeVelo - wid/2.0f;
+		float midX = WINDOW_WIDTH / 2.0f;
 		unsigned alpha = 255 * vFactor;
-		unsigned r = (displacement < wid/2.0f) * 255 * vFactor;
-		unsigned g = (displacement > wid/2.0f) * 255 * vFactor;
+		unsigned r = (displacement < midX) * 255 * vFactor;
+		unsigned g = (displacement > midX) * 255 * vFactor;
 		SDL_SetRenderDrawColor(mSdlRenderer, r, g, 0, alpha);
 
 		SDL_FRect rect(mSpacetimeVelo - wid/2.0f, y - wid/2.0f, wid, wid);
