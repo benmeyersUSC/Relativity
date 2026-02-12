@@ -11,10 +11,10 @@ class Paddle : public Actor
 public:
 	static constexpr float PADDLE_HEIGHT = 18.0f;
 	static constexpr float PADDLE_WIDTH = 54.0f;
-	static constexpr float PADDLE_ACCEL = 300.0f;
+	static constexpr float PADDLE_ACCEL = 500.0f;
 
 	void HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
-							 const Vector2& relativeMouse) override;
+							 const Vector2& posMouse) override;
 	void HandleUpdate(float deltaTime) override;
 protected:
 	explicit Paddle(unsigned frameLife);

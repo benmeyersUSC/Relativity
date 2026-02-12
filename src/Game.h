@@ -13,16 +13,15 @@
 #include <vector>
 
 #include "Actor.h"
-using std::vector;
 using Math::Vector2;
 class Paddle;
 
 class Game
 {
-	static constexpr float DURATION_SECONDS = 8.0f;
+	static constexpr float DURATION_SECONDS = 10.0f;
 	static constexpr unsigned ESTIMATED_FPS = 60;
 
-	static constexpr float PLOT_POINT_SIZE = 4.0f;
+	static constexpr float PLOT_POINT_SIZE = 3.0f;
 public:
 	// window constants
 	static constexpr float WINDOW_WIDTH = 1000.0f;
@@ -35,6 +34,7 @@ public:
 	static constexpr Uint8 MAX_COLOR = 255;
 
 	// constant for half size of character pixel count (according to SDL)
+	static constexpr float CHAR_PIXELS = 8.0f;
 	static constexpr float HALF_CHAR_PIXELS = 4.0f;
 
 	// constant for 1000 ms in one s
@@ -83,10 +83,11 @@ private:
 	unsigned mFrameAgg = 1;
 
 	// actors vector and individual member variables
-	vector<Actor*> mActors;
+	std::vector<Actor*> mActors;
 	Paddle* mPaddle;
 	std::vector<float> mActorPositions;
 	std::vector<float> mActorVelocities;
+	std::vector<float> mActorTimeVelocities;
 
 	// prev time for delta calcs
 	Uint64 mPreviousTime;
@@ -100,7 +101,7 @@ private:
 
 	void EndGame();
 
-	void TransformPoints(const std::vector<float>& src, std::vector<float>& dest, const std::function<float(float)>& transformFunc);
+	void TransformPoints(const std::vector<float>& src, std::vector<float>& dest, const std::function<float(float)>& transformFunc, bool time=true);
 	// these should return [-WIDTH/2, WIDTH/2]
 	std::function<float(float)> mTransformPosition = [](const float position) {
 		return position - WINDOW_WIDTH/2.0f;
@@ -109,12 +110,19 @@ private:
 		// rel of max velo, scaled to WIDTH/2
 		return (velo * WINDOW_WIDTH) / (MAX_VELO * 2.0f);
 	};
+	std::function<float(float)> mTransformTimeVelocity = [](float f){
+		return f * 100.0f / MAX_VELO;
+	};
+
+	void DrawText(float x, float y, const char* fmt, float value, float scale = 1.0f);
+	void DrawText(float x, float y, const char* fmt, int value, float scale = 1.0f);
 
 	void DrawPaddleText();
 	void DrawSpacetime();
 
 
 	float mDT = 0.0f;
+	Vector2 mMousePos;
 };
 
 extern Game gGame;

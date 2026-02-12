@@ -47,6 +47,11 @@ namespace Math {
 
     };
 
+    [[nodiscard]] inline float Sqrt(float value)
+	{
+		return sqrtf(value);
+	}
+
     template <typename T>
     [[nodiscard]] constexpr T Max(T a, T b)
     {

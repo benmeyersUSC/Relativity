@@ -5,13 +5,14 @@
 #include "Game.h"
 
 void Paddle::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
-                             const Vector2& relativeMouse) {
+                             const Vector2& posMouse) {
     mVeloSign = keys[SDL_SCANCODE_RIGHT] - keys[SDL_SCANCODE_LEFT];
 }
 
 void Paddle::HandleUpdate(float deltaTime) {
-    mVelocities.push_back(mVelo);
-    mPositions.push_back(GetTransform().GetPosition().x);
+    Actor::HandleUpdate(deltaTime);
+
+
     mVelo = Math::Clamp(mVelo + mVeloSign * PADDLE_ACCEL * deltaTime, -Game::MAX_VELO, Game::MAX_VELO);
 
     mVelo *= Math::NearlyZero(PADDLE_ACCEL * mVeloSign) || PADDLE_ACCEL * mVeloSign * mVelo < 0.0f ? BRAKE_FACTOR
