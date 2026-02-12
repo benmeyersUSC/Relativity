@@ -18,12 +18,11 @@ public:
     virtual void HandleUpdate(float deltaTime);
     virtual void HandleInput(const bool* keyboardInput);
 
-    [[nodiscard]] const std::vector<float>& GetVelos()const{return mVelos;}
+     [[nodiscard]] std::vector<float>& GetVelos() {return mVelos;}
 protected:
     Transform mTransform;
     float mVelo = 0.0f;
     std::vector<float> mVelos;
-
 };
 
 

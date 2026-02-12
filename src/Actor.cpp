@@ -4,6 +4,7 @@
 
 #include "Actor.h"
 
+
 Actor::Actor(unsigned frameLife) {
     mVelos.reserve(frameLife);
 }

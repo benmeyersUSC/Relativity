@@ -4,7 +4,7 @@
 
 #include "Actor.h"
 #include "Paddle.h"
-
+#include <functional>
 Game gGame;
 
 Game::Game()
@@ -20,6 +20,8 @@ Game::Game()
 	mPaddle = nullptr;
 
 	mPreviousTime = 0;
+
+	mSpacetimeVelos.reserve(FRAME_LIFE/4.0f);
 
 }
 
@@ -95,6 +97,68 @@ void Game::ProcessInput()
 	}
 }
 
+// right now this goes directly to just add the paddle's velos
+// but eventually we want it to fill a vector of transformed
+// space-velo vectors
+void Game::TransformVelos(const std::vector<float>& rawVelos) {
+	auto fun = [](float velo) {
+		return (velo * WINDOW_WIDTH / MAX_VELO) + WINDOW_WIDTH/2.0f;
+	};
+	for (size_t i = 0; i < rawVelos.size() - 3; i += 4) {
+		mSpacetimeVelos.push_back(  (
+			fun(rawVelos[i]) + fun(rawVelos[i+1]) + fun(rawVelos[i+2]) + fun(rawVelos[i+3])
+			)/4.0f);
+	}
+}
+
+void Game::DrawPaddleText() {
+	// now we type in the score onto the paddle
+	Vector2 paddleRect = mPaddle->GetTransform().GetPosition();
+	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR, MAX_COLOR, MAX_COLOR, MAX_COLOR);
+
+	// course website suggested this function:
+	//									minus 4 because text is 8   subtract a quarter so middle 8 (of 15) is text
+	SDL_RenderDebugTextFormat(mSdlRenderer, paddleRect.x - HALF_CHAR_PIXELS,
+							  paddleRect.y - 10.0f / HALF_CHAR_PIXELS, "%i", mFramesElapsed);
+}
+
+void Game::DrawSpacetime() {
+
+
+	float wid = 4.0f;
+	float y = WINDOW_HEIGHT - 5.0f;
+	for (float mSpacetimeVelo : mSpacetimeVelos) {
+		float vFactor = (1.0f - Math::Abs(mSpacetimeVelo) / MAX_VELO);
+		float displacement = mSpacetimeVelo - wid/2.0f;
+		unsigned alpha = 255 * vFactor;
+		unsigned r = (displacement < wid/2.0f) * 255 * vFactor;
+		unsigned g = (displacement > wid/2.0f) * 255 * vFactor;
+		SDL_SetRenderDrawColor(mSdlRenderer, r, g, 0, alpha);
+
+		SDL_FRect rect(mSpacetimeVelo - wid/2.0f, y - wid/2.0f, wid, wid);
+		SDL_RenderFillRect(mSdlRenderer, &rect);
+		y -= 4.0f;
+	}
+}
+
+void Game::EndGame() {
+	std::vector<float>& velos = mPaddle->GetVelos();
+	std::cout << "Game done after " << mFramesElapsed << "frames!\n";
+	for (size_t i = 0; i < FRAME_LIFE;++i ) {
+		for (int j = 0; j < Math::Abs((velos[i]) / 10); ++j) {
+			if (velos[i] < 0) {
+				std::cout << "<";
+			}
+			else {
+				std::cout << ">";
+			}
+		}
+		std::cout << velos[i] << "\n";
+	}
+	TransformVelos(velos);
+	UnloadData();
+	mPaddle = nullptr;
+}
 
 void Game::UpdateGame()
 {
@@ -104,22 +168,9 @@ void Game::UpdateGame()
 	// use trig...straight up is at rest, then max velo is rightward pointing...
 
 	mFramesElapsed++;
-	if (mFramesElapsed > FRAME_LIFE) {
-		mContinueRunning = false;
-		std::cout << "Game done after " << mFramesElapsed << "frames!\n";
-		auto x = mPaddle->GetVelos();
-		for (size_t i = 0; i < FRAME_LIFE;++i ) {
-			for (int j = 0; j < Math::Abs((x[i]) / 100); ++j) {
-				if (x[i] < 0) {
-					std::cout << "<";
-				}
-				else {
-					std::cout << ">";
-				}
-			}
-			std::cout << x[i] << "\n";
-		}
-		return;
+	if (mFramesElapsed > FRAME_LIFE && !mGameDone) {
+		mGameDone = true;
+		return EndGame();
 	}
 
 	// calculate deltatime
@@ -129,7 +180,7 @@ void Game::UpdateGame()
 	float deltaTime = uIntDiff / MS_PER_SEC;
 	deltaTime = Math::Min(MAX_DELTA_TIME, deltaTime);
 
-	// use deltatoem to update ball and paddle
+	// use deltatime to update ball and paddle
 
 	for (auto a : mActors) {
 		a->HandleUpdate(deltaTime);
@@ -150,14 +201,12 @@ void Game::GenerateOutput()
 		SDL_RenderFillRect(mSdlRenderer, &rect);
 	}
 
-	// now we type in the score onto the paddle
-	Vector2 paddleRect = mPaddle->GetTransform().GetPosition();
-	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR, MAX_COLOR, MAX_COLOR, MAX_COLOR);
+	if (mPaddle) DrawPaddleText();
 
-	// course website suggested this function:
-	//									minus 4 because text is 8   subtract a quarter so middle 8 (of 15) is text
-	SDL_RenderDebugTextFormat(mSdlRenderer, paddleRect.x - HALF_CHAR_PIXELS,
-							  paddleRect.y - 10.0f / HALF_CHAR_PIXELS, "%i", mFramesElapsed);
+	if (!mSpacetimeVelos.empty()) {
+		DrawSpacetime();
+	}
+
 	SDL_RenderPresent(mSdlRenderer);
 }
 
@@ -170,7 +219,6 @@ void Game::LoadData()
 
 	mPaddle = CreateActor<Paddle>();
 	mPaddle->GetTransform().SetPosition(Vector2(halfWidth, halfHeight ));
-
 }
 
 void Game::UnloadData()

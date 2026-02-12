@@ -22,8 +22,8 @@ class Game
 	static constexpr unsigned FRAME_LIFE = 1000;
 public:
 	// window constants
-	static constexpr float WINDOW_WIDTH = 1200.0f;
-	static constexpr float WINDOW_HEIGHT = 600.0f;
+	static constexpr float WINDOW_WIDTH = 1000.0f;
+	static constexpr float WINDOW_HEIGHT = 800.0f;
 
 	// max deltatime for update
 	static constexpr float MAX_DELTA_TIME = 0.033f;
@@ -40,6 +40,8 @@ public:
 	// just covering all my bases w these contsants!
 	static constexpr float FLIP_SIGN = -1.0f;
 	static constexpr float HALF_DIVISOR = 2.0f;
+
+	static constexpr float MAX_VELO = 1000.0f;
 
 	Game();
 
@@ -72,6 +74,7 @@ private:
 
 	// keep the game going
 	bool mContinueRunning;
+	bool mGameDone = false;
 
 	// frames elapsed
 	unsigned mFramesElapsed = 0;
@@ -79,6 +82,7 @@ private:
 	// actors vector and individual member variables
 	vector<Actor*> mActors;
 	Paddle* mPaddle;
+	std::vector<float> mSpacetimeVelos;
 
 	// prev time for delta calcs
 	Uint64 mPreviousTime;
@@ -89,6 +93,13 @@ private:
 
 	void LoadData();
 	void UnloadData();
+
+	void EndGame();
+	// takes in some vector of Actor's velos and transforms ready for display
+	void TransformVelos(const std::vector<float>& rawVelos);
+
+	void DrawPaddleText();
+	void DrawSpacetime();
 
 };
 

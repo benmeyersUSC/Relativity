@@ -10,16 +10,16 @@ void Paddle::HandleInput(const bool *keyboardInput) {
 
 void Paddle::HandleUpdate(float deltaTime) {
     mVelos.push_back(mVelo);
-    mVelo = Math::Clamp(mVelo + mVeloSign * PADDLE_ACCEL * deltaTime, -1000.0f, 1000.0f);
+    mVelo = Math::Clamp(mVelo + mVeloSign * PADDLE_ACCEL * deltaTime, -Game::MAX_VELO, Game::MAX_VELO);
 
     mVelo *= Math::NearlyZero(PADDLE_ACCEL * mVeloSign) || PADDLE_ACCEL * mVeloSign * mVelo < 0.0f ? BRAKE_FACTOR
                                                                                      : 1.0f;
 
     GetTransform().PositionDelta(mVelo * deltaTime, 0.0f);
 
-    if (GetTransform().GetPosition().x >= gGame.WINDOW_WIDTH) {
+    if (GetTransform().GetPosition().x >= Game::WINDOW_WIDTH) {
         mVelo = 0.0f;
-        GetTransform().PositionDelta(gGame.WINDOW_WIDTH - GetTransform().GetPosition().x  , 0.0f);
+        GetTransform().PositionDelta(Game::WINDOW_WIDTH - GetTransform().GetPosition().x  , 0.0f);
     }
     else if (GetTransform().GetPosition().x <= 0.0f) {
         mVelo = 0.0f;
