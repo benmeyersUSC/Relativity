@@ -19,8 +19,8 @@ class Paddle;
 
 class Game
 {
-	static constexpr unsigned FRAME_LIFE = 1000;
-	static constexpr unsigned FRAME_AGG = 4;
+	static constexpr float DURATION_SECONDS = 8.0f;
+	static constexpr unsigned ESTIMATED_FPS = 60;
 
 	static constexpr float PLOT_POINT_SIZE = 4.0f;
 public:
@@ -65,7 +65,7 @@ public:
 	template<typename A>
 	A* CreateActor() {
 		// create actor on heap, save pointer to vector
-		A* a = new A(FRAME_LIFE);
+		A* a = new A(static_cast<unsigned>(DURATION_SECONDS * ESTIMATED_FPS));
 		mActors.push_back(a);
 		return a;
 	}
@@ -79,8 +79,8 @@ private:
 	bool mContinueRunning;
 	bool mGameDone = false;
 
-	// frames elapsed
-	unsigned mFramesElapsed = 0;
+	// aggregation factor, computed after simulation ends
+	unsigned mFrameAgg = 1;
 
 	// actors vector and individual member variables
 	vector<Actor*> mActors;
@@ -100,7 +100,7 @@ private:
 
 	void EndGame();
 
-	static void TransformPoints(const std::vector<float>& src, std::vector<float>& dest, const std::function<float(float)>& transformFunc);
+	void TransformPoints(const std::vector<float>& src, std::vector<float>& dest, const std::function<float(float)>& transformFunc);
 	// these should return [-WIDTH/2, WIDTH/2]
 	std::function<float(float)> mTransformPosition = [](const float position) {
 		return position - WINDOW_WIDTH/2.0f;
@@ -113,6 +113,8 @@ private:
 	void DrawPaddleText();
 	void DrawSpacetime();
 
+
+	float mDT = 0.0f;
 };
 
 extern Game gGame;

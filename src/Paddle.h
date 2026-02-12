@@ -11,7 +11,7 @@ class Paddle : public Actor
 public:
 	static constexpr float PADDLE_HEIGHT = 18.0f;
 	static constexpr float PADDLE_WIDTH = 54.0f;
-	static constexpr float PADDLE_ACCEL = 100.0f;
+	static constexpr float PADDLE_ACCEL = 300.0f;
 
 	void HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
 							 const Vector2& relativeMouse) override;
