@@ -159,10 +159,13 @@ void Game::DrawPaddleText() {
 
 	// this is so jank and boof...fix
 	// pos + velo scaled 2x
-	float posY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y * 2;
-	float veloY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y;
-	DrawFloat(paddleRect.x - CHAR_PIXELS*2, posY, "%.0f", mPaddle->GetTransform().GetPosition().x - HALF_WIDTH, 2.0f);
-	DrawFloat(paddleRect.x - CHAR_PIXELS*2, veloY, "%.0f", mPaddle->GetVelocity(), 2.0f);
+	float posY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y * 3;
+	float veloY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y * 2;
+	float timeY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y;
+	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, posY, "Spatial position: %.0f", mPaddle->GetTransform().GetPosition().x - HALF_WIDTH, 2.0f);
+	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, veloY, "Spatial velocity: %.0f px/s", mPaddle->GetVelocity(), 2.0f);
+	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, timeY, "Aging factor: %.2f%%", mPaddle->GetTimeFactor() * 100.0f, 2.0f);
+
 }
 
 

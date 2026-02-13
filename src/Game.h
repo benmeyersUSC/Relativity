@@ -44,7 +44,7 @@ public:
 	// constant for 1000 ms in one s
 	static constexpr float MS_PER_SEC = 1000.0f;
 
-	// just covering all my bases w these contsants!
+	// just covering all my bases w these constants!
 	static constexpr float FLIP_SIGN = -1.0f;
 	static constexpr float HALF_DIVISOR = 2.0f;
 

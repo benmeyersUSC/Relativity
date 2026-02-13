@@ -30,3 +30,5 @@ void Actor::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
                              const Vector2& posMouse) {
 }
 
+float Actor::GetTimeFactor() const {return mTimeVelocities.back()/Game::MAX_VELO;}
+
