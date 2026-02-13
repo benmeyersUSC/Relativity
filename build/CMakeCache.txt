@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Build the library as a shared library
+BUILD_SHARED_LIBS:BOOL=ON
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 
@@ -205,6 +208,9 @@ CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 // inside the indicated SDK.
 CMAKE_OSX_SYSROOT:STRING=
 
+//Build static libraries with -fPIC
+CMAKE_POSITION_INDEPENDENT_CODE:BOOL=ON
+
 //Value Computed by CMake
 CMAKE_PROJECT_COMPAT_VERSION:STATIC=
 
@@ -347,6 +353,114 @@ SDL3_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 SDL3_SOURCE_DIR:STATIC=/Users/benmeyers/Desktop/Relativity/SDL3
+
+//Value Computed by CMake
+SDL3_image_BINARY_DIR:STATIC=/Users/benmeyers/Desktop/Relativity/build/SDL3_image
+
+//Value Computed by CMake
+SDL3_image_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+SDL3_image_SOURCE_DIR:STATIC=/Users/benmeyers/Desktop/Relativity/SDL3_image
+
+//Support loading AVIF images
+SDLIMAGE_AVIF:BOOL=ON
+
+//Add AVIF save support
+SDLIMAGE_AVIF_SAVE:BOOL=ON
+
+//Dynamically load AVIF support (requires shared libavif)
+SDLIMAGE_AVIF_SHARED:BOOL=ON
+
+//Use native Mac OS X frameworks for loading images
+SDLIMAGE_BACKEND_IMAGEIO:BOOL=ON
+
+//Use stb_image for loading JPEG and PNG files
+SDLIMAGE_BACKEND_STB:BOOL=ON
+
+//Support loading BMP images
+SDLIMAGE_BMP:BOOL=ON
+
+//Load dependencies dynamically
+SDLIMAGE_DEPS_SHARED:BOOL=ON
+
+//Support loading GIF images
+SDLIMAGE_GIF:BOOL=ON
+
+//Enable SDL3_image install target
+SDLIMAGE_INSTALL:BOOL=OFF
+
+//Support loading JPEG images
+SDLIMAGE_JPG:BOOL=ON
+
+//Add JPEG save support
+SDLIMAGE_JPG_SAVE:BOOL=ON
+
+//Support loading JXL images
+SDLIMAGE_JXL:BOOL=OFF
+
+//Support loading LBM images
+SDLIMAGE_LBM:BOOL=ON
+
+//Support loading PCX images
+SDLIMAGE_PCX:BOOL=ON
+
+//Support loading PNG images
+SDLIMAGE_PNG:BOOL=ON
+
+//Add PNG save support
+SDLIMAGE_PNG_SAVE:BOOL=ON
+
+//Support loading PNM images
+SDLIMAGE_PNM:BOOL=ON
+
+//Support loading QOI images
+SDLIMAGE_QOI:BOOL=ON
+
+//Build the SDL3_image sample program(s)
+SDLIMAGE_SAMPLES:BOOL=OFF
+
+//Fail when a dependency could not be found
+SDLIMAGE_STRICT:BOOL=OFF
+
+//Support loading SVG images
+SDLIMAGE_SVG:BOOL=ON
+
+//Build unit tests?
+SDLIMAGE_TESTS:BOOL=OFF
+
+//Install unit tests?
+SDLIMAGE_TESTS_INSTALL:BOOL=OFF
+
+//Support loading TGA images
+SDLIMAGE_TGA:BOOL=ON
+
+//Support loading TIFF images
+SDLIMAGE_TIF:BOOL=ON
+
+//Dynamically load TIFF support (requires shared libtiff)
+SDLIMAGE_TIF_SHARED:BOOL=ON
+
+//Use vendored third-party libraries
+SDLIMAGE_VENDORED:BOOL=OFF
+
+//Support loading WEBP images
+SDLIMAGE_WEBP:BOOL=ON
+
+//Dynamically load WEBP support (requires shared libwebp)
+SDLIMAGE_WEBP_SHARED:BOOL=ON
+
+//Treat warnings as errors
+SDLIMAGE_WERROR:BOOL=OFF
+
+//Support loading XCF images
+SDLIMAGE_XCF:BOOL=ON
+
+//Support loading XPM images
+SDLIMAGE_XPM:BOOL=ON
+
+//Support loading XV images
+SDLIMAGE_XV:BOOL=ON
 
 //Support the ALSA audio API
 SDL_ALSA:BOOL=OFF
@@ -589,6 +703,42 @@ SDL_WERROR:BOOL=OFF
 //Use X11 video driver
 SDL_X11:BOOL=OFF
 
+//The directory containing a CMake configuration file for libavif.
+libavif_DIR:PATH=libavif_DIR-NOTFOUND
+
+//Extra compile options of webp
+webp_COMPILE_OPTIONS:STRING=
+
+//The directory containing a CMake configuration file for webp.
+webp_DIR:PATH=webp_DIR-NOTFOUND
+
+//Path to a file.
+webp_INCLUDE_PATH:PATH=webp_INCLUDE_PATH-NOTFOUND
+
+//Path to a library.
+webp_LIBRARY:FILEPATH=webp_LIBRARY-NOTFOUND
+
+//Extra link flags of webp
+webp_LINK_FLAGS:STRING=
+
+//Extra link libraries of webp
+webp_LINK_LIBRARIES:STRING=
+
+//Extra compile options of webpdemux
+webpdemux_COMPILE_OPTIONS:STRING=
+
+//Path to a file.
+webpdemux_INCLUDE_PATH:PATH=webpdemux_INCLUDE_PATH-NOTFOUND
+
+//Path to a library.
+webpdemux_LIBRARY:FILEPATH=webpdemux_LIBRARY-NOTFOUND
+
+//Extra link flags of webpdemux
+webpdemux_LINK_FLAGS:STRING=
+
+//Extra link libraries of webpdemux
+webpdemux_LINK_LIBRARIES:STRING=
+
 
 ########################
 # INTERNAL cache entries
@@ -720,7 +870,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJC_COMPILER
@@ -879,6 +1029,8 @@ HAVE_ST_MTIM:INTERNAL=
 HAVE_SYSCONF:INTERNAL=1
 //Have symbol sysctlbyname
 HAVE_SYSCTLBYNAME:INTERNAL=1
+//Test HAVE_WNO_ERROR_DEPRECATED_DECLARATIONS
+HAVE_WNO_ERROR_DEPRECATED_DECLARATIONS:INTERNAL=1
 //Have symbol abs
 LIBC_HAS_ABS:INTERNAL=1
 //Have symbol acos

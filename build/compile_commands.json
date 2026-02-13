@@ -1,39 +1,45 @@
 [
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/Relativity.dir/src/main.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/main.cpp",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/main.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/main.cpp",
   "file": "/Users/benmeyers/Desktop/Relativity/src/main.cpp",
   "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/main.cpp.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/Relativity.dir/src/Game.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Game.cpp",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Game.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Game.cpp",
   "file": "/Users/benmeyers/Desktop/Relativity/src/Game.cpp",
   "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/Game.cpp.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/Relativity.dir/src/Actor.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Actor.cpp",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Actor.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Actor.cpp",
   "file": "/Users/benmeyers/Desktop/Relativity/src/Actor.cpp",
   "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/Actor.cpp.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/Relativity.dir/src/Paddle.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Paddle.cpp",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Paddle.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Paddle.cpp",
   "file": "/Users/benmeyers/Desktop/Relativity/src/Paddle.cpp",
   "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/Paddle.cpp.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/Relativity.dir/src/Transform.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Transform.cpp",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Transform.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Transform.cpp",
   "file": "/Users/benmeyers/Desktop/Relativity/src/Transform.cpp",
   "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/Transform.cpp.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/SpacetimePlot.cpp",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/SpacetimePlot.cpp",
   "file": "/Users/benmeyers/Desktop/Relativity/src/SpacetimePlot.cpp",
   "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Image.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Image.cpp",
+  "file": "/Users/benmeyers/Desktop/Relativity/src/Image.cpp",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/Image.cpp.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
@@ -1522,5 +1528,131 @@
   "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_tan.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_tan.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_WIC.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_WIC.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_WIC.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_WIC.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_avif.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_avif.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_avif.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_avif.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_bmp.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_bmp.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_bmp.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_bmp.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_gif.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_gif.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_gif.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_gif.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jpg.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_jpg.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_jpg.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jpg.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jxl.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_jxl.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_jxl.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jxl.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_lbm.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_lbm.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_lbm.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_lbm.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pcx.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_pcx.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_pcx.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pcx.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_png.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_png.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_png.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_png.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pnm.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_pnm.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_pnm.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pnm.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_qoi.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_qoi.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_qoi.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_qoi.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_stb.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_stb.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_stb.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_stb.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_svg.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_svg.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_svg.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_svg.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tga.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_tga.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_tga.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tga.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tif.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_tif.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_tif.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tif.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_webp.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_webp.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_webp.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_webp.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xcf.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_xcf.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_xcf.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xcf.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xpm.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_xpm.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_xpm.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xpm.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xv.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_xv.c",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_xv.c",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xv.c.o"
+},
+{
+  "directory": "/Users/benmeyers/Desktop/Relativity/build",
+  "command": "/usr/bin/clang -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -x objective-c -g -std=gnu17 -arch arm64 -fPIC -Wall -Wextra -Wno-error=deprecated-declarations -o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_ImageIO.m.o -c /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_ImageIO.m",
+  "file": "/Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_ImageIO.m",
+  "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_ImageIO.m.o"
 }
 ]

@@ -7992,3 +7992,1148 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:105 (cmake_check_compiler_flag)"
+      - "SDL3_image/cmake/PrivateSdlFunctions.cmake:325 (check_c_compiler_flag)"
+      - "SDL3_image/CMakeLists.txt:326 (sdl_no_deprecated_errors)"
+    checks:
+      - "Performing Test HAVE_WNO_ERROR_DEPRECATED_DECLARATIONS"
+    directories:
+      source: "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/CMakeScratch/TryCompile-QPO4Ks"
+      binary: "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/CMakeScratch/TryCompile-QPO4Ks"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/benmeyers/Desktop/Relativity/SDL3_image/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_WNO_ERROR_DEPRECATED_DECLARATIONS"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/CMakeScratch/TryCompile-QPO4Ks'
+        
+        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_5e856
+        [1/2] /usr/bin/clang -DHAVE_WNO_ERROR_DEPRECATED_DECLARATIONS  -arch arm64 -fPIE   -Wno-error=deprecated-declarations -MD -MT CMakeFiles/cmTC_5e856.dir/src.c.o -MF CMakeFiles/cmTC_5e856.dir/src.c.o.d -o CMakeFiles/cmTC_5e856.dir/src.c.o -c /Users/benmeyers/Desktop/Relativity/build/CMakeFiles/CMakeScratch/TryCompile-QPO4Ks/src.c
+        [2/2] : && /usr/bin/clang -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_5e856.dir/src.c.o -o cmTC_5e856   && :
+        
+      exitCode: 0
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "SDL3_image/CMakeLists.txt:538 (find_package)"
+    name: "libavif"
+    configs:
+      -
+        filename: "libavifConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "libavif-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "1.0"
+      version_complete: "1.0"
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "libavif"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/pkgRedirects/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/pkgRedirects/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.12/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.12/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Cryptexes/App/usr/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Cryptexes/App/usr/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/Library/Frameworks/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/Library/Frameworks/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Library/Frameworks/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Library/Frameworks/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/benmeyers/Applications/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/benmeyers/Applications/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Applications/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Applications/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/pkgRedirects/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/pkgRedirects/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.12/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.12/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Cryptexes/App/usr/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Cryptexes/App/usr/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/Library/Frameworks/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/Library/Frameworks/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Library/Frameworks/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Library/Frameworks/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/benmeyers/Applications/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/benmeyers/Applications/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Applications/libavifConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Applications/libavif-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+      CMAKE_MODULE_PATH:
+        - "/Users/benmeyers/Desktop/Relativity/SDL3_image/cmake"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "SDL3_image/cmake/Findwebp.cmake:3 (find_library)"
+      - "SDL3_image/CMakeLists.txt:974 (find_package)"
+    mode: "library"
+    variable: "webp_LIBRARY"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "webp"
+    candidate_directories:
+      - "/usr/local/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
+      - "/opt/homebrew/lib/"
+      - "/opt/homebrew/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/opt/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/"
+      - "/Library/Developer/CommandLineTools/Library/Frameworks/"
+      - "/Library/Frameworks/"
+      - "/System/Library/Frameworks/"
+    searched_directories:
+      - "/usr/local/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
+      - "/opt/homebrew/lib/"
+      - "/opt/homebrew/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/opt/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/"
+      - "/Library/Developer/CommandLineTools/Library/Frameworks/"
+      - "/Library/Frameworks/"
+      - "/System/Library/Frameworks/"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "SDL3_image/cmake/Findwebp.cmake:7 (find_path)"
+      - "SDL3_image/CMakeLists.txt:974 (find_package)"
+    mode: "path"
+    variable: "webp_INCLUDE_PATH"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "webp/decode.h"
+    candidate_directories:
+      - "/usr/local/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
+      - "/opt/homebrew/include/"
+      - "/opt/homebrew/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/sw/include/"
+      - "/sw/"
+      - "/opt/local/include/"
+      - "/opt/local/"
+      - "/usr/include/X11/"
+      - "/Users/benmeyers/Library/Frameworks/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/"
+      - "/Library/Developer/CommandLineTools/Library/Frameworks/"
+      - "/Library/Frameworks/"
+      - "/Network/Library/Frameworks/"
+      - "/System/Library/Frameworks/"
+    searched_directories:
+      - "/usr/local/bin/webp.framework/Headers/decode.h"
+      - "/opt/homebrew/bin/webp.framework/Headers/decode.h"
+      - "/opt/homebrew/sbin/webp.framework/Headers/decode.h"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/webp.framework/Headers/decode.h"
+      - "/System/Cryptexes/App/usr/bin/webp.framework/Headers/decode.h"
+      - "/usr/bin/webp.framework/Headers/decode.h"
+      - "/bin/webp.framework/Headers/decode.h"
+      - "/usr/sbin/webp.framework/Headers/decode.h"
+      - "/sbin/webp.framework/Headers/decode.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/webp.framework/Headers/decode.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/webp.framework/Headers/decode.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/webp.framework/Headers/decode.h"
+      - "/opt/pmk/env/global/bin/webp.framework/Headers/decode.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/webp.framework/Headers/decode.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/webp.framework/Headers/decode.h"
+      - "/opt/homebrew/include/webp.framework/Headers/decode.h"
+      - "/opt/homebrew/webp.framework/Headers/decode.h"
+      - "/usr/local/include/webp.framework/Headers/decode.h"
+      - "/usr/local/webp.framework/Headers/decode.h"
+      - "/usr/include/webp.framework/Headers/decode.h"
+      - "/usr/webp.framework/Headers/decode.h"
+      - "/include/webp.framework/Headers/decode.h"
+      - "/usr/X11R6/include/webp.framework/Headers/decode.h"
+      - "/usr/X11R6/webp.framework/Headers/decode.h"
+      - "/usr/pkg/include/webp.framework/Headers/decode.h"
+      - "/usr/pkg/webp.framework/Headers/decode.h"
+      - "/opt/include/webp.framework/Headers/decode.h"
+      - "/opt/webp.framework/Headers/decode.h"
+      - "/sw/include/webp.framework/Headers/decode.h"
+      - "/sw/webp.framework/Headers/decode.h"
+      - "/opt/local/include/webp.framework/Headers/decode.h"
+      - "/opt/local/webp.framework/Headers/decode.h"
+      - "/usr/include/X11/webp.framework/Headers/decode.h"
+      - "/Users/benmeyers/Library/Frameworks/webp.framework/Headers/decode.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks/webp.framework/Headers/decode.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks/webp.framework/Headers/decode.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/webp.framework/Headers/decode.h"
+      - "/Library/Developer/CommandLineTools/Library/Frameworks/webp.framework/Headers/decode.h"
+      - "/Library/Frameworks/webp.framework/Headers/decode.h"
+      - "/Network/Library/Frameworks/webp.framework/Headers/decode.h"
+      - "/System/Library/Frameworks/webp.framework/Headers/decode.h"
+      - "/usr/local/bin/webp/decode.h"
+      - "/opt/homebrew/bin/webp/decode.h"
+      - "/opt/homebrew/sbin/webp/decode.h"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/webp/decode.h"
+      - "/System/Cryptexes/App/usr/bin/webp/decode.h"
+      - "/usr/bin/webp/decode.h"
+      - "/bin/webp/decode.h"
+      - "/usr/sbin/webp/decode.h"
+      - "/sbin/webp/decode.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/webp/decode.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/webp/decode.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/webp/decode.h"
+      - "/opt/pmk/env/global/bin/webp/decode.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/webp/decode.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/webp/decode.h"
+      - "/opt/homebrew/include/webp/decode.h"
+      - "/opt/homebrew/webp/decode.h"
+      - "/usr/local/include/webp/decode.h"
+      - "/usr/local/webp/decode.h"
+      - "/usr/include/webp/decode.h"
+      - "/usr/webp/decode.h"
+      - "/include/webp/decode.h"
+      - "/usr/X11R6/include/webp/decode.h"
+      - "/usr/X11R6/webp/decode.h"
+      - "/usr/pkg/include/webp/decode.h"
+      - "/usr/pkg/webp/decode.h"
+      - "/opt/include/webp/decode.h"
+      - "/opt/webp/decode.h"
+      - "/sw/include/webp/decode.h"
+      - "/sw/webp/decode.h"
+      - "/opt/local/include/webp/decode.h"
+      - "/opt/local/webp/decode.h"
+      - "/usr/include/X11/webp/decode.h"
+      - "/Users/benmeyers/Library/Frameworks/webp/decode.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks/webp/decode.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks/webp/decode.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/webp/decode.h"
+      - "/Library/Developer/CommandLineTools/Library/Frameworks/webp/decode.h"
+      - "/Library/Frameworks/webp/decode.h"
+      - "/Network/Library/Frameworks/webp/decode.h"
+      - "/System/Library/Frameworks/webp/decode.h"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "SDL3_image/cmake/Findwebp.cmake:17 (find_library)"
+      - "SDL3_image/CMakeLists.txt:974 (find_package)"
+    mode: "library"
+    variable: "webpdemux_LIBRARY"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "webpdemux"
+    candidate_directories:
+      - "/usr/local/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
+      - "/opt/homebrew/lib/"
+      - "/opt/homebrew/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/opt/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/"
+      - "/Library/Developer/CommandLineTools/Library/Frameworks/"
+      - "/Library/Frameworks/"
+      - "/System/Library/Frameworks/"
+    searched_directories:
+      - "/usr/local/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
+      - "/opt/homebrew/lib/"
+      - "/opt/homebrew/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/opt/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/"
+      - "/Library/Developer/CommandLineTools/Library/Frameworks/"
+      - "/Library/Frameworks/"
+      - "/System/Library/Frameworks/"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "SDL3_image/cmake/Findwebp.cmake:21 (find_path)"
+      - "SDL3_image/CMakeLists.txt:974 (find_package)"
+    mode: "path"
+    variable: "webpdemux_INCLUDE_PATH"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "webp/demux.h"
+    candidate_directories:
+      - "/usr/local/bin/"
+      - "/opt/homebrew/bin/"
+      - "/opt/homebrew/sbin/"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/"
+      - "/System/Cryptexes/App/usr/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
+      - "/opt/pmk/env/global/bin/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/"
+      - "/opt/homebrew/include/"
+      - "/opt/homebrew/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/sw/include/"
+      - "/sw/"
+      - "/opt/local/include/"
+      - "/opt/local/"
+      - "/usr/include/X11/"
+      - "/Users/benmeyers/Library/Frameworks/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks/"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/"
+      - "/Library/Developer/CommandLineTools/Library/Frameworks/"
+      - "/Library/Frameworks/"
+      - "/Network/Library/Frameworks/"
+      - "/System/Library/Frameworks/"
+    searched_directories:
+      - "/usr/local/bin/webp.framework/Headers/demux.h"
+      - "/opt/homebrew/bin/webp.framework/Headers/demux.h"
+      - "/opt/homebrew/sbin/webp.framework/Headers/demux.h"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/webp.framework/Headers/demux.h"
+      - "/System/Cryptexes/App/usr/bin/webp.framework/Headers/demux.h"
+      - "/usr/bin/webp.framework/Headers/demux.h"
+      - "/bin/webp.framework/Headers/demux.h"
+      - "/usr/sbin/webp.framework/Headers/demux.h"
+      - "/sbin/webp.framework/Headers/demux.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/webp.framework/Headers/demux.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/webp.framework/Headers/demux.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/webp.framework/Headers/demux.h"
+      - "/opt/pmk/env/global/bin/webp.framework/Headers/demux.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/webp.framework/Headers/demux.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/webp.framework/Headers/demux.h"
+      - "/opt/homebrew/include/webp.framework/Headers/demux.h"
+      - "/opt/homebrew/webp.framework/Headers/demux.h"
+      - "/usr/local/include/webp.framework/Headers/demux.h"
+      - "/usr/local/webp.framework/Headers/demux.h"
+      - "/usr/include/webp.framework/Headers/demux.h"
+      - "/usr/webp.framework/Headers/demux.h"
+      - "/include/webp.framework/Headers/demux.h"
+      - "/usr/X11R6/include/webp.framework/Headers/demux.h"
+      - "/usr/X11R6/webp.framework/Headers/demux.h"
+      - "/usr/pkg/include/webp.framework/Headers/demux.h"
+      - "/usr/pkg/webp.framework/Headers/demux.h"
+      - "/opt/include/webp.framework/Headers/demux.h"
+      - "/opt/webp.framework/Headers/demux.h"
+      - "/sw/include/webp.framework/Headers/demux.h"
+      - "/sw/webp.framework/Headers/demux.h"
+      - "/opt/local/include/webp.framework/Headers/demux.h"
+      - "/opt/local/webp.framework/Headers/demux.h"
+      - "/usr/include/X11/webp.framework/Headers/demux.h"
+      - "/Users/benmeyers/Library/Frameworks/webp.framework/Headers/demux.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks/webp.framework/Headers/demux.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks/webp.framework/Headers/demux.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/webp.framework/Headers/demux.h"
+      - "/Library/Developer/CommandLineTools/Library/Frameworks/webp.framework/Headers/demux.h"
+      - "/Library/Frameworks/webp.framework/Headers/demux.h"
+      - "/Network/Library/Frameworks/webp.framework/Headers/demux.h"
+      - "/System/Library/Frameworks/webp.framework/Headers/demux.h"
+      - "/usr/local/bin/webp/demux.h"
+      - "/opt/homebrew/bin/webp/demux.h"
+      - "/opt/homebrew/sbin/webp/demux.h"
+      - "/Library/Frameworks/Python.framework/Versions/3.12/bin/webp/demux.h"
+      - "/System/Cryptexes/App/usr/bin/webp/demux.h"
+      - "/usr/bin/webp/demux.h"
+      - "/bin/webp/demux.h"
+      - "/usr/sbin/webp/demux.h"
+      - "/sbin/webp/demux.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/webp/demux.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/webp/demux.h"
+      - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/webp/demux.h"
+      - "/opt/pmk/env/global/bin/webp/demux.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/webp/demux.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/webp/demux.h"
+      - "/opt/homebrew/include/webp/demux.h"
+      - "/opt/homebrew/webp/demux.h"
+      - "/usr/local/include/webp/demux.h"
+      - "/usr/local/webp/demux.h"
+      - "/usr/include/webp/demux.h"
+      - "/usr/webp/demux.h"
+      - "/include/webp/demux.h"
+      - "/usr/X11R6/include/webp/demux.h"
+      - "/usr/X11R6/webp/demux.h"
+      - "/usr/pkg/include/webp/demux.h"
+      - "/usr/pkg/webp/demux.h"
+      - "/opt/include/webp/demux.h"
+      - "/opt/webp/demux.h"
+      - "/sw/include/webp/demux.h"
+      - "/sw/webp/demux.h"
+      - "/opt/local/include/webp/demux.h"
+      - "/opt/local/webp/demux.h"
+      - "/usr/include/X11/webp/demux.h"
+      - "/Users/benmeyers/Library/Frameworks/webp/demux.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks/webp/demux.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks/webp/demux.h"
+      - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/webp/demux.h"
+      - "/Library/Developer/CommandLineTools/Library/Frameworks/webp/demux.h"
+      - "/Library/Frameworks/webp/demux.h"
+      - "/Network/Library/Frameworks/webp/demux.h"
+      - "/System/Library/Frameworks/webp/demux.h"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "SDL3_image/CMakeLists.txt:974 (find_package)"
+    name: "webp"
+    configs:
+      -
+        filename: "webpConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "webp-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "webp"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/pkgRedirects/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/pkgRedirects/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/homebrew/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.12/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/Python.framework/Versions/3.12/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Cryptexes/App/usr/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Cryptexes/App/usr/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/Library/Frameworks/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Developer/CommandLineTools/Library/Frameworks/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Library/Frameworks/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Library/Frameworks/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/System/Library/Frameworks/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/benmeyers/Applications/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/benmeyers/Applications/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Applications/webpConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Applications/webp-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/Users/benmeyers/Desktop/Relativity/SDL3_image/cmake/Findwebp.cmake"
+        mode: "module"
+        reason: "not_found"
+    found: null
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/bin"
+        - "/opt/homebrew/bin"
+        - "/opt/homebrew/sbin"
+        - "/Library/Frameworks/Python.framework/Versions/3.12/bin"
+        - "/usr/local/bin"
+        - "/System/Cryptexes/App/usr/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/sbin"
+        - "/sbin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
+        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
+        - "/opt/pmk/env/global/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/opt/homebrew"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+        - "/sw"
+        - "/opt/local"
+      CMAKE_SYSTEM_FRAMEWORK_PATH:
+        - "~/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Developer/CommandLineTools/Library/Frameworks"
+        - "/Library/Frameworks"
+        - "/Network/Library/Frameworks"
+        - "/System/Library/Frameworks"
+      CMAKE_MODULE_PATH:
+        - "/Users/benmeyers/Desktop/Relativity/SDL3_image/cmake"
+...

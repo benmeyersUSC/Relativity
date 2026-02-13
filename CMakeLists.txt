@@ -4,6 +4,8 @@ project(Relativity)
 set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory(SDL3)
+add_subdirectory(SDL3_image)
+
 
 add_executable(Relativity src/main.cpp
         src/Game.cpp
@@ -17,6 +19,8 @@ add_executable(Relativity src/main.cpp
         src/Transform.h
         src/SpacetimePlot.cpp
         src/SpacetimePlot.h
+        src/Image.cpp
+        src/Image.h
 )
 
-target_link_libraries(Relativity PRIVATE SDL3::SDL3)
+target_link_libraries(Relativity PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)

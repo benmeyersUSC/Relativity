@@ -5,8 +5,9 @@
 #include "Actor.h"
 #include "Paddle.h"
 #include <functional>
-
+#include "SDL3_image/SDL_image.h"
 #include "SpacetimePlot.h"
+#include "Image.h"
 Game gGame;
 
 Game::Game()
@@ -125,6 +126,25 @@ void Game::DrawInt(float x, float y, int value, float scale) {
 	if (scale != 1.0f) { SDL_SetRenderScale(mSdlRenderer, scale, scale); }
 	SDL_RenderDebugTextFormat(mSdlRenderer, x / scale, y / scale, "%i", value);
 	if (scale != 1.0f) { SDL_SetRenderScale(mSdlRenderer, 1.0f, 1.0f); }
+}
+
+SDL_Texture * Game::GetTexture(std::string_view filename) {
+
+	if (mTextures.contains(filename.data()))
+	{
+		return mTextures[filename.data()];
+	}
+	SDL_Surface* imgSurface = IMG_Load(filename.data());
+	if (imgSurface == nullptr)
+	{
+		SDL_Log("Image file: %s failed to load!", filename.data());
+		return nullptr;
+	}
+	SDL_Texture* imgTexture = SDL_CreateTextureFromSurface(mSdlRenderer, imgSurface);
+	SDL_DestroySurface(imgSurface);
+
+	mTextures[filename.data()] = imgTexture;
+	return imgTexture;
 }
 
 void Game::DrawPaddleText() {

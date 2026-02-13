@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_Relativity: phony || cmake_object_order_
 build CMakeFiles/Relativity.dir/src/main.cpp.o: CXX_COMPILER__Relativity_unscanned_Debug /Users/benmeyers/Desktop/Relativity/src/main.cpp || cmake_object_order_depends_target_Relativity
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Relativity.dir/src/main.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64
+  FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
@@ -60,7 +60,7 @@ build CMakeFiles/Relativity.dir/src/main.cpp.o: CXX_COMPILER__Relativity_unscann
 build CMakeFiles/Relativity.dir/src/Game.cpp.o: CXX_COMPILER__Relativity_unscanned_Debug /Users/benmeyers/Desktop/Relativity/src/Game.cpp || cmake_object_order_depends_target_Relativity
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Relativity.dir/src/Game.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64
+  FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
@@ -68,7 +68,7 @@ build CMakeFiles/Relativity.dir/src/Game.cpp.o: CXX_COMPILER__Relativity_unscann
 build CMakeFiles/Relativity.dir/src/Actor.cpp.o: CXX_COMPILER__Relativity_unscanned_Debug /Users/benmeyers/Desktop/Relativity/src/Actor.cpp || cmake_object_order_depends_target_Relativity
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Relativity.dir/src/Actor.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64
+  FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
@@ -76,7 +76,7 @@ build CMakeFiles/Relativity.dir/src/Actor.cpp.o: CXX_COMPILER__Relativity_unscan
 build CMakeFiles/Relativity.dir/src/Paddle.cpp.o: CXX_COMPILER__Relativity_unscanned_Debug /Users/benmeyers/Desktop/Relativity/src/Paddle.cpp || cmake_object_order_depends_target_Relativity
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Relativity.dir/src/Paddle.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64
+  FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
@@ -84,7 +84,7 @@ build CMakeFiles/Relativity.dir/src/Paddle.cpp.o: CXX_COMPILER__Relativity_unsca
 build CMakeFiles/Relativity.dir/src/Transform.cpp.o: CXX_COMPILER__Relativity_unscanned_Debug /Users/benmeyers/Desktop/Relativity/src/Transform.cpp || cmake_object_order_depends_target_Relativity
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Relativity.dir/src/Transform.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64
+  FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
@@ -92,7 +92,15 @@ build CMakeFiles/Relativity.dir/src/Transform.cpp.o: CXX_COMPILER__Relativity_un
 build CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o: CXX_COMPILER__Relativity_unscanned_Debug /Users/benmeyers/Desktop/Relativity/src/SpacetimePlot.cpp || cmake_object_order_depends_target_Relativity
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64
+  FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = CMakeFiles/Relativity.dir
+  OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
+
+build CMakeFiles/Relativity.dir/src/Image.cpp.o: CXX_COMPILER__Relativity_unscanned_Debug /Users/benmeyers/Desktop/Relativity/src/Image.cpp || cmake_object_order_depends_target_Relativity
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles/Relativity.dir/src/Image.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
@@ -105,7 +113,7 @@ build CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o: CXX_COMPILER__Relativit
 #############################################
 # Link the executable Relativity
 
-build Relativity: CXX_EXECUTABLE_LINKER__Relativity_Debug CMakeFiles/Relativity.dir/src/main.cpp.o CMakeFiles/Relativity.dir/src/Game.cpp.o CMakeFiles/Relativity.dir/src/Actor.cpp.o CMakeFiles/Relativity.dir/src/Paddle.cpp.o CMakeFiles/Relativity.dir/src/Transform.cpp.o CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o | SDL3/libSDL3.0.dylib /Users/benmeyers/Desktop/Relativity/SDL3/src/dynapi/SDL_dynapi.sym || SDL3/libSDL3.dylib SDL3/libSDL3.dylib
+build Relativity: CXX_EXECUTABLE_LINKER__Relativity_Debug CMakeFiles/Relativity.dir/src/main.cpp.o CMakeFiles/Relativity.dir/src/Game.cpp.o CMakeFiles/Relativity.dir/src/Actor.cpp.o CMakeFiles/Relativity.dir/src/Paddle.cpp.o CMakeFiles/Relativity.dir/src/Transform.cpp.o CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o CMakeFiles/Relativity.dir/src/Image.cpp.o | SDL3/libSDL3.0.dylib /Users/benmeyers/Desktop/Relativity/SDL3/src/dynapi/SDL_dynapi.sym || SDL3/libSDL3.dylib SDL3/libSDL3.dylib
   CONFIG = Debug
   FLAGS = -g -arch arm64
   LINK_FLAGS = -Wl,-search_paths_first -Wl,-headerpad_max_install_names
@@ -2486,15 +2494,276 @@ build SDL3/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build SDL3/rebuild_cache: phony SDL3/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/benmeyers/Desktop/Relativity/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target SDL3_image-shared
+
+
+#############################################
+# Order-only phony target for SDL3_image-shared
+
+build cmake_object_order_depends_target_SDL3_image-shared: phony || cmake_object_order_depends_target_SDL3-shared
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_WIC.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_WIC.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_WIC.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_avif.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_avif.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_avif.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_bmp.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_bmp.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_bmp.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_gif.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_gif.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_gif.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jpg.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_jpg.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jpg.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jxl.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_jxl.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jxl.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_lbm.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_lbm.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_lbm.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pcx.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_pcx.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pcx.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_png.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_png.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_png.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pnm.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_pnm.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pnm.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_qoi.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_qoi.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_qoi.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_stb.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_stb.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_stb.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_svg.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_svg.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_svg.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tga.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_tga.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tga.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tif.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_tif.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tif.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_webp.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_webp.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_webp.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xcf.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_xcf.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xcf.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xpm.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_xpm.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xpm.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xv.c.o: C_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_xv.c || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xv.c.o.d
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+build SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_ImageIO.m.o: OBJC_COMPILER__SDL3_image-shared_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3_image/src/IMG_ImageIO.m || cmake_object_order_depends_target_SDL3_image-shared
+  CONFIG = Debug
+  DEFINES = -DBUILD_SDL -DDLL_EXPORT -DLOAD_BMP -DLOAD_GIF -DLOAD_JPG -DLOAD_LBM -DLOAD_PCX -DLOAD_PNG -DLOAD_PNM -DLOAD_QOI -DLOAD_SVG -DLOAD_TGA -DLOAD_XCF -DLOAD_XPM -DLOAD_XV -DSDL_BUILD_MAJOR_VERSION=3 -DSDL_BUILD_MICRO_VERSION=4 -DSDL_BUILD_MINOR_VERSION=2 -DSDL_IMAGE_SAVE_JPG=1 -DSDL_IMAGE_SAVE_PNG=1 -DUSE_STBIMAGE
+  DEP_FILE = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_ImageIO.m.o.d
+  FLAGS = -g -std=gnu17 -arch arm64 -fPIC -Wall -Wextra -Wno-error=deprecated-declarations
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  OBJECT_FILE_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir/src
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target SDL3_image-shared
+
+
+#############################################
+# Link the shared library SDL3_image/libSDL3_image.0.2.4.dylib
+
+build SDL3_image/libSDL3_image.0.2.4.dylib: C_SHARED_LIBRARY_LINKER__SDL3_image-shared_Debug SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_WIC.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_avif.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_bmp.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_gif.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jpg.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_jxl.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_lbm.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pcx.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_png.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_pnm.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_qoi.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_stb.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_svg.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tga.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_tif.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_webp.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xcf.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xpm.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_xv.c.o SDL3_image/CMakeFiles/SDL3_image-shared.dir/src/IMG_ImageIO.m.o | SDL3/libSDL3.0.dylib /Users/benmeyers/Desktop/Relativity/SDL3/src/dynapi/SDL_dynapi.sym || SDL3/libSDL3.dylib SDL3/libSDL3.dylib
+  ARCH_FLAGS = -arch arm64
+  CONFIG = Debug
+  INSTALLNAME_DIR = @rpath/
+  LANGUAGE_COMPILE_FLAGS = -g
+  LINK_FLAGS = -dynamiclib -Wl,-headerpad_max_install_names -Wl,-undefined,error -compatibility_version 205.0.0 -current_version 205.0.0
+  LINK_LIBRARIES = -Wl,-rpath,/Users/benmeyers/Desktop/Relativity/build/SDL3  SDL3/libSDL3.0.dylib  -Wl,-framework,ApplicationServices  -lobjc
+  OBJECT_DIR = SDL3_image/CMakeFiles/SDL3_image-shared.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  SONAME = libSDL3_image.0.dylib
+  SONAME_FLAG = -install_name
+  TARGET_FILE = SDL3_image/libSDL3_image.0.2.4.dylib
+  TARGET_PDB = SDL3_image.dylib.dbg
+
+
+#############################################
+# Create library symlink SDL3_image/libSDL3_image.dylib
+
+build SDL3_image/libSDL3_image.0.dylib SDL3_image/libSDL3_image.dylib: CMAKE_SYMLINK_LIBRARY SDL3_image/libSDL3_image.0.2.4.dylib
+  POST_BUILD = :
+
+
+#############################################
+# Utility command for edit_cache
+
+build SDL3_image/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/benmeyers/Desktop/Relativity/build/SDL3_image && /opt/homebrew/bin/ccmake -S/Users/benmeyers/Desktop/Relativity -B/Users/benmeyers/Desktop/Relativity/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build SDL3_image/edit_cache: phony SDL3_image/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build SDL3_image/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/benmeyers/Desktop/Relativity/build/SDL3_image && /opt/homebrew/bin/cmake --regenerate-during-build -S/Users/benmeyers/Desktop/Relativity -B/Users/benmeyers/Desktop/Relativity/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build SDL3_image/rebuild_cache: phony SDL3_image/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
 build SDL3-shared: phony SDL3/libSDL3.dylib
+
+build SDL3_image-shared: phony SDL3_image/libSDL3_image.dylib
 
 build SDL3_test: phony SDL3/libSDL3_test.a
 
 build SDL_uclibc: phony SDL3/libSDL_uclibc.a
 
 build libSDL3.dylib: phony SDL3/libSDL3.dylib
+
+build libSDL3_image.dylib: phony SDL3_image/libSDL3_image.dylib
 
 build libSDL3_test.a: phony SDL3/libSDL3_test.a
 
@@ -2508,7 +2777,7 @@ build libSDL_uclibc.a: phony SDL3/libSDL_uclibc.a
 #############################################
 # Folder: /Users/benmeyers/Desktop/Relativity/build
 
-build codegen: phony SDL3/codegen
+build codegen: phony SDL3/codegen SDL3_image/codegen
 
 # =============================================================================
 
@@ -2520,9 +2789,16 @@ build SDL3/codegen: phony
 # =============================================================================
 
 #############################################
+# Folder: /Users/benmeyers/Desktop/Relativity/build/SDL3_image
+
+build SDL3_image/codegen: phony
+
+# =============================================================================
+
+#############################################
 # Folder: /Users/benmeyers/Desktop/Relativity/build
 
-build all: phony Relativity SDL3/all
+build all: phony Relativity SDL3/all SDL3_image/all
 
 # =============================================================================
 
@@ -2532,20 +2808,27 @@ build all: phony Relativity SDL3/all
 build SDL3/all: phony SDL3/libSDL3.dylib SDL3/libSDL3_test.a SDL3/libSDL_uclibc.a
 
 # =============================================================================
+
+#############################################
+# Folder: /Users/benmeyers/Desktop/Relativity/build/SDL3_image
+
+build SDL3_image/all: phony SDL3_image/libSDL3_image.dylib
+
+# =============================================================================
 # Built-in targets
 
 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja /Users/benmeyers/Desktop/Relativity/build/cmake_install.cmake /Users/benmeyers/Desktop/Relativity/build/SDL3/cmake_install.cmake: RERUN_CMAKE | /Users/benmeyers/Desktop/Relativity/.git/HEAD /Users/benmeyers/Desktop/Relativity/.git/refs/heads/master /Users/benmeyers/Desktop/Relativity/CMakeLists.txt /Users/benmeyers/Desktop/Relativity/SDL3/CMakeLists.txt /Users/benmeyers/Desktop/Relativity/SDL3/cmake/3rdparty.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/FindLibUSB.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/GetGitRevisionDescription.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/GetGitRevisionDescription.cmake.in /Users/benmeyers/Desktop/Relativity/SDL3/cmake/PreseedEmscriptenCache.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/PreseedMSVCCache.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/SDL3Config.cmake.in /Users/benmeyers/Desktop/Relativity/SDL3/cmake/macros.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlchecks.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlcompilers.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlcpu.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlmanpages.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlplatform.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdltargets.cmake /Users/benmeyers/Desktop/Relativity/SDL3/include/build_config/SDL_build_config.h.cmake /Users/benmeyers/Desktop/Relativity/SDL3/include/build_config/SDL_revision.h.cmake /opt/homebrew/share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeDependentOption.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeOBJCInformation.cmake /opt/homebrew/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/share/cmake/Modules/CMakeParseArguments.cmake /opt/homebrew/share/cmake/Modules/CMakePushCheckState.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckCSourceRuns.cmake /opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/share/cmake/Modules/CheckLanguage.cmake /opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/share/cmake/Modules/CheckLinkerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckOBJCSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckStructHasMember.cmake /opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/FindGit.cmake /opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake /opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeOBJCLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckLinkerFlag.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceRuns.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.1.0/CMakeCCompiler.cmake CMakeFiles/4.1.0/CMakeCXXCompiler.cmake CMakeFiles/4.1.0/CMakeOBJCCompiler.cmake CMakeFiles/4.1.0/CMakeSystem.cmake SDL3/CMakeFiles/SDL_build_config.h.intermediate SDL3/CMakeFiles/git-data/grabRef.cmake
+build build.ninja /Users/benmeyers/Desktop/Relativity/build/cmake_install.cmake /Users/benmeyers/Desktop/Relativity/build/SDL3/cmake_install.cmake /Users/benmeyers/Desktop/Relativity/build/SDL3_image/cmake_install.cmake: RERUN_CMAKE | /Users/benmeyers/Desktop/Relativity/.git/HEAD /Users/benmeyers/Desktop/Relativity/.git/refs/heads/master /Users/benmeyers/Desktop/Relativity/CMakeLists.txt /Users/benmeyers/Desktop/Relativity/SDL3/CMakeLists.txt /Users/benmeyers/Desktop/Relativity/SDL3/cmake/3rdparty.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/FindLibUSB.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/GetGitRevisionDescription.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/GetGitRevisionDescription.cmake.in /Users/benmeyers/Desktop/Relativity/SDL3/cmake/PreseedEmscriptenCache.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/PreseedMSVCCache.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/SDL3Config.cmake.in /Users/benmeyers/Desktop/Relativity/SDL3/cmake/macros.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlchecks.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlcompilers.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlcpu.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlmanpages.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlplatform.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdltargets.cmake /Users/benmeyers/Desktop/Relativity/SDL3/include/build_config/SDL_build_config.h.cmake /Users/benmeyers/Desktop/Relativity/SDL3/include/build_config/SDL_revision.h.cmake /Users/benmeyers/Desktop/Relativity/SDL3_image/CMakeLists.txt /Users/benmeyers/Desktop/Relativity/SDL3_image/cmake/Findwebp.cmake /Users/benmeyers/Desktop/Relativity/SDL3_image/cmake/GetGitRevisionDescription.cmake /Users/benmeyers/Desktop/Relativity/SDL3_image/cmake/PrivateSdlFunctions.cmake /Users/benmeyers/Desktop/Relativity/SDL3_image/cmake/sdlcpu.cmake /Users/benmeyers/Desktop/Relativity/SDL3_image/cmake/sdlmanpages.cmake /Users/benmeyers/Desktop/Relativity/SDL3_image/cmake/sdlplatform.cmake /opt/homebrew/share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeDependentOption.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeOBJCInformation.cmake /opt/homebrew/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/share/cmake/Modules/CMakeParseArguments.cmake /opt/homebrew/share/cmake/Modules/CMakePushCheckState.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckCSourceRuns.cmake /opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/share/cmake/Modules/CheckLanguage.cmake /opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/share/cmake/Modules/CheckLinkerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckOBJCSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckStructHasMember.cmake /opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/FindGit.cmake /opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake /opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeOBJCLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckLinkerFlag.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceRuns.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.1.0/CMakeCCompiler.cmake CMakeFiles/4.1.0/CMakeCXXCompiler.cmake CMakeFiles/4.1.0/CMakeOBJCCompiler.cmake CMakeFiles/4.1.0/CMakeSystem.cmake SDL3/CMakeFiles/SDL_build_config.h.intermediate SDL3/CMakeFiles/git-data/grabRef.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Users/benmeyers/Desktop/Relativity/.git/HEAD /Users/benmeyers/Desktop/Relativity/.git/refs/heads/master /Users/benmeyers/Desktop/Relativity/CMakeLists.txt /Users/benmeyers/Desktop/Relativity/SDL3/CMakeLists.txt /Users/benmeyers/Desktop/Relativity/SDL3/cmake/3rdparty.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/FindLibUSB.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/GetGitRevisionDescription.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/GetGitRevisionDescription.cmake.in /Users/benmeyers/Desktop/Relativity/SDL3/cmake/PreseedEmscriptenCache.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/PreseedMSVCCache.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/SDL3Config.cmake.in /Users/benmeyers/Desktop/Relativity/SDL3/cmake/macros.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlchecks.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlcompilers.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlcpu.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlmanpages.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlplatform.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdltargets.cmake /Users/benmeyers/Desktop/Relativity/SDL3/include/build_config/SDL_build_config.h.cmake /Users/benmeyers/Desktop/Relativity/SDL3/include/build_config/SDL_revision.h.cmake /opt/homebrew/share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeDependentOption.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeOBJCInformation.cmake /opt/homebrew/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/share/cmake/Modules/CMakeParseArguments.cmake /opt/homebrew/share/cmake/Modules/CMakePushCheckState.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckCSourceRuns.cmake /opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/share/cmake/Modules/CheckLanguage.cmake /opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/share/cmake/Modules/CheckLinkerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckOBJCSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckStructHasMember.cmake /opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/FindGit.cmake /opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake /opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeOBJCLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckLinkerFlag.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceRuns.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.1.0/CMakeCCompiler.cmake CMakeFiles/4.1.0/CMakeCXXCompiler.cmake CMakeFiles/4.1.0/CMakeOBJCCompiler.cmake CMakeFiles/4.1.0/CMakeSystem.cmake SDL3/CMakeFiles/SDL_build_config.h.intermediate SDL3/CMakeFiles/git-data/grabRef.cmake: phony
+build /Users/benmeyers/Desktop/Relativity/.git/HEAD /Users/benmeyers/Desktop/Relativity/.git/refs/heads/master /Users/benmeyers/Desktop/Relativity/CMakeLists.txt /Users/benmeyers/Desktop/Relativity/SDL3/CMakeLists.txt /Users/benmeyers/Desktop/Relativity/SDL3/cmake/3rdparty.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/FindLibUSB.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/GetGitRevisionDescription.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/GetGitRevisionDescription.cmake.in /Users/benmeyers/Desktop/Relativity/SDL3/cmake/PreseedEmscriptenCache.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/PreseedMSVCCache.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/SDL3Config.cmake.in /Users/benmeyers/Desktop/Relativity/SDL3/cmake/macros.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlchecks.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlcompilers.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlcpu.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlmanpages.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdlplatform.cmake /Users/benmeyers/Desktop/Relativity/SDL3/cmake/sdltargets.cmake /Users/benmeyers/Desktop/Relativity/SDL3/include/build_config/SDL_build_config.h.cmake /Users/benmeyers/Desktop/Relativity/SDL3/include/build_config/SDL_revision.h.cmake /Users/benmeyers/Desktop/Relativity/SDL3_image/CMakeLists.txt /Users/benmeyers/Desktop/Relativity/SDL3_image/cmake/Findwebp.cmake /Users/benmeyers/Desktop/Relativity/SDL3_image/cmake/GetGitRevisionDescription.cmake /Users/benmeyers/Desktop/Relativity/SDL3_image/cmake/PrivateSdlFunctions.cmake /Users/benmeyers/Desktop/Relativity/SDL3_image/cmake/sdlcpu.cmake /Users/benmeyers/Desktop/Relativity/SDL3_image/cmake/sdlmanpages.cmake /Users/benmeyers/Desktop/Relativity/SDL3_image/cmake/sdlplatform.cmake /opt/homebrew/share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/share/cmake/Modules/CMakeDependentOption.cmake /opt/homebrew/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeOBJCInformation.cmake /opt/homebrew/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/share/cmake/Modules/CMakeParseArguments.cmake /opt/homebrew/share/cmake/Modules/CMakePushCheckState.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckCSourceRuns.cmake /opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/share/cmake/Modules/CheckLanguage.cmake /opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/share/cmake/Modules/CheckLinkerFlag.cmake /opt/homebrew/share/cmake/Modules/CheckOBJCSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/CheckStructHasMember.cmake /opt/homebrew/share/cmake/Modules/CheckSymbolExists.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Compiler/AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/share/cmake/Modules/FindGit.cmake /opt/homebrew/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/share/cmake/Modules/FindPkgConfig.cmake /opt/homebrew/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CMakeOBJCLinkerInformation.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckLinkerFlag.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/share/cmake/Modules/Internal/CheckSourceRuns.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Linker/AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-C.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-CXX.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang-OBJC.cmake /opt/homebrew/share/cmake/Modules/Platform/Linker/Apple-AppleClang.cmake /opt/homebrew/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/share/cmake/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/4.1.0/CMakeCCompiler.cmake CMakeFiles/4.1.0/CMakeCXXCompiler.cmake CMakeFiles/4.1.0/CMakeOBJCCompiler.cmake CMakeFiles/4.1.0/CMakeSystem.cmake SDL3/CMakeFiles/SDL_build_config.h.intermediate SDL3/CMakeFiles/git-data/grabRef.cmake: phony
 
 
 #############################################

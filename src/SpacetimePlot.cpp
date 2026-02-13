@@ -3,8 +3,11 @@
 //
 
 #include "SpacetimePlot.h"
-#include "Game.h"
 
+#include <iostream>
+
+#include "Game.h"
+#include "Image.h"
 void SpacetimePlot::DrawYAxis() {
 	// Y (time) axis
 	SDL_SetRenderDrawColor(gGame.GetRenderer(), Game::MAX_COLOR,Game::MAX_COLOR,Game::MAX_COLOR,Game::MAX_COLOR);
@@ -84,6 +87,11 @@ void SpacetimePlot::DrawMouse(float yStep) {
 	gGame.DrawFloat(mouseTextX, mouseTextY, "Space Position: %.1f", mousePos);
 	gGame.DrawFloat(mouseTextX, mouseTextY + lineStep, "Space Velocity: %.1f", mouseVelo);
 	gGame.DrawFloat(mouseTextX, mouseTextY + lineStep * 2, "Aging Factor: %.1f%%", mouseTime);
+
+	mArrow->GetTransform().SetRotation(Math::Acos(mouseTime/100.0f));
+	mArrow->GetTransform().SetPosition(gGame.GetMousePos());
+	std::cout << Math::Acos(mouseTime/100.0f) << std::endl;
+	mArrow->Draw(gGame.GetRenderer());
 }
 
 void SpacetimePlot::DrawSpacetime() {
@@ -104,4 +112,8 @@ SpacetimePlot::SpacetimePlot() {
 	mActorPositions.reserve(static_cast<unsigned>(Game::WINDOW_HEIGHT / Game::PLOT_POINT_SIZE));
 	mActorVelocities.reserve(static_cast<unsigned>(Game::WINDOW_HEIGHT / Game::PLOT_POINT_SIZE));
 	mActorTimeVelocities.reserve(static_cast<unsigned>(Game::WINDOW_HEIGHT / Game::PLOT_POINT_SIZE));
+
+	mArrow = std::make_unique<Image>();
+	mArrow->GetTransform().SetScale(10.0f);
+	mArrow->SetTexture(gGame.GetTexture(ARROW_FILE));
 }

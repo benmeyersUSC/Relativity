@@ -85,5 +85,10 @@ namespace Math {
         return Abs(a - b) <= epsilon;
     }
 
+    [[nodiscard]] inline float Acos(float value)
+    {
+        return acosf(value);
+    }
+
 }
 #endif //RELATIVITY_MATH_H
