@@ -16,14 +16,18 @@
 using Math::Vector2;
 class Paddle;
 class SpacetimePlot;
+class Image;
+
 class Game
 {
 public:
 
+    static constexpr const char* BUDDHA_FILE = "../src/Assets/Buddha.webp";
+
 	static constexpr float DURATION_SECONDS = 10.0f;
 	static constexpr unsigned ESTIMATED_FPS = 60;
 
-	static constexpr float PLOT_POINT_SIZE = 3.0f;
+	static constexpr float PLOT_POINT_SIZE = 5.0f;
 	static constexpr float HALF_PLOT_POINT = PLOT_POINT_SIZE/2.0f;
 	// window constants
 	static constexpr float WINDOW_WIDTH = 1305.0f;
@@ -76,6 +80,7 @@ public:
 
 	void DrawFloat(float x, float y, const char* fmt, float value, float scale = 1.0f);
 	void DrawInt(float x, float y, int value, float scale = 1.0f);
+	void DrawFilledCircle(float cx, float cy, float radius);
 
 	[[nodiscard]] const Vector2& GetMousePos()const{return mMousePos;}
 
@@ -126,11 +131,13 @@ private:
 		return f * 100.0f / MAX_VELO;
 	};
 
+	void DrawGame();
 	void DrawPaddleText();
 
 	float mDT = 0.0f;
 	Vector2 mMousePos;
 	std::unique_ptr<SpacetimePlot> mSpacetimePlot;
+	std::unique_ptr<Image> mBuddha;
 };
 
 extern Game gGame;

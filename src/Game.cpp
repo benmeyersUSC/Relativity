@@ -129,6 +129,16 @@ void Game::DrawInt(float x, float y, int value, float scale) {
 	if (scale != 1.0f) { SDL_SetRenderScale(mSdlRenderer, 1.0f, 1.0f); }
 }
 
+void Game::DrawFilledCircle(float cx, float cy, float radius) {
+	// scan-line filled circle: uses current draw color
+	float r2 = radius * radius;
+	for (float dy = -radius; dy <= radius; dy += 1.0f) {
+		float dx = Math::Sqrt(r2 - dy * dy);
+		SDL_FRect line(cx - dx, cy + dy, dx * 2.0f, 1.0f);
+		SDL_RenderFillRect(mSdlRenderer, &line);
+	}
+}
+
 SDL_Texture * Game::GetTexture(std::string_view filename) {
 
 	if (mTextures.contains(filename.data()))
@@ -160,15 +170,31 @@ void Game::DrawPaddleText() {
 
 	// this is so jank and boof...fix
 	// pos + velo scaled 2x
-	float posY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y * 3;
-	float veloY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y * 2;
-	float timeY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y;
-	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, posY, "Spatial position: %.0f", mPaddle->GetTransform().GetPosition().x - HALF_WIDTH, 2.0f);
-	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, veloY, "Spatial velocity: %.0f px/s", mPaddle->GetVelocity(), 2.0f);
-	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, timeY, "Aging factor: %.2f%%", mPaddle->GetTimeFactor() * 100.0f, 2.0f);
+	float posY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y * 3 - 36.0f;
+	float veloY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y * 2 - 36.0f;
+	float timeY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y - 36.0f;
+	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, posY, "Space Position: %.0f px", mPaddle->GetTransform().GetPosition().x - HALF_WIDTH, 2.0f);
+	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, veloY, "Space Velocity: %.0f px/s", mPaddle->GetVelocity(), 2.0f);
+	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, timeY, "Aging at %.2f%% speed", mPaddle->GetTimeFactor() * 100.0f, 2.0f);
 
 }
 
+void Game::DrawGame(){
+	mBuddha->Draw(gGame.GetRenderer());
+
+	// paddle specific...fix
+	// now set to blue
+	SDL_SetRenderDrawColor(mSdlRenderer, 0, 0, MAX_COLOR, MAX_COLOR);
+	// render each actor
+	for (auto& actor : mActors)
+	{
+		Vector2 pos = actor->GetTransform().GetPosition();
+		float radius = actor->GetTransform().GetSize().x / 2.0f;
+		DrawFilledCircle(pos.x, pos.y, radius);
+	}
+
+	DrawPaddleText();
+}
 
 void Game::EndGame() {
 	mSpacetimePlot = std::make_unique<SpacetimePlot>();
@@ -225,22 +251,12 @@ void Game::GenerateOutput()
 		SDL_RenderFillRect(mSdlRenderer, &rect);
 	}
 
-	// paddle specific...fix
-	// now set to blue
-	SDL_SetRenderDrawColor(mSdlRenderer, 0, 0, MAX_COLOR, MAX_COLOR);
-	// render each actor
-	for (auto& actor : mActors)
-	{
-		SDL_FRect rect = actor->GetTransform().GetRect();
-		SDL_RenderFillRect(mSdlRenderer, &rect);
-	}
-
 	// if games done we draw spacetime
 	if (mGameDone) {
 		mSpacetimePlot->Draw();
 	}
 	else{
-		DrawPaddleText();
+		DrawGame();
 	}
 
 	SDL_RenderPresent(mSdlRenderer);
@@ -250,6 +266,11 @@ void Game::LoadData()
 {
 	mPaddle = CreateActor<Paddle>();
 	mPaddle->GetTransform().SetPosition(Vector2(WINDOW_WIDTH / HALF_DIVISOR, WINDOW_HEIGHT / HALF_DIVISOR ));
+
+	mBuddha = std::make_unique<Image>();
+	mBuddha->GetTransform().SetScale(0.1f);
+	mBuddha->SetTexture(gGame.GetTexture(BUDDHA_FILE));
+	mBuddha->GetTransform().SetPosition({Game::HALF_WIDTH, Game::HALF_HEIGHT});
 }
 
 void Game::UnloadData()

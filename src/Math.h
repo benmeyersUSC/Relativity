@@ -85,6 +85,18 @@ namespace Math {
         return Abs(a - b) <= epsilon;
     }
 
+    constexpr float Pi = 3.14159265f;
+
+    [[nodiscard]] inline float Sin(float value)
+    {
+        return sinf(value);
+    }
+
+    [[nodiscard]] inline float Cos(float value)
+    {
+        return cosf(value);
+    }
+
     [[nodiscard]] inline float Acos(float value)
     {
         return acosf(value);

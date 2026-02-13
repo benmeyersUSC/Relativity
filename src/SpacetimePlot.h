@@ -8,7 +8,6 @@
 class Image;
 class SpacetimePlot {
     static constexpr const char* ARROW_FILE = "../src/Assets/Arrow.png";
-    static constexpr const char* BUDDHA_FILE = "../src/Assets/Buddha.webp";
     static constexpr float NUM_TIME_PRINTS = 9.0f;
     std::vector<float> mActorPositions;
     std::vector<float> mActorVelocities;
@@ -19,9 +18,11 @@ class SpacetimePlot {
     static void DrawYAxis();
     void DrawPoints(float yStep, unsigned timePrintInterval);
     void DrawMouse(float yStep);
+    void DrawVelocityMeter(float mouseVelo, float mouseTime);
 
     std::unique_ptr<Image> mArrow;
     std::unique_ptr<Image> mBuddha;
+    std::unique_ptr<Image> mMeterArrow;
 public:
     std::vector<float>& GetPositions(){return mActorPositions;}
     std::vector<float>& GetVelocities(){return mActorVelocities;}

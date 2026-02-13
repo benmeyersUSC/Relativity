@@ -13,6 +13,7 @@ class Image {
     SDL_Texture* mTexture = nullptr;
 public:
     void Draw(SDL_Renderer* renderer);
+    void DrawWithPivot(SDL_Renderer* renderer, SDL_FPoint pivot);
     void SetTexture(SDL_Texture* texture);
     Transform& GetTransform(){return mTransform;}
 };
