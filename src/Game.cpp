@@ -142,6 +142,7 @@ SDL_Texture * Game::GetTexture(std::string_view filename) {
 		return nullptr;
 	}
 	SDL_Texture* imgTexture = SDL_CreateTextureFromSurface(mSdlRenderer, imgSurface);
+	SDL_SetTextureBlendMode(imgTexture, SDL_BLENDMODE_BLEND);
 	SDL_DestroySurface(imgSurface);
 
 	mTextures[filename.data()] = imgTexture;
@@ -183,6 +184,8 @@ void Game::EndGame() {
 	TransformPoints(mPaddle->GetPositions(), mSpacetimePlot->GetPositions(), mTransformPosition);
 	TransformPoints(mPaddle->GetVelocities(), mSpacetimePlot->GetVelocities(), mTransformVelocity);
 	TransformPoints(mPaddle->GetTimeVelocities(), mSpacetimePlot->GetTimeVelocities(), mTransformTimeVelocity, false);
+
+	mSpacetimePlot->Setup();
 
 	// destroy actors and ditch paddle
 	UnloadData();
