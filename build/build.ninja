@@ -47,13 +47,13 @@ cmake_ninja_workdir = /Users/benmeyers/Desktop/Relativity/build/
 #############################################
 # Order-only phony target for Relativity
 
-build cmake_object_order_depends_target_Relativity: phony || cmake_object_order_depends_target_SDL3-shared
+build cmake_object_order_depends_target_Relativity: phony || cmake_object_order_depends_target_SDL3-shared cmake_object_order_depends_target_SDL3_image-shared
 
 build CMakeFiles/Relativity.dir/src/main.cpp.o: CXX_COMPILER__Relativity_unscanned_Debug /Users/benmeyers/Desktop/Relativity/src/main.cpp || cmake_object_order_depends_target_Relativity
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Relativity.dir/src/main.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
-  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
 
@@ -61,7 +61,7 @@ build CMakeFiles/Relativity.dir/src/Game.cpp.o: CXX_COMPILER__Relativity_unscann
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Relativity.dir/src/Game.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
-  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
 
@@ -69,7 +69,7 @@ build CMakeFiles/Relativity.dir/src/Actor.cpp.o: CXX_COMPILER__Relativity_unscan
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Relativity.dir/src/Actor.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
-  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
 
@@ -77,7 +77,7 @@ build CMakeFiles/Relativity.dir/src/Paddle.cpp.o: CXX_COMPILER__Relativity_unsca
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Relativity.dir/src/Paddle.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
-  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
 
@@ -85,7 +85,7 @@ build CMakeFiles/Relativity.dir/src/Transform.cpp.o: CXX_COMPILER__Relativity_un
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Relativity.dir/src/Transform.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
-  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
 
@@ -93,7 +93,7 @@ build CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o: CXX_COMPILER__Relativit
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
-  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
 
@@ -101,7 +101,7 @@ build CMakeFiles/Relativity.dir/src/Image.cpp.o: CXX_COMPILER__Relativity_unscan
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Relativity.dir/src/Image.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -fPIE
-  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
+  INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include
   OBJECT_DIR = CMakeFiles/Relativity.dir
   OBJECT_FILE_DIR = CMakeFiles/Relativity.dir/src
 
@@ -113,11 +113,11 @@ build CMakeFiles/Relativity.dir/src/Image.cpp.o: CXX_COMPILER__Relativity_unscan
 #############################################
 # Link the executable Relativity
 
-build Relativity: CXX_EXECUTABLE_LINKER__Relativity_Debug CMakeFiles/Relativity.dir/src/main.cpp.o CMakeFiles/Relativity.dir/src/Game.cpp.o CMakeFiles/Relativity.dir/src/Actor.cpp.o CMakeFiles/Relativity.dir/src/Paddle.cpp.o CMakeFiles/Relativity.dir/src/Transform.cpp.o CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o CMakeFiles/Relativity.dir/src/Image.cpp.o | SDL3/libSDL3.0.dylib /Users/benmeyers/Desktop/Relativity/SDL3/src/dynapi/SDL_dynapi.sym || SDL3/libSDL3.dylib SDL3/libSDL3.dylib
+build Relativity: CXX_EXECUTABLE_LINKER__Relativity_Debug CMakeFiles/Relativity.dir/src/main.cpp.o CMakeFiles/Relativity.dir/src/Game.cpp.o CMakeFiles/Relativity.dir/src/Actor.cpp.o CMakeFiles/Relativity.dir/src/Paddle.cpp.o CMakeFiles/Relativity.dir/src/Transform.cpp.o CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o CMakeFiles/Relativity.dir/src/Image.cpp.o | SDL3_image/libSDL3_image.0.2.4.dylib SDL3/libSDL3.0.dylib /Users/benmeyers/Desktop/Relativity/SDL3/src/dynapi/SDL_dynapi.sym || SDL3/libSDL3.dylib SDL3_image/libSDL3_image.dylib SDL3_image/libSDL3_image.dylib SDL3/libSDL3.dylib
   CONFIG = Debug
   FLAGS = -g -arch arm64
   LINK_FLAGS = -Wl,-search_paths_first -Wl,-headerpad_max_install_names
-  LINK_LIBRARIES = -Wl,-rpath,/Users/benmeyers/Desktop/Relativity/build/SDL3  SDL3/libSDL3.0.dylib
+  LINK_LIBRARIES = -Wl,-rpath,/Users/benmeyers/Desktop/Relativity/build/SDL3_image -Wl,-rpath,/Users/benmeyers/Desktop/Relativity/build/SDL3  SDL3_image/libSDL3_image.0.2.4.dylib  SDL3/libSDL3.0.dylib
   OBJECT_DIR = CMakeFiles/Relativity.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -2122,7 +2122,7 @@ build cmake_object_order_depends_target_SDL3_test: phony || .
 build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o: C_COMPILER__SDL3_test_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_assert.c || cmake_object_order_depends_target_SDL3_test
   CONFIG = Debug
   DEP_FILE = SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o.d
-  FLAGS = -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL3_test.dir/src/test
@@ -2130,7 +2130,7 @@ build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o: C_COMPILER__SD
 build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o: C_COMPILER__SDL3_test_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_common.c || cmake_object_order_depends_target_SDL3_test
   CONFIG = Debug
   DEP_FILE = SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o.d
-  FLAGS = -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL3_test.dir/src/test
@@ -2138,7 +2138,7 @@ build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o: C_COMPILER__SD
 build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o: C_COMPILER__SDL3_test_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_compare.c || cmake_object_order_depends_target_SDL3_test
   CONFIG = Debug
   DEP_FILE = SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o.d
-  FLAGS = -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL3_test.dir/src/test
@@ -2146,7 +2146,7 @@ build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o: C_COMPILER__S
 build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o: C_COMPILER__SDL3_test_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_crc32.c || cmake_object_order_depends_target_SDL3_test
   CONFIG = Debug
   DEP_FILE = SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o.d
-  FLAGS = -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL3_test.dir/src/test
@@ -2154,7 +2154,7 @@ build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o: C_COMPILER__SDL
 build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o: C_COMPILER__SDL3_test_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_font.c || cmake_object_order_depends_target_SDL3_test
   CONFIG = Debug
   DEP_FILE = SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o.d
-  FLAGS = -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL3_test.dir/src/test
@@ -2162,7 +2162,7 @@ build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o: C_COMPILER__SDL3
 build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o: C_COMPILER__SDL3_test_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_fuzzer.c || cmake_object_order_depends_target_SDL3_test
   CONFIG = Debug
   DEP_FILE = SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o.d
-  FLAGS = -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL3_test.dir/src/test
@@ -2170,7 +2170,7 @@ build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o: C_COMPILER__SD
 build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o: C_COMPILER__SDL3_test_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_harness.c || cmake_object_order_depends_target_SDL3_test
   CONFIG = Debug
   DEP_FILE = SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o.d
-  FLAGS = -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL3_test.dir/src/test
@@ -2178,7 +2178,7 @@ build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o: C_COMPILER__S
 build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o: C_COMPILER__SDL3_test_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_log.c || cmake_object_order_depends_target_SDL3_test
   CONFIG = Debug
   DEP_FILE = SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o.d
-  FLAGS = -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL3_test.dir/src/test
@@ -2186,7 +2186,7 @@ build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o: C_COMPILER__SDL3_
 build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o: C_COMPILER__SDL3_test_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_md5.c || cmake_object_order_depends_target_SDL3_test
   CONFIG = Debug
   DEP_FILE = SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o.d
-  FLAGS = -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL3_test.dir/src/test
@@ -2194,7 +2194,7 @@ build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o: C_COMPILER__SDL3_
 build SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o: C_COMPILER__SDL3_test_unscanned_Debug /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_memory.c || cmake_object_order_depends_target_SDL3_test
   CONFIG = Debug
   DEP_FILE = SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o.d
-  FLAGS = -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL3_test.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL3_test.dir/src/test
@@ -2230,7 +2230,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o: C_COMPILER__SDL_uclib
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2239,7 +2239,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o: C_COMPILER__SDL_uclibc_
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2248,7 +2248,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o: C_COMPILER__SDL_uclibc
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2257,7 +2257,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o: C_COMPILER__SDL_uclibc_
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2266,7 +2266,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o: C_COMPILER__SDL_uclib
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2275,7 +2275,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o: C_COMPILER__SDL_uclibc_
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2284,7 +2284,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o: C_COMPILER__SDL_uc
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2293,7 +2293,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o: C_COMPILER__SDL_uclibc
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2302,7 +2302,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o: C_COMPILER__SDL_uclibc_
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2311,7 +2311,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o: C_COMPILER__SDL_uc
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2320,7 +2320,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o: C_COMPILER__SDL_uclibc_
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2329,7 +2329,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o: C_COMPILER__SDL_uclibc_
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2338,7 +2338,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o: C_COMPILER__SDL_uclibc
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2347,7 +2347,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o: C_COMPILER__SDL_uc
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2356,7 +2356,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o: C_COMPILER__SDL_uclibc_
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2365,7 +2365,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o: C_COMPILER__SDL_uclibc
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2374,7 +2374,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o: C_COMPILER__SDL_uclib
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2383,7 +2383,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o: C_COMPILER__SDL_uclib
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2392,7 +2392,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o: C_COMPILER__SDL_ucli
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2401,7 +2401,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o: C_COMPILER__SDL_uclib
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2410,7 +2410,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o: C_COMPILER__SDL_ucli
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2419,7 +2419,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o: C_COMPILER__SDL_uclibc
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2428,7 +2428,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o: C_COMPILER__SDL_ucli
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2437,7 +2437,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o: C_COMPILER__SDL_uclibc_
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm
@@ -2446,7 +2446,7 @@ build SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o: C_COMPILER__SDL_uclibc_
   CONFIG = Debug
   DEFINES = -DUSING_GENERATED_CONFIG_H
   DEP_FILE = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o.d
-  FLAGS = -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
+  FLAGS = -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics
   INCLUDES = -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include
   OBJECT_DIR = SDL3/CMakeFiles/SDL_uclibc.dir
   OBJECT_FILE_DIR = SDL3/CMakeFiles/SDL_uclibc.dir/src/libm

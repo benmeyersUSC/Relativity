@@ -24,3 +24,4 @@ add_executable(Relativity src/main.cpp
 )
 
 target_link_libraries(Relativity PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)
+

@@ -107,7 +107,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Relativity::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Relativity-Debug-24384ace82818eedf666.json",
+					"jsonFile" : "target-Relativity-Debug-b4ddfed995c07aa512f5.json",
 					"name" : "Relativity",
 					"projectIndex" : 0
 				},
@@ -128,14 +128,14 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "SDL3_test::@61f02b296a88846ad5eb",
-					"jsonFile" : "target-SDL3_test-Debug-044c3fb282a94c6c6069.json",
+					"jsonFile" : "target-SDL3_test-Debug-611a634aca57932e10fa.json",
 					"name" : "SDL3_test",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "SDL_uclibc::@61f02b296a88846ad5eb",
-					"jsonFile" : "target-SDL_uclibc-Debug-803ce2b6669d8adc370b.json",
+					"jsonFile" : "target-SDL_uclibc-Debug-04f20c2286e7d3c1927d.json",
 					"name" : "SDL_uclibc",
 					"projectIndex" : 1
 				}

@@ -54,6 +54,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "/Users/benmeyers/Desktop/Relativity/SDL3/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/Users/benmeyers/Desktop/Relativity/SDL3_image/include"
 				}
 			],
 			"language" : "CXX",
@@ -82,6 +86,10 @@
 		{
 			"backtrace" : 2,
 			"id" : "SDL3-shared::@61f02b296a88846ad5eb"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "SDL3_image-shared::@4bc16813b53a95dbcd13"
 		}
 	],
 	"id" : "Relativity::@6890427a1f51a3e7e1df",
@@ -102,7 +110,12 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/Users/benmeyers/Desktop/Relativity/build/SDL3",
+				"fragment" : "-Wl,-rpath,/Users/benmeyers/Desktop/Relativity/build/SDL3_image -Wl,-rpath,/Users/benmeyers/Desktop/Relativity/build/SDL3",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "SDL3_image/libSDL3_image.0.2.4.dylib",
 				"role" : "libraries"
 			},
 			{

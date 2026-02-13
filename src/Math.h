@@ -90,5 +90,10 @@ namespace Math {
         return acosf(value);
     }
 
+    [[nodiscard]] inline float ToDegrees(float radians)
+{
+    return radians * 180.0f / 3.14159265f;
+}
+
 }
 #endif //RELATIVITY_MATH_H

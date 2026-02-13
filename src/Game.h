@@ -20,7 +20,7 @@ class Game
 {
 public:
 
-	static constexpr float DURATION_SECONDS = 10.0f;
+	static constexpr float DURATION_SECONDS = 5.0f;
 	static constexpr unsigned ESTIMATED_FPS = 60;
 
 	static constexpr float PLOT_POINT_SIZE = 3.0f;

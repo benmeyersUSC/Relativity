@@ -88,9 +88,9 @@ void SpacetimePlot::DrawMouse(float yStep) {
 	gGame.DrawFloat(mouseTextX, mouseTextY + lineStep, "Space Velocity: %.1f", mouseVelo);
 	gGame.DrawFloat(mouseTextX, mouseTextY + lineStep * 2, "Aging Factor: %.1f%%", mouseTime);
 
-	mArrow->GetTransform().SetRotation(Math::Acos(mouseTime/100.0f));
+	mArrow->GetTransform().SetRotation(Math::ToDegrees(Math::Acos(mouseTime/100.0f)));
 	mArrow->GetTransform().SetPosition(gGame.GetMousePos());
-	std::cout << Math::Acos(mouseTime/100.0f) << std::endl;
+	std::cout << Math::ToDegrees(Math::Acos(mouseTime/100.0f)) << std::endl;
 	mArrow->Draw(gGame.GetRenderer());
 }
 
@@ -114,6 +114,6 @@ SpacetimePlot::SpacetimePlot() {
 	mActorTimeVelocities.reserve(static_cast<unsigned>(Game::WINDOW_HEIGHT / Game::PLOT_POINT_SIZE));
 
 	mArrow = std::make_unique<Image>();
-	mArrow->GetTransform().SetScale(10.0f);
+	mArrow->GetTransform().SetScale(0.1f);
 	mArrow->SetTexture(gGame.GetTexture(ARROW_FILE));
 }

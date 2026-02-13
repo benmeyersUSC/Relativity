@@ -7,7 +7,7 @@
 #include <vector>
 class Image;
 class SpacetimePlot {
-    static constexpr const char* ARROW_FILE = "Assets/Arrow.png";
+    static constexpr const char* ARROW_FILE = "../src/Assets/Arrow.png";
     static constexpr float NUM_TIME_PRINTS = 18.0f;
     std::vector<float> mActorPositions;
     std::vector<float> mActorVelocities;

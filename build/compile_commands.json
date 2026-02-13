@@ -1,43 +1,43 @@
 [
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/main.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/main.cpp",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/main.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/main.cpp",
   "file": "/Users/benmeyers/Desktop/Relativity/src/main.cpp",
   "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/main.cpp.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Game.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Game.cpp",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Game.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Game.cpp",
   "file": "/Users/benmeyers/Desktop/Relativity/src/Game.cpp",
   "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/Game.cpp.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Actor.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Actor.cpp",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Actor.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Actor.cpp",
   "file": "/Users/benmeyers/Desktop/Relativity/src/Actor.cpp",
   "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/Actor.cpp.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Paddle.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Paddle.cpp",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Paddle.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Paddle.cpp",
   "file": "/Users/benmeyers/Desktop/Relativity/src/Paddle.cpp",
   "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/Paddle.cpp.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Transform.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Transform.cpp",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Transform.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Transform.cpp",
   "file": "/Users/benmeyers/Desktop/Relativity/src/Transform.cpp",
   "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/Transform.cpp.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/SpacetimePlot.cpp",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/SpacetimePlot.cpp",
   "file": "/Users/benmeyers/Desktop/Relativity/src/SpacetimePlot.cpp",
   "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/SpacetimePlot.cpp.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Image.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Image.cpp",
+  "command": "/usr/bin/clang++ -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -I/Users/benmeyers/Desktop/Relativity/SDL3_image/include -g -std=gnu++20 -arch arm64 -fPIE -o CMakeFiles/Relativity.dir/src/Image.cpp.o -c /Users/benmeyers/Desktop/Relativity/src/Image.cpp",
   "file": "/Users/benmeyers/Desktop/Relativity/src/Image.cpp",
   "output": "/Users/benmeyers/Desktop/Relativity/build/CMakeFiles/Relativity.dir/src/Image.cpp.o"
 },
@@ -1321,211 +1321,211 @@
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_assert.c",
+  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_assert.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_assert.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_assert.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_common.c",
+  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_common.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_common.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_common.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_compare.c",
+  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_compare.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_compare.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_compare.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_crc32.c",
+  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_crc32.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_crc32.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_crc32.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_font.c",
+  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_font.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_font.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_font.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_fuzzer.c",
+  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_fuzzer.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_fuzzer.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_fuzzer.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_harness.c",
+  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_harness.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_harness.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_harness.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_log.c",
+  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_log.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_log.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_log.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_md5.c",
+  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_md5.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_md5.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_md5.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_memory.c",
+  "command": "/usr/bin/clang -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-revision -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_memory.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/test/SDL_test_memory.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL3_test.dir/src/test/SDL_test_memory.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_atan2.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_atan2.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_atan2.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_atan2.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_exp.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_exp.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_exp.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_exp.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_fmod.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_fmod.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_fmod.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_fmod.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_log.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_log.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_log.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_log.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_log10.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_log10.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_log10.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_log10.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_pow.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_pow.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_pow.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_pow.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_rem_pio2.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_rem_pio2.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_rem_pio2.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_rem_pio2.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_sqrt.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_sqrt.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/e_sqrt.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/e_sqrt.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/k_cos.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/k_cos.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/k_cos.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_cos.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/k_rem_pio2.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/k_rem_pio2.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/k_rem_pio2.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_rem_pio2.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/k_sin.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/k_sin.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/k_sin.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_sin.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/k_tan.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/k_tan.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/k_tan.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/k_tan.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_atan.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_atan.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_atan.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_atan.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_copysign.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_copysign.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_copysign.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_copysign.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_cos.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_cos.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_cos.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_cos.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_fabs.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_fabs.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_fabs.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_fabs.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_floor.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_floor.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_floor.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_floor.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_isinf.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_isinf.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_isinf.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinf.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_isinff.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_isinff.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_isinff.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isinff.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_isnan.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_isnan.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_isnan.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnan.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_isnanf.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_isnanf.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_isnanf.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_isnanf.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_modf.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_modf.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_modf.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_modf.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_scalbn.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_scalbn.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_scalbn.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_scalbn.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_sin.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_sin.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_sin.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_sin.c.o"
 },
 {
   "directory": "/Users/benmeyers/Desktop/Relativity/build",
-  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_tan.c",
+  "command": "/usr/bin/clang -DUSING_GENERATED_CONFIG_H -I/Users/benmeyers/Desktop/Relativity/build/SDL3/include-config-debug/build_config -I/Users/benmeyers/Desktop/Relativity/SDL3/src -I/Users/benmeyers/Desktop/Relativity/SDL3/include -g -arch arm64 -fPIC -fvisibility=hidden -Wall -Wundef -Wfloat-conversion -fno-strict-aliasing -Wdocumentation -Wdocumentation-unknown-command -fcomment-block-commands=threadsafety -Wshadow -Wno-unused-local-typedefs -Wimplicit-fallthrough -fcolor-diagnostics -o SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o -c /Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_tan.c",
   "file": "/Users/benmeyers/Desktop/Relativity/SDL3/src/libm/s_tan.c",
   "output": "/Users/benmeyers/Desktop/Relativity/build/SDL3/CMakeFiles/SDL_uclibc.dir/src/libm/s_tan.c.o"
 },
