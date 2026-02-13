@@ -4,7 +4,6 @@
 
 #include "SpacetimePlot.h"
 
-#include <iostream>
 
 #include "Game.h"
 #include "Image.h"
@@ -20,6 +19,7 @@ void SpacetimePlot::DrawYAxis() {
 void SpacetimePlot::DrawPoints(float yStep, unsigned timePrintInterval) {
 	float y = Game::WINDOW_HEIGHT;
 
+	// plot the points
 	for (size_t i = 0; i < mActorPositions.size(); ++i) {
 		// pos, velo, timeDil for plotting
 		float mSpacetimePos = mActorPositions[i];
@@ -77,30 +77,29 @@ void SpacetimePlot::DrawMouse(float yStep) {
 	float mouseTextY = gGame.GetMousePos().y < Game::HALF_HEIGHT ? gGame.GetMousePos().y + Game::CHAR_PIXELS : gGame.GetMousePos().y - textH - Game::CHAR_PIXELS;
 
 	// outlined box
-	float pad = 4.0f;
+	float pad = 12.0f;
 	SDL_SetRenderDrawColor(gGame.GetRenderer(), Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR);
-	SDL_FRect box(mouseTextX - pad, mouseTextY - pad, textW + pad * 2, textH + pad * 2);
+	SDL_FRect box(mouseTextX - pad, mouseTextY - pad, textW + pad * 3, textH + pad * 2);
 	SDL_RenderRect(gGame.GetRenderer(), &box);
 
 	// draw text
-	float lineStep = Game::CHAR_PIXELS + 2.0f;
+	float lineStep = Game::CHAR_PIXELS + 4.0f;
 	gGame.DrawFloat(mouseTextX, mouseTextY, "Space Position: %.1f", mousePos);
 	gGame.DrawFloat(mouseTextX, mouseTextY + lineStep, "Space Velocity: %.1f", mouseVelo);
 	gGame.DrawFloat(mouseTextX, mouseTextY + lineStep * 2, "Aging Factor: %.1f%%", mouseTime);
 
-	mArrow->GetTransform().SetRotation(Math::ToDegrees(Math::Acos(mouseTime/100.0f)));
-	mArrow->GetTransform().SetPosition(gGame.GetMousePos());
-	std::cout << Math::ToDegrees(Math::Acos(mouseTime/100.0f)) << std::endl;
+	auto rotationSign = mouseVelo >= 0.0f ? 1.0f : -1.0f;
+	mArrow->GetTransform().SetRotation(rotationSign * Math::ToDegrees(Math::Acos(mouseTime/100.0f)));
+	mArrow->GetTransform().SetPosition({mouseTextX + textW, mouseTextY + lineStep});
 	mArrow->Draw(gGame.GetRenderer());
 }
 
-void SpacetimePlot::DrawSpacetime() {
+void SpacetimePlot::Draw() {
 
 	// how many time dilation prints do we want
 	auto timePrintInterval = static_cast<unsigned>(static_cast<float>(mActorPositions.size()) / NUM_TIME_PRINTS);
 	// plot as many positions fit in the window (we'll accept overlap)
-	float yStep = mActorPositions.empty() ? Game::Game::PLOT_POINT_SIZE
-				  : Game::WINDOW_HEIGHT / static_cast<float>(mActorPositions.size());
+	float yStep = Game::WINDOW_HEIGHT / static_cast<float>(mActorPositions.size());
 
 	// Y (time) axis
 	DrawYAxis();
@@ -109,9 +108,10 @@ void SpacetimePlot::DrawSpacetime() {
 }
 
 SpacetimePlot::SpacetimePlot() {
-	mActorPositions.reserve(static_cast<unsigned>(Game::WINDOW_HEIGHT / Game::PLOT_POINT_SIZE));
-	mActorVelocities.reserve(static_cast<unsigned>(Game::WINDOW_HEIGHT / Game::PLOT_POINT_SIZE));
-	mActorTimeVelocities.reserve(static_cast<unsigned>(Game::WINDOW_HEIGHT / Game::PLOT_POINT_SIZE));
+	auto samples = static_cast<unsigned>(Game::WINDOW_HEIGHT / Game::PLOT_POINT_SIZE);
+	mActorPositions.reserve(samples);
+	mActorVelocities.reserve(samples);
+	mActorTimeVelocities.reserve(samples);
 
 	mArrow = std::make_unique<Image>();
 	mArrow->GetTransform().SetScale(0.1f);

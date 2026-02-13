@@ -16,12 +16,13 @@ void Paddle::HandleUpdate(float deltaTime) {
     float realAcceleration = PADDLE_ACCEL * (1.0f - std::abs(mVelo) / Game::MAX_VELO);
 
     mVelo = Math::Clamp(mVelo + static_cast<float>(mVeloSign) * realAcceleration * deltaTime, -Game::MAX_VELO, Game::MAX_VELO);
-
     mVelo *= Math::NearlyZero(realAcceleration * static_cast<float>(mVeloSign)) || realAcceleration * static_cast<float>(mVeloSign) * mVelo < 0.0f ? BRAKE_FACTOR
                                                                                      : 1.0f;
 
     GetTransform().PositionDelta(mVelo * deltaTime, 0.0f);
 
+
+    // booooof
     if (GetTransform().GetPosition().x + GetTransform().GetSize().x/2.0f >= Game::WINDOW_WIDTH) {
         mVelo = 0.0f;
         GetTransform().PositionDelta(Game::WINDOW_WIDTH - GetTransform().GetPosition().x - GetTransform().GetSize().x/2.0f  , 0.0f);
@@ -33,5 +34,5 @@ void Paddle::HandleUpdate(float deltaTime) {
 }
 
 Paddle::Paddle( unsigned frameLife) : Actor(frameLife) {
-    GetTransform().SetSize(Vector2(PADDLE_WIDTH, PADDLE_HEIGHT)); // not quite bottom
+    GetTransform().SetSize(Vector2(PADDLE_WIDTH, PADDLE_HEIGHT));
 }

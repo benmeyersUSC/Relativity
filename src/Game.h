@@ -20,7 +20,7 @@ class Game
 {
 public:
 
-	static constexpr float DURATION_SECONDS = 5.0f;
+	static constexpr float DURATION_SECONDS = 10.0f;
 	static constexpr unsigned ESTIMATED_FPS = 60;
 
 	static constexpr float PLOT_POINT_SIZE = 3.0f;
@@ -116,9 +116,11 @@ private:
 	std::function<float(float)> mTransformPosition = [](const float position) {
 		return position - WINDOW_WIDTH/2.0f;
 	};
+
+	// lowkey this should be scaled to something else
 	std::function<float(float)> mTransformVelocity = [](const float velo) {
 		// percentage of max velo, scaled to WIDTH/2
-		return (velo * WINDOW_WIDTH) / (MAX_VELO * 2.0f);
+		return velo * WINDOW_WIDTH / (MAX_VELO * 2.0f);
 	};
 	std::function<float(float)> mTransformTimeVelocity = [](float f){
 		return f * 100.0f / MAX_VELO;

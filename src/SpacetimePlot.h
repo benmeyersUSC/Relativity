@@ -22,7 +22,7 @@ public:
     std::vector<float>& GetPositions(){return mActorPositions;}
     std::vector<float>& GetVelocities(){return mActorVelocities;}
     std::vector<float>& GetTimeVelocities(){return mActorTimeVelocities;}
-    void DrawSpacetime();
+    void Draw();
     SpacetimePlot() ;
 };
 

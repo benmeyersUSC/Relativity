@@ -19,7 +19,7 @@ void Image::Draw(SDL_Renderer* renderer)
     rect.x = mTransform.GetPosition().x - rect.w / 2.0f;
     rect.y = mTransform.GetPosition().y - rect.h / 2.0f;
 
-    SDL_RenderTextureRotated(renderer, mTexture, nullptr, &rect, -mTransform.GetRotation(), nullptr,
+    SDL_RenderTextureRotated(renderer, mTexture, nullptr, &rect, mTransform.GetRotation(), nullptr,
                              SDL_FLIP_NONE);
 }
 
