@@ -3,7 +3,8 @@
 //
 #include "Player.h"
 #include "Game.h"
-
+#include "SpacetimeComponent.h"
+#include <algorithm>
 void Player::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
                              const Vector2& posMouse) {
     mVeloSign = keys[SDL_SCANCODE_RIGHT] - keys[SDL_SCANCODE_LEFT];
@@ -13,26 +14,40 @@ void Player::HandleUpdate(float deltaTime) {
     Actor::HandleUpdate(deltaTime);
 
     // increasing velocity becomes asymptotically hard as you approach max!
-    float realAcceleration = PLAYER_ACCEL * (1.0f - std::abs(mVelo) / Game::MAX_VELO);
+    // (and this obviates clamping!)
+    float realAcceleration = static_cast<float>(mVeloSign) * PLAYER_ACCEL * (
+        1.0f -          std::abs(mSpacetimeComponent->GetVelocity()) /
+                                        Game::MAX_VELO
+        );
 
-    mVelo = Math::Clamp(mVelo + static_cast<float>(mVeloSign) * realAcceleration * deltaTime, -Game::MAX_VELO, Game::MAX_VELO);
-    mVelo *= Math::NearlyZero(realAcceleration * static_cast<float>(mVeloSign)) || realAcceleration * static_cast<float>(mVeloSign) * mVelo < 0.0f ? BRAKE_FACTOR
-                                                                                     : 1.0f;
+    // integrate velocity by accel
+    mSpacetimeComponent->GetVelocity() = mSpacetimeComponent->GetVelocity() + realAcceleration * deltaTime;
+    // apply brake factor for no or (net)negative accel
+    auto zeroAccel = Math::NearlyZero(realAcceleration);
+    auto turningAround = realAcceleration * mSpacetimeComponent->GetVelocity() < 0.0f;
+    mSpacetimeComponent->GetVelocity() *= zeroAccel || turningAround ? BRAKE_FACTOR : 1.0f;
 
-    GetTransform().PositionDelta(mVelo * deltaTime, 0.0f);
+    // integrate position by velo
+    GetTransform().PositionDelta(mSpacetimeComponent->GetVelocity() * deltaTime, 0.0f);
 
+    FixPosition();
+}
 
-    // booooof
-    if (GetTransform().GetPosition().x + GetTransform().GetSize().x/2.0f >= Game::WINDOW_WIDTH) {
-        mVelo = 0.0f;
-        GetTransform().PositionDelta(Game::WINDOW_WIDTH - GetTransform().GetPosition().x - GetTransform().GetSize().x/2.0f  , 0.0f);
-    }
-    else if (GetTransform().GetPosition().x - GetTransform().GetSize().x/2.0f <= 0.0f) {
-        mVelo = 0.0f;
-        GetTransform().PositionDelta(GetTransform().GetSize().x/2.0f - GetTransform().GetPosition().x, 0.0f);
+void Player::FixPosition() {
+    // boundary collision
+    float x = GetTransform().GetPosition().x;
+    float halfW = GetTransform().GetSize().x / 2.0f;
+    float minX = halfW;
+    float maxX = Game::WINDOW_WIDTH - halfW;
+
+    if (x >= maxX || x <= minX) {
+        mSpacetimeComponent->GetVelocity() = 0.0f;
+        float clampedX = std::clamp(x, minX, maxX);
+        GetTransform().PositionDelta(clampedX - x, 0.0f);
     }
 }
 
-Player::Player( unsigned frameLife) : Actor(frameLife) {
+Player::Player() :Actor() {
     GetTransform().SetSize(Vector2(PLAYER_WIDTH, PLAYER_HEIGHT));
+    mSpacetimeComponent = CreateComponent<SpacetimeComponent>();
 }

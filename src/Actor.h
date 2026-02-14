@@ -49,26 +49,15 @@ public:
     void Input(const bool keys[], SDL_MouseButtonFlags mouseButtons, const Vector2& posMouse);
     void Destroy();
 
-    explicit Actor( unsigned frameLife);
-
-    [[nodiscard]] std::vector<float>& GetPositions() {return mPositions;}
-    [[nodiscard]] std::vector<float>& GetVelocities() {return mVelocities;}
-    [[nodiscard]] std::vector<float>& GetTimeVelocities() {return mTimeVelocities;}
-    [[nodiscard]] float GetVelocity()const{return mVelo;}
-
-    [[nodiscard]] float GetTimeFactor()const;
+    explicit Actor() = default;
 protected:
     virtual void HandleUpdate(float deltaTime);
     virtual void HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
                              const Vector2& posMouse);
-    float mVelo = 0.0f;
 
 private:
 
     Transform mTransform;
-    std::vector<float> mPositions;
-    std::vector<float> mVelocities;
-    std::vector<float> mTimeVelocities;
     std::vector<Component*> mComponents;
 };
 

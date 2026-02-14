@@ -7,6 +7,7 @@
 #include <functional>
 #include "SDL3_image/SDL_image.h"
 #include "SpacetimePlot.h"
+#include "SpacetimeComponent.h"
 #include "Image.h"
 Game gGame;
 
@@ -20,7 +21,7 @@ Game::Game()
 	mContinueRunning = true;
 
 	// actors start null
-	mPaddle = nullptr;
+	mPlayer = nullptr;
 
 	mPreviousTime = 0;
 }
@@ -174,9 +175,9 @@ SDL_Texture * Game::GetTexture(std::string_view filename) {
 }
 
 void Game::DrawPaddleText() {
-	if (mPaddle == nullptr){return;}
+	if (mPlayer == nullptr){return;}
 	// now we type in the score onto the paddle
-	Vector2 paddleRect = mPaddle->GetTransform().GetPosition();
+	Vector2 paddleRect = mPlayer->GetTransform().GetPosition();
 	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR, MAX_COLOR, MAX_COLOR, MAX_COLOR);
 	
 	// time remaining
@@ -184,12 +185,14 @@ void Game::DrawPaddleText() {
 
 	// this is so jank and boof...fix
 	// pos + velo scaled 2x
-	float posY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y * 3 - 36.0f;
-	float veloY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y * 2 - 36.0f;
-	float timeY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPaddle->GetTransform().GetSize().y - 36.0f;
-	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, posY, "Space Position: %.0f px", mPaddle->GetTransform().GetPosition().x - HALF_WIDTH, 2.0f);
-	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, veloY, "Space Velocity: %.0f px/s", mPaddle->GetVelocity(), 2.0f);
-	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, timeY, "Aging at %.2f%% speed", mPaddle->GetTimeFactor() * 100.0f, 2.0f);
+	float posY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPlayer->GetTransform().GetSize().y * 3 - 36.0f;
+	float veloY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPlayer->GetTransform().GetSize().y * 2 - 36.0f;
+	float timeY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPlayer->GetTransform().GetSize().y - 36.0f;
+	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, posY, "Space Position: %.0f px", mPlayer->GetTransform().GetPosition().x - HALF_WIDTH, 2.0f);
+	// DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, veloY, "Space Velocity: %.0f px/s", mPaddle->GetVelocity(), 2.0f);
+	// DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, timeY, "Aging at %.2f%% speed", mPaddle->GetTimeFactor() * 100.0f, 2.0f);
+	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, veloY, "Space Velocity: %.0f px/s", mPlayer->GetSpacetime()->GetVelocity(), 2.0f);
+	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, timeY, "Aging at %.2f%% speed", mPlayer->GetSpacetime()->GetTimeFactor() * 100.0f, 2.0f);
 
 }
 
@@ -213,7 +216,8 @@ void Game::DrawGame(){
 void Game::EndGame() {
 	mSpacetimePlot = std::make_unique<SpacetimePlot>();
 
-	unsigned numSamples = mPaddle->GetPositions().size();
+	// unsigned numSamples = mPaddle->GetPositions().size();
+	unsigned numSamples = mPlayer->GetSpacetime()->GetPositions().size();
 	auto maxPlotPoints = static_cast<unsigned>(WINDOW_HEIGHT / PLOT_POINT_SIZE);
 	// how many samples will we average to meet the ideal/max plot points
 	mFrameAgg = std::max(1u, numSamples/ maxPlotPoints);
@@ -221,15 +225,18 @@ void Game::EndGame() {
 	// transform raw samples...extract from actor(s) before we destroy them, pass along to spacetime plot
 	// - scaled by width
 	// - mapped via aggregation to vertical plotting space!
-	TransformPoints(mPaddle->GetPositions(), mSpacetimePlot->GetPositions(), mTransformPosition);
-	TransformPoints(mPaddle->GetVelocities(), mSpacetimePlot->GetVelocities(), mTransformVelocity);
-	TransformPoints(mPaddle->GetTimeVelocities(), mSpacetimePlot->GetTimeVelocities(), mTransformTimeVelocity, false);
+	// TransformPoints(mPaddle->GetPositions(), mSpacetimePlot->GetPositions(), mTransformPosition);
+	// TransformPoints(mPaddle->GetVelocities(), mSpacetimePlot->GetVelocities(), mTransformVelocity);
+	// TransformPoints(mPaddle->GetTimeVelocities(), mSpacetimePlot->GetTimeVelocities(), mTransformTimeVelocity, false);
+	TransformPoints(mPlayer->GetSpacetime()->GetPositions(), mSpacetimePlot->GetPositions(), mTransformPosition);
+	TransformPoints(mPlayer->GetSpacetime()->GetVelocities(), mSpacetimePlot->GetVelocities(), mTransformVelocity);
+	TransformPoints(mPlayer->GetSpacetime()->GetTimeVelocities(), mSpacetimePlot->GetTimeVelocities(), mTransformTimeVelocity, false);
 
 	mSpacetimePlot->Setup();
 
 	// destroy actors and ditch paddle
 	UnloadData();
-	mPaddle = nullptr;
+	mPlayer = nullptr;
 }
 
 void Game::UpdateGame()
@@ -287,8 +294,9 @@ void Game::GenerateOutput()
 
 void Game::LoadData()
 {
-	mPaddle = CreateActor<Player>();
-	mPaddle->GetTransform().SetPosition(Vector2(WINDOW_WIDTH / HALF_DIVISOR, WINDOW_HEIGHT / HALF_DIVISOR ));
+	mPlayer = CreateActor<Player>();
+	mPlayer->GetTransform().SetPosition(Vector2(WINDOW_WIDTH / HALF_DIVISOR, WINDOW_HEIGHT / HALF_DIVISOR ));
+	mPlayer->GetSpacetime()->Setup(DURATION_SECONDS * ESTIMATED_FPS);
 
 	mBuddha = std::make_unique<Image>();
 	mBuddha->GetTransform().SetScale(0.1f);

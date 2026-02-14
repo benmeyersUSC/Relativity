@@ -35,7 +35,7 @@ public:
 	static constexpr float HALF_WIDTH = WINDOW_WIDTH/2.0f;
 	static constexpr float HALF_HEIGHT = WINDOW_HEIGHT/2.0f;
 
-	// max deltatime for update
+	// max deltaTime for update
 	static constexpr float MAX_DELTA_TIME = 0.033f;
 
 	// constant for full color
@@ -73,7 +73,7 @@ public:
 	template<typename A>
 	A* CreateActor() {
 		// create actor on heap, save pointer to vector
-		A* a = new A(static_cast<unsigned>(DURATION_SECONDS * ESTIMATED_FPS));
+		A* a = new A();
 		mActors.push_back(a);
 		return a;
 	}
@@ -104,7 +104,7 @@ private:
 	std::vector<Actor*> mActors;
 	std::vector<Actor*> mPendingCreate;
 	std::vector<Actor*> mPendingDestroy;
-	Player* mPaddle;
+	Player* mPlayer;
 	void DestroyActor(Actor* actor);
 
 

@@ -3,11 +3,13 @@
 //
 #pragma once
 #include "Actor.h"
-   
+class SpacetimeComponent;
 class Player : public Actor
 {
 	static constexpr float BRAKE_FACTOR = 0.9f;
 	short mVeloSign = 0.0f;
+	SpacetimeComponent* mSpacetimeComponent;
+	void FixPosition();
 public:
 	static constexpr float PLAYER_HEIGHT = 54.0f;
 	static constexpr float PLAYER_WIDTH = 54.0f;
@@ -16,8 +18,9 @@ public:
 	void HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
 							 const Vector2& posMouse) override;
 	void HandleUpdate(float deltaTime) override;
+	SpacetimeComponent* GetSpacetime(){return mSpacetimeComponent;}
 protected:
-	explicit Player(unsigned frameLife);
+	explicit Player();
 	friend class Game;
 };
    

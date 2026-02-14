@@ -23,7 +23,7 @@ public:
     void Input(const bool keys[], SDL_MouseButtonFlags mouseButtons, const Math::Vector2& posMouse);
 
 protected:
-    Component(Actor* owner);
+    explicit Component(Actor* owner);
     virtual ~Component();
 
     virtual void HandleUpdate(float deltaTime);
