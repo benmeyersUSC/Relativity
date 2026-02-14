@@ -14,7 +14,7 @@
 #include <unordered_map>
 #include "Actor.h"
 using Math::Vector2;
-class Paddle;
+class Player;
 class SpacetimePlot;
 class Image;
 
@@ -77,6 +77,7 @@ public:
 		mActors.push_back(a);
 		return a;
 	}
+	void AddPendingDestroy(class Actor* actor);
 
 	void DrawFloat(float x, float y, const char* fmt, float value, float scale = 1.0f);
 	void DrawInt(float x, float y, int value, float scale = 1.0f);
@@ -101,7 +102,10 @@ private:
 
 	// actors vector and individual member variables
 	std::vector<Actor*> mActors;
-	Paddle* mPaddle;
+	std::vector<Actor*> mPendingCreate;
+	std::vector<Actor*> mPendingDestroy;
+	Player* mPaddle;
+	void DestroyActor(Actor* actor);
 
 
 	// prev time for delta calcs
@@ -128,6 +132,7 @@ private:
 		return velo * WINDOW_WIDTH / (MAX_VELO * 2.0f);
 	};
 	std::function<float(float)> mTransformTimeVelocity = [](float f){
+		// this will be a percentage (out of 100)!
 		return f * 100.0f / MAX_VELO;
 	};
 

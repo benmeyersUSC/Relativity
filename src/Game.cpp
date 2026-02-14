@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include "Actor.h"
-#include "Paddle.h"
+#include "Player.h"
 #include <functional>
 #include "SDL3_image/SDL_image.h"
 #include "SpacetimePlot.h"
@@ -83,6 +83,13 @@ void Game::HandleEvent(const SDL_Event* event)
 	}
 }
 
+void Game::DestroyActor(Actor *actor) {
+
+		std::erase(mActors, actor);
+		delete actor;
+
+}
+
 void Game::ProcessInput()
 {
 	const bool* keyboardState = SDL_GetKeyboardState(nullptr);
@@ -97,7 +104,7 @@ void Game::ProcessInput()
 
 
 	for (auto a : mActors) {
-		a->HandleInput(keyboardState, mouseButtons, mMousePos);
+		a->Input(keyboardState, mouseButtons, mMousePos);
 	}
 }
 
@@ -112,6 +119,13 @@ void Game::TransformPoints(const std::vector<float>& src, std::vector<float>& de
 		// and apply the transformation function and center around mid if not time
 		// now these are transformed for rendering
 		dest.push_back(transformFunc(sum/static_cast<float>(mFrameAgg)) + static_cast<float>(notTime) * HALF_WIDTH);
+	}
+}
+
+void Game::AddPendingDestroy(class Actor *actor) {
+	if (std::ranges::find(mPendingDestroy, actor) == mPendingDestroy.end())
+	{
+		mPendingDestroy.emplace_back(actor);
 	}
 }
 
@@ -234,9 +248,18 @@ void Game::UpdateGame()
 		return EndGame();
 	}
 
-	for (auto a : mActors) {
-		a->HandleUpdate(deltaTime);
-	}
+	for (auto actor : mPendingCreate)
+		mActors.emplace_back(actor);
+
+	mPendingCreate.clear();
+
+	for (auto actor : mActors)
+		actor->Update(deltaTime);
+
+	for (auto actor : mPendingDestroy)
+		DestroyActor(actor);
+
+	mPendingDestroy.clear();
 }
 
 void Game::GenerateOutput()
@@ -264,7 +287,7 @@ void Game::GenerateOutput()
 
 void Game::LoadData()
 {
-	mPaddle = CreateActor<Paddle>();
+	mPaddle = CreateActor<Player>();
 	mPaddle->GetTransform().SetPosition(Vector2(WINDOW_WIDTH / HALF_DIVISOR, WINDOW_HEIGHT / HALF_DIVISOR ));
 
 	mBuddha = std::make_unique<Image>();

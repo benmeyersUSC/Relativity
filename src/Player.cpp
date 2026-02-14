@@ -1,19 +1,19 @@
 //
 // Created by Ben Meyers on 2/11/26.
 //
-#include "Paddle.h"
+#include "Player.h"
 #include "Game.h"
 
-void Paddle::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
+void Player::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
                              const Vector2& posMouse) {
     mVeloSign = keys[SDL_SCANCODE_RIGHT] - keys[SDL_SCANCODE_LEFT];
 }
 
-void Paddle::HandleUpdate(float deltaTime) {
+void Player::HandleUpdate(float deltaTime) {
     Actor::HandleUpdate(deltaTime);
 
     // increasing velocity becomes asymptotically hard as you approach max!
-    float realAcceleration = PADDLE_ACCEL * (1.0f - std::abs(mVelo) / Game::MAX_VELO);
+    float realAcceleration = PLAYER_ACCEL * (1.0f - std::abs(mVelo) / Game::MAX_VELO);
 
     mVelo = Math::Clamp(mVelo + static_cast<float>(mVeloSign) * realAcceleration * deltaTime, -Game::MAX_VELO, Game::MAX_VELO);
     mVelo *= Math::NearlyZero(realAcceleration * static_cast<float>(mVeloSign)) || realAcceleration * static_cast<float>(mVeloSign) * mVelo < 0.0f ? BRAKE_FACTOR
@@ -33,6 +33,6 @@ void Paddle::HandleUpdate(float deltaTime) {
     }
 }
 
-Paddle::Paddle( unsigned frameLife) : Actor(frameLife) {
-    GetTransform().SetSize(Vector2(PADDLE_WIDTH, PADDLE_HEIGHT));
+Player::Player( unsigned frameLife) : Actor(frameLife) {
+    GetTransform().SetSize(Vector2(PLAYER_WIDTH, PLAYER_HEIGHT));
 }

@@ -13,14 +13,16 @@ add_executable(Relativity src/main.cpp
         src/Math.h
         src/Actor.cpp
         src/Actor.h
-        src/Paddle.cpp
-        src/Paddle.h
+        src/Player.cpp
+        src/Player.h
         src/Transform.cpp
         src/Transform.h
         src/SpacetimePlot.cpp
         src/SpacetimePlot.h
         src/Image.cpp
         src/Image.h
+        src/Component.cpp
+        src/Component.h
 )
 
 target_link_libraries(Relativity PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)
