@@ -46,17 +46,18 @@ public:
     }
 
     void Update(float deltaTime);
+    void Render();
     void Input(const bool keys[], SDL_MouseButtonFlags mouseButtons, const Vector2& posMouse);
     void Destroy();
 
     explicit Actor() = default;
 protected:
+    virtual void HandleRender();
     virtual void HandleUpdate(float deltaTime);
     virtual void HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
                              const Vector2& posMouse);
 
 private:
-
     Transform mTransform;
     std::vector<Component*> mComponents;
 };

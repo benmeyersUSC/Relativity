@@ -12,6 +12,14 @@ Component::~Component() = default;
 void Component::HandleUpdate(float deltaTime)
 {
 }
+
+void Component::Render() {
+    HandleRender();
+}
+
+void Component::HandleRender() {
+}
+
 void Component::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
                             const Math::Vector2& relativeMouse)
 {

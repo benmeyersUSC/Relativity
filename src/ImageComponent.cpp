@@ -3,7 +3,11 @@
 //
 
 #include "ImageComponent.h"
-void ImageComponent::Draw(SDL_Renderer* renderer)
+#include "SDL3/SDL.h"
+#include "Actor.h"
+#include "Game.h"
+
+void ImageComponent::Draw()
 {
     if (mTexture == nullptr)
     {
@@ -11,18 +15,18 @@ void ImageComponent::Draw(SDL_Renderer* renderer)
     }
     SDL_FRect rect = SDL_FRect();
     SDL_GetTextureSize(mTexture, &rect.w, &rect.h);
-    float scale = mTransform.GetScale();
+    float scale = GetTransform().GetScale();
     rect.w *= scale;
     rect.h *= scale;
 
-    rect.x = mTransform.GetPosition().x - rect.w / 2.0f;
-    rect.y = mTransform.GetPosition().y - rect.h / 2.0f;
+    rect.x = GetTransform().GetPosition().x - rect.w / 2.0f;
+    rect.y = GetTransform().GetPosition().y - rect.h / 2.0f;
 
-    SDL_RenderTextureRotated(renderer, mTexture, nullptr, &rect, mTransform.GetRotation(), nullptr,
+    SDL_RenderTextureRotated(mRenderer, mTexture, nullptr, &rect, GetTransform().GetRotation(), nullptr,
                              SDL_FLIP_NONE);
 }
 
-void ImageComponent::DrawWithPivot(SDL_Renderer* renderer, SDL_FPoint pivot)
+void ImageComponent::DrawWithPivot(SDL_FPoint pivot)
 {
     if (mTexture == nullptr)
     {
@@ -30,15 +34,15 @@ void ImageComponent::DrawWithPivot(SDL_Renderer* renderer, SDL_FPoint pivot)
     }
     SDL_FRect rect = SDL_FRect();
     SDL_GetTextureSize(mTexture, &rect.w, &rect.h);
-    float scale = mTransform.GetScale();
+    float scale = GetTransform().GetScale();
     rect.w *= scale;
     rect.h *= scale;
 
     // position so the pivot point in the texture lands at mTransform position
-    rect.x = mTransform.GetPosition().x - pivot.x;
-    rect.y = mTransform.GetPosition().y - pivot.y;
+    rect.x = GetTransform().GetPosition().x - pivot.x;
+    rect.y = GetTransform().GetPosition().y - pivot.y;
 
-    SDL_RenderTextureRotated(renderer, mTexture, nullptr, &rect, mTransform.GetRotation(), &pivot,
+    SDL_RenderTextureRotated(mRenderer, mTexture, nullptr, &rect, GetTransform().GetRotation(), &pivot,
                              SDL_FLIP_NONE);
 }
 
@@ -47,9 +51,16 @@ void ImageComponent::SetTexture(SDL_Texture* texture)
     mTexture = texture;
 }
 
-ImageComponent::ImageComponent(class Actor *owner) : Component(owner) {
+Transform & ImageComponent::GetTransform() const {
+    {return GetOwner()->GetTransform();}
 }
 
-void ImageComponent::HandleUpdate(float deltaTime) {
-    Component::HandleUpdate(deltaTime);
+ImageComponent::ImageComponent(class Actor *owner) : Component(owner) {
+    mRenderer = gGame.GetRenderer();
 }
+
+void ImageComponent::HandleRender() {
+    Component::HandleRender();
+    Draw();
+}
+

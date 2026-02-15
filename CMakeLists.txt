@@ -29,6 +29,8 @@ add_executable(Relativity src/main.cpp
         src/ImageComponent.h
         src/ShapeComponent.cpp
         src/ShapeComponent.h
+        src/ReferenceActor.cpp
+        src/ReferenceActor.h
 )
 
 target_link_libraries(Relativity PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)

@@ -1,14 +1,17 @@
 #include "Game.h"
 
 #include <iostream>
-
+#include "ReferenceActor.h"
 #include "Actor.h"
 #include "Player.h"
 #include <functional>
 #include "SDL3_image/SDL_image.h"
 #include "SpacetimePlot.h"
 #include "SpacetimeComponent.h"
+#include "ImageComponent.h"
+
 #include "Image.h"
+#include "ShapeComponent.h"
 Game gGame;
 
 Game::Game()
@@ -131,27 +134,15 @@ void Game::AddPendingDestroy(class Actor *actor) {
 }
 
 void Game::DrawFloat(float x, float y, const char* fmt, float value, float scale) {
-	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR,MAX_COLOR,MAX_COLOR,MAX_COLOR);
-	if (scale != 1.0f) { SDL_SetRenderScale(mSdlRenderer, scale, scale); }
-	SDL_RenderDebugTextFormat(mSdlRenderer, x / scale, y / scale, fmt, value);
-	if (scale != 1.0f) { SDL_SetRenderScale(mSdlRenderer, 1.0f, 1.0f); }
+	return;
 }
 
 void Game::DrawInt(float x, float y, int value, float scale) {
-	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR,MAX_COLOR,MAX_COLOR,MAX_COLOR);
-	if (scale != 1.0f) { SDL_SetRenderScale(mSdlRenderer, scale, scale); }
-	SDL_RenderDebugTextFormat(mSdlRenderer, x / scale, y / scale, "%i", value);
-	if (scale != 1.0f) { SDL_SetRenderScale(mSdlRenderer, 1.0f, 1.0f); }
+	return;
 }
 
 void Game::DrawFilledCircle(float cx, float cy, float radius) {
-	// scan-line filled circle: uses current draw color
-	float r2 = radius * radius;
-	for (float dy = -radius; dy <= radius; dy += 1.0f) {
-		float dx = Math::Sqrt(r2 - dy * dy);
-		SDL_FRect line(cx - dx, cy + dy, dx * 2.0f, 1.0f);
-		SDL_RenderFillRect(mSdlRenderer, &line);
-	}
+	return;
 }
 
 SDL_Texture * Game::GetTexture(std::string_view filename) {
@@ -174,43 +165,48 @@ SDL_Texture * Game::GetTexture(std::string_view filename) {
 	return imgTexture;
 }
 
-void Game::DrawPaddleText() {
-	if (mPlayer == nullptr){return;}
-	// now we type in the score onto the paddle
-	Vector2 paddleRect = mPlayer->GetTransform().GetPosition();
-	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR, MAX_COLOR, MAX_COLOR, MAX_COLOR);
-	
-	// time remaining
-	DrawInt(paddleRect.x - HALF_CHAR_PIXELS, paddleRect.y - 10.0f / HALF_CHAR_PIXELS, static_cast<int>(DURATION_SECONDS - mDT), 1.35f);
-
-	// this is so jank and boof...fix
-	// pos + velo scaled 2x
-	float posY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPlayer->GetTransform().GetSize().y * 3 - 36.0f;
-	float veloY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPlayer->GetTransform().GetSize().y * 2 - 36.0f;
-	float timeY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPlayer->GetTransform().GetSize().y - 36.0f;
-	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, posY, "Space Position: %.0f px", mPlayer->GetTransform().GetPosition().x - HALF_WIDTH, 2.0f);
-	// DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, veloY, "Space Velocity: %.0f px/s", mPaddle->GetVelocity(), 2.0f);
-	// DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, timeY, "Aging at %.2f%% speed", mPaddle->GetTimeFactor() * 100.0f, 2.0f);
-	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, veloY, "Space Velocity: %.0f px/s", mPlayer->GetSpacetime()->GetVelocity(), 2.0f);
-	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, timeY, "Aging at %.2f%% speed", mPlayer->GetSpacetime()->GetTimeFactor() * 100.0f, 2.0f);
-
-}
+// void Game::DrawPaddleText() {
+// 	if (mPlayer == nullptr){return;}
+// 	// now we type in the score onto the paddle
+// 	Vector2 paddleRect = mPlayer->GetTransform().GetPosition();
+// 	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR, MAX_COLOR, MAX_COLOR, MAX_COLOR);
+//
+// 	// time remaining
+// 	DrawInt(paddleRect.x - HALF_CHAR_PIXELS, paddleRect.y - 10.0f / HALF_CHAR_PIXELS, static_cast<int>(DURATION_SECONDS - mDT), 1.35f);
+//
+// 	// this is so jank and boof...fix
+// 	// pos + velo scaled 2x
+// 	float posY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPlayer->GetTransform().GetSize().y * 3 - 36.0f;
+// 	float veloY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPlayer->GetTransform().GetSize().y * 2 - 36.0f;
+// 	float timeY = paddleRect.y - 10.0f / HALF_CHAR_PIXELS - mPlayer->GetTransform().GetSize().y - 36.0f;
+// 	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, posY, "Space Position: %.0f px", mPlayer->GetTransform().GetPosition().x - HALF_WIDTH, 2.0f);
+// 	// DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, veloY, "Space Velocity: %.0f px/s", mPaddle->GetVelocity(), 2.0f);
+// 	// DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, timeY, "Aging at %.2f%% speed", mPaddle->GetTimeFactor() * 100.0f, 2.0f);
+// 	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, veloY, "Space Velocity: %.0f px/s", mPlayer->GetSpacetime()->GetVelocity(), 2.0f);
+// 	DrawFloat(HALF_WIDTH - CHAR_PIXELS*27, timeY, "Aging at %.2f%% speed", mPlayer->GetSpacetime()->GetTimeFactor() * 100.0f, 2.0f);
+//
+// }
 
 void Game::DrawGame(){
-	mBuddha->Draw(gGame.GetRenderer());
+	// mBuddha->Draw(gGame.GetRenderer());
+	// mReferenceActor.D
 
 	// paddle specific...fix
 	// now set to blue
 	SDL_SetRenderDrawColor(mSdlRenderer, 0, 0, MAX_COLOR, MAX_COLOR);
 	// render each actor
-	for (auto& actor : mActors)
-	{
-		Vector2 pos = actor->GetTransform().GetPosition();
-		float radius = actor->GetTransform().GetSize().x / 2.0f;
-		DrawFilledCircle(pos.x, pos.y, radius);
+	// for (auto& actor : mActors)
+	// {
+		// Vector2 pos = mPlayer->GetTransform().GetPosition();
+		// float radius = mPlayer->GetTransform().GetSize().x / 2.0f;
+		// DrawFilledCircle(pos.x, pos.y, radius);
+	// }
+
+	for (auto& a : mActors) {
+		a->Render();
 	}
 
-	DrawPaddleText();
+	// DrawPaddleText();
 }
 
 void Game::EndGame() {
@@ -236,7 +232,7 @@ void Game::EndGame() {
 
 	// destroy actors and ditch paddle
 	UnloadData();
-	mPlayer = nullptr;
+	// mPlayer = nullptr;
 }
 
 void Game::UpdateGame()
@@ -294,14 +290,20 @@ void Game::GenerateOutput()
 
 void Game::LoadData()
 {
+	// mPlayer = CreateActor<Player>();
 	mPlayer = CreateActor<Player>();
 	mPlayer->GetTransform().SetPosition(Vector2(WINDOW_WIDTH / HALF_DIVISOR, WINDOW_HEIGHT / HALF_DIVISOR ));
 	mPlayer->GetSpacetime()->Setup(DURATION_SECONDS * ESTIMATED_FPS);
 
-	mBuddha = std::make_unique<Image>();
-	mBuddha->GetTransform().SetScale(0.1f);
-	mBuddha->SetTexture(gGame.GetTexture(BUDDHA_FILE));
-	mBuddha->GetTransform().SetPosition({Game::HALF_WIDTH, Game::HALF_HEIGHT});
+	// mBuddha = std::make_unique<Image>();
+	// mBuddha->GetTransform().SetScale(0.1f);
+	// mBuddha->SetTexture(gGame.GetTexture(BUDDHA_FILE));
+	// mBuddha->GetTransform().SetPosition({Game::HALF_WIDTH, Game::HALF_HEIGHT});
+
+	mReferenceActor = CreateActor<ReferenceActor>();
+	mReferenceActor->GetTransform().SetScale(0.1f);
+	mReferenceActor->GetTransform().SetPosition({Game::HALF_WIDTH, Game::HALF_HEIGHT});
+	mReferenceActor->Setup();
 }
 
 void Game::UnloadData()

@@ -19,7 +19,7 @@ public:
     Actor* GetOwner() const;
 
     void Update(float deltaTime);
-
+    void Render();
     void Input(const bool keys[], SDL_MouseButtonFlags mouseButtons, const Math::Vector2& posMouse);
 
 protected:
@@ -27,7 +27,7 @@ protected:
     virtual ~Component();
 
     virtual void HandleUpdate(float deltaTime);
-
+    virtual void HandleRender();
     virtual void HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
                              const Math::Vector2& posMouse);
 

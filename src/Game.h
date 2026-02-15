@@ -13,6 +13,8 @@
 #include <vector>
 #include <unordered_map>
 #include "Actor.h"
+class ShapeComponent;
+class ReferenceActor;
 using Math::Vector2;
 class Player;
 class SpacetimePlot;
@@ -24,7 +26,7 @@ public:
 
     static constexpr const char* BUDDHA_FILE = "../src/Assets/Buddha.webp";
 
-	static constexpr float DURATION_SECONDS = 10.0f;
+	static constexpr float DURATION_SECONDS = 3.0f;
 	static constexpr unsigned ESTIMATED_FPS = 60;
 
 	static constexpr float PLOT_POINT_SIZE = 5.0f;
@@ -87,6 +89,7 @@ public:
 
 	SDL_Texture* GetTexture(std::string_view filename);
 	SDL_Renderer* GetRenderer(){return mSdlRenderer;}
+	[[nodiscard]] float GetDT()const{return mDT;}
 private:
 	// window and renderer
 	SDL_Window* mSdlWindow;
@@ -105,6 +108,9 @@ private:
 	std::vector<Actor*> mPendingCreate;
 	std::vector<Actor*> mPendingDestroy;
 	Player* mPlayer;
+	ReferenceActor* mReferenceActor;
+	// std::unique_ptr<Player> mPlayer;
+	// std::unique_ptr<ReferenceActor> mReferenceActor;
 	void DestroyActor(Actor* actor);
 
 
@@ -137,12 +143,12 @@ private:
 	};
 
 	void DrawGame();
-	void DrawPaddleText();
+	// void DrawPaddleText();
 
 	float mDT = 0.0f;
 	Vector2 mMousePos;
 	std::unique_ptr<SpacetimePlot> mSpacetimePlot;
-	std::unique_ptr<Image> mBuddha;
+	// std::unique_ptr<Image> mBuddha;
 };
 
 extern Game gGame;

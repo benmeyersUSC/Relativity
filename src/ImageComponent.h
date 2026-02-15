@@ -6,19 +6,19 @@
 #define RELATIVITY_IMAGECOMPONENT_H
 #include "Component.h"
 #include <SDL3/SDL.h>
-
 #include "Transform.h"
+
 class ImageComponent : public  Component{
-    Transform mTransform;
     SDL_Texture* mTexture = nullptr;
+    SDL_Renderer* mRenderer = nullptr;
 public:
-    void Draw(SDL_Renderer* renderer);
-    void DrawWithPivot(SDL_Renderer* renderer, SDL_FPoint pivot);
+    void Draw();
+    void DrawWithPivot(SDL_FPoint pivot);
     void SetTexture(SDL_Texture* texture);
-    Transform& GetTransform(){return mTransform;}
+    [[nodiscard]] Transform& GetTransform() const;
 protected:
     explicit ImageComponent(class Actor *owner);
-    void HandleUpdate(float deltaTime) override;
+    void HandleRender() override;
 
     friend class Actor;
 };

@@ -24,6 +24,16 @@ void Actor::Update(float deltaTime)
     }
     HandleUpdate(deltaTime);
 }
+
+void Actor::Render() {
+    for (auto& comp : mComponents) {
+        comp->Render();
+    }
+    HandleRender();
+}
+void Actor::HandleRender() {
+}
+
 void Actor::Input(const bool keys[], SDL_MouseButtonFlags mouseButtons,
                   const Vector2& posMouse)
 {
