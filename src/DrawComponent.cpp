@@ -41,16 +41,35 @@ void DrawComponent::AddRect(float x, float y, float w, float h, Uint8 r, Uint8 g
 }
 
 void DrawComponent::AddScaledWidthRect(float x, float y, float maxW, float h, float pct, Uint8 r, Uint8 g,
-    Uint8 b, Uint8 a, std::string_view endMarker, float pad, float textScale) {
-    AddRect(x, y, maxW * pct, h, r, g, b, a);
-    AddText(x + maxW * pct + pad * textScale, y - Game::HALF_CHAR_PIXELS * textScale + h/2.0f, endMarker, textScale);
+    Uint8 b, Uint8 a, std::string_view endMarker, float pad, float textScale, bool reversed) {
+    float len = maxW * pct;
+    float textCenterY = y - Game::HALF_CHAR_PIXELS * textScale + h / 2.0f;
+    if (reversed) {
+        // bar grows left from x, text on left end
+        AddRect(x - len, y, len, h, r, g, b, a);
+        float markerW = Game::CHAR_PIXELS * textScale * static_cast<float>(endMarker.size());
+        AddText(x - len - pad * textScale - markerW, textCenterY, endMarker, textScale);
+    } else {
+        // bar grows right from x, text on right end
+        AddRect(x, y, len, h, r, g, b, a);
+        AddText(x + len + pad * textScale, textCenterY, endMarker, textScale);
+    }
 }
 
 void DrawComponent::AddScaledHeightRect(float x, float y, float w, float maxH, float pct, Uint8 r, Uint8 g,
-    Uint8 b, Uint8 a, std::string_view endMarker, float pad, float textScale) {
-    float realY = y + maxH * (1.0f - pct);
-    AddRect(x, realY, w, maxH * pct, r, g, b, a);
-    AddText(x - Game::HALF_CHAR_PIXELS * textScale + w/2.0f, realY - pad * textScale - Game::HALF_CHAR_PIXELS, endMarker, textScale);
+    Uint8 b, Uint8 a, std::string_view endMarker, float pad, float textScale, bool reversed) {
+    float len = maxH * pct;
+    float textCenterX = x - Game::HALF_CHAR_PIXELS * textScale * static_cast<float>(endMarker.size()) + w / 2.0f;
+    if (reversed) {
+        // bar grows down from y, text below bottom of bar
+        AddRect(x, y, w, len, r, g, b, a);
+        AddText(textCenterX, y + len + pad * textScale, endMarker, textScale);
+    } else {
+        // bar grows up from bottom (y + maxH), text above top of bar
+        float realY = y + maxH - len;
+        AddRect(x, realY, w, len, r, g, b, a);
+        AddText(textCenterX, realY - pad * textScale - Game::CHAR_PIXELS * textScale, endMarker, textScale);
+    }
 }
 
 

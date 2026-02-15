@@ -24,8 +24,8 @@ class SpacetimeDisplay : public  Actor{
 
     float mDt = 0.0f;
 
-    unsigned mTimePrintInterval;
-    float mYStep;
+    unsigned mTimePrintInterval{};
+    float mYStep{};
     void DrawPoints();
     void DrawMouse();
     void DrawVelocityMeter(float mouseVelo, float mouseTime);

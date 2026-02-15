@@ -51,8 +51,8 @@ void ImageComponent::SetTexture(SDL_Texture* texture)
     mTexture = texture;
 }
 
-Transform & ImageComponent::GetTransform() const {
-    {return GetOwner()->GetTransform();}
+Transform & ImageComponent::GetTransform() {
+    return mUseLocalTransform ? mLocalTransform : GetOwner()->GetTransform();
 }
 
 ImageComponent::ImageComponent(class Actor *owner) : Component(owner) {
@@ -61,6 +61,10 @@ ImageComponent::ImageComponent(class Actor *owner) : Component(owner) {
 
 void ImageComponent::HandleRender() {
     Component::HandleRender();
-    Draw();
+    if (mHasPivot) {
+        DrawWithPivot(mPivot);
+    } else {
+        Draw();
+    }
 }
 

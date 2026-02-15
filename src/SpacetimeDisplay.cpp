@@ -4,6 +4,7 @@
 
 #include "SpacetimeDisplay.h"
 
+#include <algorithm>
 #include "DrawComponent.h"
 #include "Game.h"
 #include "Line.h"
@@ -127,7 +128,7 @@ void SpacetimeDisplay::DrawMouse() {
 	// SDL_SetRenderDrawColor(gGame.GetRenderer(), 0, 0, Game::MAX_COLOR, Game::MAX_COLOR);
 	// gGame.DrawFilledCircle(mousePos + Game::HALF_WIDTH, gGame.GetMousePos().y, playerRadius);
 
-	// THIS IS RIGHT BUT NEEDS TO GO TO SPACETIMEPLAYER
+	// THIS IS RIGHT BUT NEEDS TO GO TO SPACETIME PLAYER
 	float playerRadius = 27.0f;
 	mDraw->AddFilledCircle(
 	mousePos + Game::HALF_WIDTH, gGame.GetMousePos().y, playerRadius,
@@ -139,9 +140,6 @@ void SpacetimeDisplay::DrawMouse() {
 	// mArrow->GetTransform().SetRotation(rotationSign * Math::ToDegrees(Math::Acos(mouseTime/100.0f)));
 	// mArrow->GetTransform().SetPosition({mousePos + Game::HALF_WIDTH, gGame.GetMousePos().y });
 	// mArrow->Draw(gGame.GetRenderer());
-
-	// spacetime velocity meter
-	DrawVelocityMeter(mouseVelo, mouseTime);
 
 	// --- cumulative time bars (bottom-right) ---
 	float barMaxH = 270.0f;
@@ -167,7 +165,7 @@ void SpacetimeDisplay::DrawMouse() {
 	// SDL_RenderFillRect(gGame.GetRenderer(), &buddhaBar);
 	mDraw->AddScaledHeightRect(
 		buddhaX, barBaseY - barMaxH, barW, barMaxH, buddhaFrac, 135, 108, 32, Game::MAX_COLOR,
-		DrawComponent::FormatString("%.2fs", coordinateTimeAtMouse), 1.0f
+		DrawComponent::FormatString("%.2fs", coordinateTimeAtMouse), 2.0f
 	);
 
 	// player bar left of buddha
@@ -177,7 +175,7 @@ void SpacetimeDisplay::DrawMouse() {
 	// SDL_RenderFillRect(gGame.GetRenderer(), &playerBar);
 	mDraw->AddScaledHeightRect(
 		playerX, barBaseY - barMaxH, barW, barMaxH, playerFrac, 0, 0, Game::MAX_COLOR, Game::MAX_COLOR,
-		DrawComponent::FormatString("%.2fs", mCumulativeProperTime[mouseHeightIndex]), 1.0f
+		DrawComponent::FormatString("%.2fs", mCumulativeProperTime[mouseHeightIndex]), 2.0f
 	);
 
 	// outline around bar area
@@ -192,6 +190,9 @@ void SpacetimeDisplay::DrawMouse() {
 	// float buddhaLabelY = barBaseY - buddhaH - barPad;
 	// gGame.DrawFloat(playerX - 2, playerLabelY, "%.2fs", mCumulativeProperTime[mouseHeightIndex], labelScale);
 	// gGame.DrawFloat(buddhaX - 2, buddhaLabelY, "%.2fs", coordinateTimeAtMouse, labelScale);
+
+	// spacetime velocity meter
+	DrawVelocityMeter(mouseVelo, mouseTime);
 }
 
 void SpacetimeDisplay::DrawVelocityMeter(float mouseVelo, float mouseTime) {
@@ -245,13 +246,10 @@ void SpacetimeDisplay::DrawVelocityMeter(float mouseVelo, float mouseTime) {
 		veloB = 0;
 		veloA = Game::MAX_COLOR;
 	}
-	// sdl x we specify left side so if neg velo, we add it (to shift to left)
-	float barX = centerX + static_cast<float>(spatialLen < 0.0f) * spatialLen;
-	//														     and width is len!
-	// SDL_FRect spatialBar(barX, centerY - barThickness / 2.0f, Math::Abs(spatialLen), barThickness);
-	// SDL_RenderFillRect(gGame.GetRenderer(), &spatialBar);
-	mDraw->AddScaledWidthRect(barX, centerY - barThickness / 2.0f, radius, barThickness, spatialFrac,
-		veloR, veloG, veloB, veloA, "v", 1.0f);
+	// spatial bar grows from center: right if positive, left if negative
+	bool negVelo = spatialFrac < 0.0f;
+	mDraw->AddScaledWidthRect(centerX, centerY - barThickness / 2.0f, radius, barThickness,
+		Math::Abs(spatialFrac), veloR, veloG, veloB, veloA, "v", 2.0f, 2.0f, negVelo);
 
 	// time component
 	float timeFrac = mouseTime / 100.0f; // mouseTime was a full percentage
@@ -261,7 +259,7 @@ void SpacetimeDisplay::DrawVelocityMeter(float mouseVelo, float mouseTime) {
 	// SDL_FRect timeBar(centerX - barThickness / 2.0f, centerY - timeLen, barThickness, timeLen);
 	// SDL_RenderFillRect(gGame.GetRenderer(), &timeBar);
 	mDraw->AddScaledHeightRect(centerX - barThickness / 2.0f, centerY - radius, barThickness, radius, timeFrac,
-		255, 255, 32, Game::MAX_COLOR, "t", 1.0f);
+		255, 255, 32, Game::MAX_COLOR, "t", 3.0f, 2.0f);
 
 	// arrow itself
 	auto rotationSign = mouseVelo >= 0.0f ? 1.0f : -1.0f;
@@ -276,8 +274,7 @@ void SpacetimeDisplay::DrawVelocityMeter(float mouseVelo, float mouseTime) {
 	scaledW *= meterScale;
 	scaledH *= meterScale;
 	// y is already set, now go to center (x-wise) of arrow for true pivot
-	SDL_FPoint pivot = {scaledW / 2.0f, scaledH};
-	mVeloArrow->DrawWithPivot(pivot);
+	mVeloArrow->SetPivot({scaledW / 2.0f, scaledH});
 }
 
 void SpacetimeDisplay::HandleRender() {
@@ -305,15 +302,12 @@ SpacetimeDisplay::SpacetimeDisplay() {
     yLevel = gGame.CreateActor<Line>();
     yLevel->SetSlope(Line::X_AXIS_SLOPE);
 
-    mTimePrintInterval = static_cast<unsigned>(static_cast<float>(mActorPositions.size()) / NUM_TIME_PRINTS);
-    // plot as many positions fit in the window (we'll accept overlap)
-    mYStep = Game::WINDOW_HEIGHT / static_cast<float>(mActorPositions.size());
-
-    mVeloArrow = CreateComponent<ImageComponent>();
-    mVeloArrow->GetTransform().SetScale(0.24f);
-    mVeloArrow->SetTexture(gGame.GetTexture(ARROW_FILE));
-
     mDraw = CreateComponent<DrawComponent>();
+
+	mVeloArrow = CreateComponent<ImageComponent>();
+	mVeloArrow->SetUseLocalTransform(true);
+	mVeloArrow->GetTransform().SetScale(0.24f);
+	mVeloArrow->SetTexture(gGame.GetTexture(ARROW_FILE));
 }
 
 size_t SpacetimeDisplay::GetTimestepIndex() const {
@@ -321,6 +315,9 @@ size_t SpacetimeDisplay::GetTimestepIndex() const {
 }
 
 void SpacetimeDisplay::Setup(){
+    mTimePrintInterval = std::max(1u, static_cast<unsigned>(static_cast<float>(mActorPositions.size()) / NUM_TIME_PRINTS));
+    mYStep = Game::WINDOW_HEIGHT / static_cast<float>(mActorPositions.size());
+
     mDt = Game::DURATION_SECONDS / static_cast<float>(mActorTimeVelocities.size());
     mCumulativeProperTime.resize(mActorTimeVelocities.size());
 
