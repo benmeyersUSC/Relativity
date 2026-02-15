@@ -15,6 +15,10 @@ void SpacetimeComponent::Setup(size_t frameLife) {
     mTimeVelocities.reserve(frameLife);
 }
 
+float SpacetimeComponent::LifePct() const {
+    return static_cast<float>(mPositions.size()) / static_cast<float>(mPositions.capacity());
+}
+
 SpacetimeComponent::SpacetimeComponent(class Actor *owner)
     : Component(owner) {
 }

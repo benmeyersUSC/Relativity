@@ -12,6 +12,7 @@
 
 #include "Image.h"
 #include "DrawComponent.h"
+#include "Line.h"
 Game gGame;
 
 Game::Game()
@@ -270,13 +271,6 @@ void Game::GenerateOutput()
 	SDL_SetRenderDrawColor(mSdlRenderer, 0, 0, 0, MAX_COLOR);
 	SDL_RenderClear(mSdlRenderer);
 
-	// x axis!
-	SDL_SetRenderDrawColor(mSdlRenderer, MAX_COLOR,MAX_COLOR,MAX_COLOR,MAX_COLOR);
-	for (size_t i = 0; i < WINDOW_WIDTH; ++i) {
-		SDL_FRect rect(i - 1.0f, HALF_HEIGHT - 1.0f, 2.0f, 2.0f);
-		SDL_RenderFillRect(mSdlRenderer, &rect);
-	}
-
 	// if games done we draw spacetime
 	if (mGameDone) {
 		mSpacetimePlot->Draw();
@@ -290,20 +284,18 @@ void Game::GenerateOutput()
 
 void Game::LoadData()
 {
-	// mPlayer = CreateActor<Player>();
-	mPlayer = CreateActor<Player>();
-	mPlayer->GetTransform().SetPosition(Vector2(WINDOW_WIDTH / HALF_DIVISOR, WINDOW_HEIGHT / HALF_DIVISOR ));
-	mPlayer->GetSpacetime()->Setup(DURATION_SECONDS * ESTIMATED_FPS);
-
-	// mBuddha = std::make_unique<Image>();
-	// mBuddha->GetTransform().SetScale(0.1f);
-	// mBuddha->SetTexture(gGame.GetTexture(BUDDHA_FILE));
-	// mBuddha->GetTransform().SetPosition({Game::HALF_WIDTH, Game::HALF_HEIGHT});
+	auto* xAxis = CreateActor<Line>();
+	xAxis->SetOrigin(Line::X_AXIS_ORIGIN);
+	xAxis->SetSlope(Line::X_AXIS_SLOPE);
 
 	mReferenceActor = CreateActor<ReferenceActor>();
 	mReferenceActor->GetTransform().SetScale(0.1f);
 	mReferenceActor->GetTransform().SetPosition({Game::HALF_WIDTH, Game::HALF_HEIGHT});
 	mReferenceActor->Setup();
+
+	mPlayer = CreateActor<Player>();
+	mPlayer->GetTransform().SetPosition(Vector2(WINDOW_WIDTH / HALF_DIVISOR, WINDOW_HEIGHT / HALF_DIVISOR ));
+	mPlayer->GetSpacetime()->Setup(DURATION_SECONDS * ESTIMATED_FPS);
 }
 
 void Game::UnloadData()

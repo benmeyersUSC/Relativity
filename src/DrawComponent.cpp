@@ -21,22 +21,38 @@ void DrawComponent::HandleRender() {
     mShapes.clear();
 }
 
-void DrawComponent::DrawFloat(float x, float y, const char* fmt, float value, float scale) {
-    mShapes.emplace_back(ShapeText{x, y, scale, FormatString(fmt, value), Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR});
-}
-
-void DrawComponent::DrawInt(float x, float y, int value, float scale) {
-    mShapes.emplace_back(ShapeText{x, y, scale, FormatString("%i", value), Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR});
+void DrawComponent::AddText(float x, float y, std::string_view txt, float scale) {
+    mShapes.emplace_back(ShapeText{x, y, scale, txt.data(), Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR});
 }
 
 
-void DrawComponent::DrawFilledCircle(float cx, float cy, float radius, Uint8 r, Uint8 g,Uint8 b,Uint8 a) {
+void DrawComponent::AddFilledCircle(float cx, float cy, float radius, Uint8 r, Uint8 g,Uint8 b,Uint8 a) {
     float r2 = radius * radius;
     for (float dy = -radius; dy <= radius; dy += 1.0f) {
         float dx = Math::Sqrt(r2 - dy * dy);
         mShapes.emplace_back(ShapeRect{cx - dx, cy + dy, dx * 2.0f, 1.0f, r, g, b, a});
     }
 }
+
+void DrawComponent::AddRect(float x, float y, float w, float h, Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
+    mShapes.emplace_back(ShapeRect{
+        x, y , w, h, r, g, b, a
+    });
+}
+
+void DrawComponent::AddScaledWidthRect(float x, float y, float maxW, float h, float pct, Uint8 r, Uint8 g,
+    Uint8 b, Uint8 a, std::string_view endMarker, float pad, float textScale) {
+    AddRect(x, y, maxW * pct, h, r, g, b, a);
+    AddText(x + maxW * pct + pad * textScale, y - Game::HALF_CHAR_PIXELS * textScale + h/2.0f, endMarker, textScale);
+}
+
+void DrawComponent::AddScaledHeightRect(float x, float y, float w, float maxH, float pct, Uint8 r, Uint8 g,
+    Uint8 b, Uint8 a, std::string_view endMarker, float pad, float textScale) {
+    float realY = y + maxH * (1.0f - pct);
+    AddRect(x, realY, w, maxH * pct, r, g, b, a);
+    AddText(x - Game::HALF_CHAR_PIXELS * textScale + w/2.0f, realY - pad * textScale - Game::HALF_CHAR_PIXELS, endMarker, textScale);
+}
+
 
 void DrawComponent::SetColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a) const {
     SDL_SetRenderDrawColor(mRenderer, r, g, b, a);

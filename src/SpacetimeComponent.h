@@ -14,6 +14,7 @@ public:
 	float& GetVelocity(){return mVelo;}
 	[[nodiscard]] float GetTimeFactor()const;
 	void Setup(size_t frameLife);
+	[[nodiscard]] float LifePct()const;
 protected:
 	explicit SpacetimeComponent(class Actor *owner);
 	void HandleUpdate(float deltaTime) override;

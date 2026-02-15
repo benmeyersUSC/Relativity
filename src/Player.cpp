@@ -10,23 +10,26 @@
 void Player::HandleRender() {
     Vector2 pos = GetTransform().GetPosition();
     float radius = GetTransform().GetSize().x / 2.0f;
-    mDraw->DrawFilledCircle(pos.x, pos.y, radius, 0, 0, Game::MAX_COLOR, Game::MAX_COLOR);
+    mDraw->AddFilledCircle(pos.x, pos.y, radius, 0, 0, Game::MAX_COLOR, Game::MAX_COLOR);
 
     Actor::HandleRender();
     // now we type in the score onto the paddle
     Vector2 paddleRect = GetTransform().GetPosition();
-
-    // time remaining
-    mDraw->DrawInt(paddleRect.x - Game::HALF_CHAR_PIXELS, paddleRect.y - 10.0f / Game::HALF_CHAR_PIXELS, static_cast<int>(Game::DURATION_SECONDS - gGame.GetDT()), 1.35f);
 
     // this is so jank and boof...fix
     // pos + velo scaled 2x
     float posY = paddleRect.y - 10.0f / Game::HALF_CHAR_PIXELS - GetTransform().GetSize().y * 3 - 36.0f;
     float veloY = paddleRect.y - 10.0f / Game::HALF_CHAR_PIXELS - GetTransform().GetSize().y * 2 - 36.0f;
     float timeY = paddleRect.y - 10.0f / Game::HALF_CHAR_PIXELS - GetTransform().GetSize().y - 36.0f;
-    mDraw->DrawFloat(Game::HALF_WIDTH - Game::CHAR_PIXELS*27, posY, "Space Position: %.0f px", GetTransform().GetPosition().x - Game::HALF_WIDTH, 2.0f);
-    mDraw->DrawFloat(Game::HALF_WIDTH - Game::CHAR_PIXELS*27, veloY, "Space Velocity: %.0f px/s", GetSpacetime()->GetVelocity(), 2.0f);
-    mDraw->DrawFloat(Game::HALF_WIDTH - Game::CHAR_PIXELS*27, timeY, "Aging at %.2f%% speed", GetSpacetime()->GetTimeFactor() * 100.0f, 2.0f);
+    mDraw->AddText(Game::HALF_WIDTH - Game::CHAR_PIXELS*27, posY, DrawComponent::FormatString("Space Position: %.0f px", GetTransform().GetPosition().x - Game::HALF_WIDTH), 2.0f);
+    mDraw->AddText(Game::HALF_WIDTH - Game::CHAR_PIXELS*27, veloY, DrawComponent::FormatString("Space Velocity: %.0f px/s", GetSpacetime()->GetVelocity()), 2.0f);
+    mDraw->AddText(Game::HALF_WIDTH - Game::CHAR_PIXELS*27, timeY, DrawComponent::FormatString("Aging at %.2f%% speed", GetSpacetime()->GetTimeFactor() * 100.0f), 2.0f);
+
+    // time remaining
+    float timeBarWid = Game::WINDOW_WIDTH;
+    mDraw->AddScaledWidthRect(Game::HALF_WIDTH - timeBarWid/2.0f, Game::WINDOW_HEIGHT - 27.0f, timeBarWid, 27.0f, (1.0f - mSpacetime->LifePct()),  135, Game::MAX_COLOR, 135, Game::MAX_COLOR,
+        DrawComponent::FormatString("%i remaining...", static_cast<int>(Game::DURATION_SECONDS - gGame.GetDT())), Game::CHAR_PIXELS, 2.7f);
+
 }
 
 void Player::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,

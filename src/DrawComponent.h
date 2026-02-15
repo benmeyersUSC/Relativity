@@ -12,8 +12,7 @@
 
 
 class DrawComponent : public Component{
-    template <typename T>
-    static std::string FormatString(const char* fmt, T val);
+
 protected:
     explicit DrawComponent(class Actor *owner);
     void HandleUpdate(float deltaTime) override;
@@ -21,9 +20,13 @@ protected:
 
     friend class Actor;
 public:
-    void DrawFloat(float x, float y, const char* fmt, float value, float scale = 1.0f);
-    void DrawInt(float x, float y, int value, float scale = 1.0f);
-    void DrawFilledCircle(float cx, float cy, float radius, Uint8 r, Uint8 g,Uint8 b,Uint8 a);
+    template <typename T>
+    static std::string FormatString(const char* fmt, T val);
+    void AddText(float x, float y, std::string_view txt, float scale = 1.0f);
+    void AddFilledCircle(float cx, float cy, float radius, Uint8 r, Uint8 g,Uint8 b,Uint8 a);
+    void AddRect(float x, float y, float w, float h, Uint8 r, Uint8 g,Uint8 b,Uint8 a);
+    void AddScaledWidthRect(float x, float y, float maxW, float h, float pct, Uint8 r, Uint8 g,Uint8 b,Uint8 a, std::string_view endMarker = "", float pad = 0.0f, float textScale = 1.0f);
+    void AddScaledHeightRect(float x, float y, float w, float maxH, float pct, Uint8 r, Uint8 g,Uint8 b,Uint8 a, std::string_view endMarker = "", float pad = 0.0f, float textScale = 1.0f);
 
     void SetColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a) const;
 
