@@ -23,16 +23,25 @@ class SpacetimeDisplay : public  Actor{
     std::vector<float> mCumulativeProperTime;
 
     float mDt = 0.0f;
+    float mMousePos = 0.0f;
+    float mMouseVelo = 0.0f;
+    float mMouseTime = 0.0f;
 
     unsigned mTimePrintInterval{};
     float mYStep{};
     void DrawPoints();
-    void DrawMouse();
-    void DrawVelocityMeter(float mouseVelo, float mouseTime);
+    void DrawMouse(size_t mouseHeightIndex, float coordinateTimeAtMouse);
+    void DrawVelocityMeter();
+    void DrawAgingBars(size_t mouseHeightIndex, float coordinateTimeAtMouse);
+
 protected:
     void HandleRender() override;
 
 public:
+    [[nodiscard]] float GetMouseBasedPos()const {return mMousePos;}
+    [[nodiscard]] float GetMouseBasedVelo()const {return mMouseVelo;}
+    [[nodiscard]] float GetMouseBasedTime()const {return mMouseTime;}
+
     std::vector<float>& GetPositions(){return mActorPositions;}
     std::vector<float>& GetVelocities(){return mActorVelocities;}
     std::vector<float>& GetTimeVelocities(){return mActorTimeVelocities;}

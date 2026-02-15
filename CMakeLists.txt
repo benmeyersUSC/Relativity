@@ -17,12 +17,8 @@ add_executable(Relativity src/main.cpp
         src/Player.h
         src/Transform.cpp
         src/Transform.h
-        src/SpacetimePlot.cpp
-        src/SpacetimePlot.h
         src/SpacetimeComponent.cpp
         src/SpacetimeComponent.h
-        src/Image.cpp
-        src/Image.h
         src/Component.cpp
         src/Component.h
         src/ImageComponent.cpp
@@ -35,6 +31,10 @@ add_executable(Relativity src/main.cpp
         src/Line.h
         src/SpacetimeDisplay.cpp
         src/SpacetimeDisplay.h
+        src/SpacetimeReference.cpp
+        src/SpacetimeReference.h
+        src/SpacetimePlayer.cpp
+        src/SpacetimePlayer.h
 )
 
 target_link_libraries(Relativity PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)

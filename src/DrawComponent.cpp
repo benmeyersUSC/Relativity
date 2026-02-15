@@ -40,6 +40,10 @@ void DrawComponent::AddRect(float x, float y, float w, float h, Uint8 r, Uint8 g
     });
 }
 
+void DrawComponent::AddOutlineRect(float x, float y, float w, float h, Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
+    mShapes.emplace_back(ShapeOutlineRect{x, y, w, h, r, g, b, a});
+}
+
 void DrawComponent::AddScaledWidthRect(float x, float y, float maxW, float h, float pct, Uint8 r, Uint8 g,
     Uint8 b, Uint8 a, std::string_view endMarker, float pad, float textScale, bool reversed) {
     float len = maxW * pct;
@@ -90,4 +94,10 @@ void DrawComponent::Draw(const ShapeText &text) const {
     if (text.scale != 1.0f) { SDL_SetRenderScale(mRenderer, text.scale, text.scale); }
     SDL_RenderDebugTextFormat(mRenderer, text.x / text.scale, text.y / text.scale, "%s", text.text.c_str());
     if (text.scale != 1.0f) { SDL_SetRenderScale(mRenderer, 1.0f, 1.0f); }
+}
+
+void DrawComponent::Draw(const ShapeOutlineRect &rect) const {
+    SetColor(rect.r, rect.g, rect.b, rect.a);
+    SDL_FRect rct{rect.x, rect.y, rect.w, rect.h};
+    SDL_RenderRect(mRenderer, &rct);
 }

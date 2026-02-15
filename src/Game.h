@@ -13,13 +13,14 @@
 #include <vector>
 #include <unordered_map>
 #include "Actor.h"
+class SpacetimeReference;
+class SpacetimePlayer;
+
 class SpacetimeDisplay;
 class DrawComponent;
 class ReferenceActor;
 using Math::Vector2;
 class Player;
-class SpacetimePlot;
-class Image;
 
 class Game
 {
@@ -27,7 +28,7 @@ public:
 
     static constexpr const char* BUDDHA_FILE = "../src/Assets/Buddha.webp";
 
-	static constexpr float DURATION_SECONDS = 10.0f;
+	static constexpr float DURATION_SECONDS = 3.0f;
 	static constexpr unsigned ESTIMATED_FPS = 60;
 
 	static constexpr float PLOT_POINT_SIZE = 5.0f;
@@ -82,15 +83,12 @@ public:
 	}
 	void AddPendingDestroy(class Actor* actor);
 
-	// void DrawFloat(float x, float y, const char* fmt, float value, float scale = 1.0f);
-	// void DrawInt(float x, float y, int value, float scale = 1.0f);
-	// void DrawFilledCircle(float cx, float cy, float radius);
-
 	[[nodiscard]] const Vector2& GetMousePos()const{return mMousePos;}
 
 	SDL_Texture* GetTexture(std::string_view filename);
 	SDL_Renderer* GetRenderer(){return mSdlRenderer;}
 	[[nodiscard]] float GetDT()const{return mDT;}
+	SpacetimeDisplay* GetSpacetimeDisplay(){return mSpacetimeDisplay;}
 private:
 	// window and renderer
 	SDL_Window* mSdlWindow;
@@ -109,9 +107,8 @@ private:
 	std::vector<Actor*> mPendingCreate;
 	std::vector<Actor*> mPendingDestroy;
 	Player* mPlayer;
-	ReferenceActor* mReferenceActor;
-	// std::unique_ptr<Player> mPlayer;
-	// std::unique_ptr<ReferenceActor> mReferenceActor;
+	ReferenceActor* mReferenceActor = nullptr;
+
 	void DestroyActor(Actor* actor);
 
 
@@ -143,14 +140,12 @@ private:
 		return f * 100.0f / MAX_VELO;
 	};
 
-
-
 	float mDT = 0.0f;
 	Vector2 mMousePos;
 	size_t mTimestepIndex = 0;
 	SpacetimeDisplay* mSpacetimeDisplay = nullptr;
-	// std::unique_ptr<SpacetimePlot> mSpacetimePlot;
-	// std::unique_ptr<Image> mBuddha;
+	SpacetimeReference* mSpacetimeBuddha = nullptr;
+	SpacetimePlayer* mSpacetimePlayer = nullptr;
 };
 
 extern Game gGame;

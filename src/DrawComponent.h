@@ -25,6 +25,7 @@ public:
     void AddText(float x, float y, std::string_view txt, float scale = 1.0f);
     void AddFilledCircle(float cx, float cy, float radius, Uint8 r, Uint8 g,Uint8 b,Uint8 a);
     void AddRect(float x, float y, float w, float h, Uint8 r, Uint8 g,Uint8 b,Uint8 a);
+    void AddOutlineRect(float x, float y, float w, float h, Uint8 r, Uint8 g,Uint8 b,Uint8 a);
     void AddScaledWidthRect(float x, float y, float maxW, float h, float pct, Uint8 r, Uint8 g,Uint8 b,Uint8 a, std::string_view endMarker = "", float pad = 0.0f, float textScale = 1.0f, bool reversed = false);
     void AddScaledHeightRect(float x, float y, float w, float maxH, float pct, Uint8 r, Uint8 g,Uint8 b,Uint8 a, std::string_view endMarker = "", float pad = 0.0f, float textScale = 1.0f, bool reversed = false);
 
@@ -40,11 +41,17 @@ public:
         std::string text;
         Uint8 r, g, b, a;
     };
-    using ShapeEntry = std::variant<ShapeRect, ShapeText>;
 
+    struct ShapeOutlineRect {
+        float x, y, w, h;
+        Uint8 r, g, b, a;
+    };
+
+    using ShapeEntry = std::variant<ShapeRect, ShapeText, ShapeOutlineRect>;
 
     void Draw(const ShapeRect& rect) const;
     void Draw(const ShapeText& text) const;
+    void Draw(const ShapeOutlineRect& rect) const;
 
 private:
     SDL_Renderer* mRenderer = nullptr;

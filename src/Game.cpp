@@ -6,11 +6,11 @@
 #include "Player.h"
 #include <functional>
 #include "SDL3_image/SDL_image.h"
-#include "SpacetimePlot.h"
+#include "SpacetimePlayer.h"
 #include "SpacetimeComponent.h"
 #include "ImageComponent.h"
 
-#include "Image.h"
+#include "SpacetimeReference.h"
 #include "DrawComponent.h"
 #include "Line.h"
 #include "SpacetimeDisplay.h"
@@ -41,7 +41,7 @@ bool Game::Initialize()
 		return false;
 	}
 	// use window constants
-	mSdlWindow = SDL_CreateWindow("PONG", WINDOW_WIDTH, WINDOW_HEIGHT, 0);
+	mSdlWindow = SDL_CreateWindow("SPECIAL RELATIVITY", WINDOW_WIDTH, WINDOW_HEIGHT, 0);
 	if (mSdlWindow == nullptr)
 	{
 		return false;
@@ -137,17 +137,6 @@ void Game::AddPendingDestroy(class Actor *actor) {
 	}
 }
 
-// void Game::DrawFloat(float x, float y, const char* fmt, float value, float scale) {
-// 	return;
-// }
-//
-// void Game::DrawInt(float x, float y, int value, float scale) {
-// 	return;
-// }
-//
-// void Game::DrawFilledCircle(float cx, float cy, float radius) {
-// 	return;
-// }
 
 SDL_Texture * Game::GetTexture(std::string_view filename) {
 
@@ -188,9 +177,6 @@ void Game::EndGame() {
 
 	mSpacetimeDisplay = CreateActor<SpacetimeDisplay>();
 
-	// mSpacetimePlot = std::make_unique<SpacetimePlot>();
-
-
 	// transform raw samples...extract from actor(s) before we destroy them, pass along to spacetime plot
 	// - scaled by width
 	// - mapped via aggregation to vertical plotting space!
@@ -198,8 +184,10 @@ void Game::EndGame() {
 	TransformPoints(pv, mSpacetimeDisplay->GetVelocities(), mTransformVelocity, frameAgg);
 	TransformPoints(ptv, mSpacetimeDisplay->GetTimeVelocities(), mTransformTimeVelocity,frameAgg, false);
 
-	// mSpacetimePlot->Setup();
 	mSpacetimeDisplay->Setup();
+
+	mSpacetimeBuddha = CreateActor<SpacetimeReference>();
+	mSpacetimePlayer = CreateActor<SpacetimePlayer>();
 }
 
 void Game::UpdateGame()
@@ -237,15 +225,9 @@ void Game::GenerateOutput()
 	SDL_SetRenderDrawColor(mSdlRenderer, 0, 0, 0, MAX_COLOR);
 	SDL_RenderClear(mSdlRenderer);
 
-	// if games done we draw spacetime
-	// if (mGameDone) {
-	// 	// mSpacetimePlot->Draw();
-	// }
-	// else{
-		for (auto& a : mActors) {
-			a->Render();
-		}
-	// }
+	for (auto& a : mActors) {
+		a->Render();
+	}
 
 	SDL_RenderPresent(mSdlRenderer);
 }
