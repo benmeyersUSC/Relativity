@@ -33,6 +33,8 @@ add_executable(Relativity src/main.cpp
         src/ReferenceActor.h
         src/Line.cpp
         src/Line.h
+        src/SpacetimeDisplay.cpp
+        src/SpacetimeDisplay.h
 )
 
 target_link_libraries(Relativity PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)

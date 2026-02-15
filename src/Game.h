@@ -13,6 +13,7 @@
 #include <vector>
 #include <unordered_map>
 #include "Actor.h"
+class SpacetimeDisplay;
 class DrawComponent;
 class ReferenceActor;
 using Math::Vector2;
@@ -26,7 +27,7 @@ public:
 
     static constexpr const char* BUDDHA_FILE = "../src/Assets/Buddha.webp";
 
-	static constexpr float DURATION_SECONDS = 10.0f;
+	static constexpr float DURATION_SECONDS = 3.0f;
 	static constexpr unsigned ESTIMATED_FPS = 60;
 
 	static constexpr float PLOT_POINT_SIZE = 5.0f;
@@ -81,9 +82,9 @@ public:
 	}
 	void AddPendingDestroy(class Actor* actor);
 
-	void DrawFloat(float x, float y, const char* fmt, float value, float scale = 1.0f);
-	void DrawInt(float x, float y, int value, float scale = 1.0f);
-	void DrawFilledCircle(float cx, float cy, float radius);
+	// void DrawFloat(float x, float y, const char* fmt, float value, float scale = 1.0f);
+	// void DrawInt(float x, float y, int value, float scale = 1.0f);
+	// void DrawFilledCircle(float cx, float cy, float radius);
 
 	[[nodiscard]] const Vector2& GetMousePos()const{return mMousePos;}
 
@@ -126,7 +127,7 @@ private:
 
 	void EndGame();
 
-	void TransformPoints(const std::vector<float>& src, std::vector<float>& dest, const std::function<float(float)>& transformFunc, bool notTime=true) const;
+	static void TransformPoints(const std::vector<float>& src, std::vector<float>& dest, const std::function<float(float)>& transformFunc, unsigned frameAgg, bool notTime=true) ;
 	// these should return [-WIDTH/2, WIDTH/2]
 	std::function<float(float)> mTransformPosition = [](const float position) {
 		return position - WINDOW_WIDTH/2.0f;
@@ -142,12 +143,13 @@ private:
 		return f * 100.0f / MAX_VELO;
 	};
 
-	void DrawGame();
-	// void DrawPaddleText();
+
 
 	float mDT = 0.0f;
 	Vector2 mMousePos;
-	std::unique_ptr<SpacetimePlot> mSpacetimePlot;
+	size_t mTimestepIndex = 0;
+	SpacetimeDisplay* mSpacetimeDisplay = nullptr;
+	// std::unique_ptr<SpacetimePlot> mSpacetimePlot;
 	// std::unique_ptr<Image> mBuddha;
 };
 

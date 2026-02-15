@@ -7,31 +7,31 @@
 #include <vector>
 class Image;
 class SpacetimePlot {
-    static constexpr const char* ARROW_FILE = "../src/Assets/Arrow.png";
-    static constexpr float NUM_TIME_PRINTS = 9.0f;
-    std::vector<float> mActorPositions;
-    std::vector<float> mActorVelocities;
-    std::vector<float> mActorTimeVelocities;
-    std::vector<float> mCumulativeProperTime;
-    float mDt = 0.0f;
-
-    static void DrawYAxis();
-    void DrawPoints(float yStep, unsigned timePrintInterval);
-    void DrawMouse(float yStep);
-    void DrawVelocityMeter(float mouseVelo, float mouseTime);
-
-    std::unique_ptr<Image> mArrow;
-    std::unique_ptr<Image> mBuddha;
-    std::unique_ptr<Image> mMeterArrow;
-public:
-    std::vector<float>& GetPositions(){return mActorPositions;}
-    std::vector<float>& GetVelocities(){return mActorVelocities;}
-    std::vector<float>& GetTimeVelocities(){return mActorTimeVelocities;}
-    void Draw();
-    SpacetimePlot() ;
-    void Setup();
-    float GetCumulativeAgeDiff();
-    float GetCumulativeAgeDiff(size_t i);
+//     static constexpr const char* ARROW_FILE = "../src/Assets/Arrow.png";
+//     static constexpr float NUM_TIME_PRINTS = 9.0f;
+//     std::vector<float> mActorPositions;
+//     std::vector<float> mActorVelocities;
+//     std::vector<float> mActorTimeVelocities;
+//     std::vector<float> mCumulativeProperTime;
+//     float mDt = 0.0f;
+//
+//     static void DrawYAxis();
+//     void DrawPoints(float yStep, unsigned timePrintInterval);
+//     void DrawMouse(float yStep);
+//     void DrawVelocityMeter(float mouseVelo, float mouseTime);
+//
+//     std::unique_ptr<Image> mArrow;
+//     std::unique_ptr<Image> mBuddha;
+//     std::unique_ptr<Image> mMeterArrow;
+// public:
+//     std::vector<float>& GetPositions(){return mActorPositions;}
+//     std::vector<float>& GetVelocities(){return mActorVelocities;}
+//     std::vector<float>& GetTimeVelocities(){return mActorTimeVelocities;}
+//     void Draw();
+//     SpacetimePlot() ;
+//     void Setup();
+//     float GetCumulativeAgeDiff();
+//     float GetCumulativeAgeDiff(size_t i);
 };
 
 

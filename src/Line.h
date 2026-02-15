@@ -16,10 +16,10 @@ class Line : public  Actor{
     Vector2 mOrigin;
     DrawComponent* mDraw = nullptr;
 public:
-    static constexpr Vector2 X_AXIS_SLOPE(1.0f, 0.0f);
-    static constexpr Vector2 X_AXIS_ORIGIN(0.0f, Game::HALF_HEIGHT);
-    static constexpr Vector2 Y_AXIS_SLOPE(0.0f, 1.0f);
-    static constexpr Vector2 Y_AXIS_ORIGIN(Game::HALF_WIDTH, 0.0f);
+    static constexpr Vector2 X_AXIS_SLOPE{1.0f, 0.0f};
+    static constexpr Vector2 X_AXIS_ORIGIN{0.0f, Game::HALF_HEIGHT};
+    static constexpr Vector2 Y_AXIS_SLOPE{0.0f, 1.0f};
+    static constexpr Vector2 Y_AXIS_ORIGIN{Game::HALF_WIDTH, 0.0f};
 
     Line();
     void SetSlope(const Vector2& slope) {mSlope = slope;}

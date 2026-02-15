@@ -59,9 +59,11 @@ void DrawComponent::SetColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a) const {
 }
 
 void DrawComponent::Draw(const ShapeRect &rect) const {
+    SDL_SetRenderDrawBlendMode(mRenderer, SDL_BLENDMODE_BLEND);
     SetColor(rect.r, rect.g, rect.b, rect.a);
     SDL_FRect rct{rect.x, rect.y, rect.w, rect.h};
     SDL_RenderFillRect(mRenderer, &rct);
+    SDL_SetRenderDrawBlendMode(mRenderer, SDL_BLENDMODE_NONE);
 }
 
 void DrawComponent::Draw(const ShapeText &text) const {
