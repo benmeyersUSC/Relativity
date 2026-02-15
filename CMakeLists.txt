@@ -27,8 +27,8 @@ add_executable(Relativity src/main.cpp
         src/Component.h
         src/ImageComponent.cpp
         src/ImageComponent.h
-        src/ShapeComponent.cpp
-        src/ShapeComponent.h
+        src/DrawComponent.cpp
+        src/DrawComponent.h
         src/ReferenceActor.cpp
         src/ReferenceActor.h
 )

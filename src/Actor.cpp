@@ -26,10 +26,11 @@ void Actor::Update(float deltaTime)
 }
 
 void Actor::Render() {
+    // actor makes its rendering updates (adding shapes)
+    HandleRender();
     for (auto& comp : mComponents) {
         comp->Render();
     }
-    HandleRender();
 }
 void Actor::HandleRender() {
 }

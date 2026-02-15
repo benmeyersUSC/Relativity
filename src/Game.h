@@ -13,7 +13,7 @@
 #include <vector>
 #include <unordered_map>
 #include "Actor.h"
-class ShapeComponent;
+class DrawComponent;
 class ReferenceActor;
 using Math::Vector2;
 class Player;
@@ -26,7 +26,7 @@ public:
 
     static constexpr const char* BUDDHA_FILE = "../src/Assets/Buddha.webp";
 
-	static constexpr float DURATION_SECONDS = 3.0f;
+	static constexpr float DURATION_SECONDS = 10.0f;
 	static constexpr unsigned ESTIMATED_FPS = 60;
 
 	static constexpr float PLOT_POINT_SIZE = 5.0f;

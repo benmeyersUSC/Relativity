@@ -11,7 +11,7 @@
 #include "ImageComponent.h"
 
 #include "Image.h"
-#include "ShapeComponent.h"
+#include "DrawComponent.h"
 Game gGame;
 
 Game::Game()

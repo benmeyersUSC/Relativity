@@ -4,14 +4,14 @@
 #pragma once
 #include "Actor.h"
 class SpacetimeComponent;
-class ShapeComponent;
+class DrawComponent;
 
 class Player : public Actor
 {
 	static constexpr float BRAKE_FACTOR = 0.9f;
 	short mVeloSign = 0.0f;
 	SpacetimeComponent* mSpacetime;
-	ShapeComponent* mShape;
+	DrawComponent* mDraw;
 	void FixPosition();
 public:
 	static constexpr float PLAYER_HEIGHT = 54.0f;
