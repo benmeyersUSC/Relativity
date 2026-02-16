@@ -11,7 +11,6 @@ class ImageComponent;
 class DrawComponent;
 
 class SpacetimeDisplay : public  Actor{
-    static constexpr const char* ARROW_FILE = "../src/Assets/Arrow.png";
     static constexpr float NUM_TIME_PRINTS = 9.0f;
 
     DrawComponent* mDraw = nullptr;

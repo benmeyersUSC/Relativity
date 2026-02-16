@@ -24,6 +24,7 @@ public:
     [[nodiscard]] Transform& GetTransform();
 protected:
     explicit ImageComponent(class Actor *owner);
+    ~ImageComponent() override;
     void HandleRender() override;
 
     friend class Actor;

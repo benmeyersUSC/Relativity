@@ -3,12 +3,15 @@
 //
 
 #include "Component.h"
+#include "Game.h"
 
 Component::Component(Actor* owner)
 {
     mOwner = owner;
 }
-Component::~Component() = default;
+Component::~Component()
+{
+}
 void Component::HandleUpdate(float deltaTime)
 {
 }
@@ -36,4 +39,10 @@ void Component::Input(const bool keys[], SDL_MouseButtonFlags mouseButtons,
                       const Math::Vector2& relativeMouse)
 {
     HandleInput(keys, mouseButtons, relativeMouse);
+}
+void Component::SetDrawOrder(int order)
+{
+    gGame.RemoveRenderable(this);
+    mDrawOrder = order;
+    gGame.AddRenderable(this);
 }

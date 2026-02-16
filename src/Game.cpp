@@ -11,6 +11,7 @@
 #include "ImageComponent.h"
 
 #include "SpacetimeReference.h"
+#include "Component.h"
 #include "DrawComponent.h"
 #include "Line.h"
 #include "SpacetimeDisplay.h"
@@ -130,6 +131,18 @@ void Game::TransformPoints(const std::vector<float>& src, std::vector<float>& de
 	}
 }
 
+void Game::AddRenderable(Component* comp) {
+	const auto it = std::ranges::upper_bound(mRenderables, comp,
+	                                   [](const Component* a, const Component* b) {
+		                                   return a->GetDrawOrder() < b->GetDrawOrder();
+	                                   });
+	mRenderables.insert(it, comp);
+}
+
+void Game::RemoveRenderable(Component* comp) {
+	std::erase(mRenderables, comp);
+}
+
 void Game::AddPendingDestroy(class Actor *actor) {
 	if (std::ranges::find(mPendingDestroy, actor) == mPendingDestroy.end())
 	{
@@ -140,9 +153,10 @@ void Game::AddPendingDestroy(class Actor *actor) {
 
 SDL_Texture * Game::GetTexture(std::string_view filename) {
 
-	if (mTextures.contains(filename.data()))
+	auto it = mTextures.find(filename.data());
+	if (it != mTextures.end())
 	{
-		return mTextures[filename.data()];
+		return it->second;
 	}
 	SDL_Surface* imgSurface = IMG_Load(filename.data());
 	if (imgSurface == nullptr)
@@ -161,11 +175,10 @@ SDL_Texture * Game::GetTexture(std::string_view filename) {
 
 
 void Game::EndGame() {
-	auto ppos = mPlayer->GetSpacetime()->GetPositions();
-	auto pv = mPlayer->GetSpacetime()->GetVelocities();
-	auto ptv = mPlayer->GetSpacetime()->GetTimeVelocities();
-	// unsigned numSamples = mPaddle->GetPositions().size();
-	unsigned numSamples = mPlayer->GetSpacetime()->GetPositions().size();
+	auto ppos = std::move(mPlayer->GetSpacetime()->GetPositions());
+	auto pv = std::move(mPlayer->GetSpacetime()->GetVelocities());
+	auto ptv = std::move(mPlayer->GetSpacetime()->GetTimeVelocities());
+	unsigned numSamples = ppos.size();
 	auto maxPlotPoints = static_cast<unsigned>(WINDOW_HEIGHT / PLOT_POINT_SIZE);
 	// how many samples will we average to meet the ideal/max plot points
 	auto frameAgg = std::max(1u, numSamples/ maxPlotPoints);
@@ -225,8 +238,14 @@ void Game::GenerateOutput()
 	SDL_SetRenderDrawColor(mSdlRenderer, 0, 0, 0, MAX_COLOR);
 	SDL_RenderClear(mSdlRenderer);
 
+	// actors call their own HandleRender, creating shapes
 	for (auto& a : mActors) {
 		a->Render();
+	}
+
+	// actual rendering components then draw shapes to SDL in order
+	for (auto& comp : mRenderables) {
+		comp->Render();
 	}
 
 	SDL_RenderPresent(mSdlRenderer);
@@ -244,7 +263,7 @@ void Game::LoadData()
 	mReferenceActor->Setup();
 
 	mPlayer = CreateActor<Player>();
-	mPlayer->GetTransform().SetPosition(Vector2(WINDOW_WIDTH / HALF_DIVISOR, WINDOW_HEIGHT / HALF_DIVISOR ));
+	mPlayer->GetTransform().SetPosition(Vector2(HALF_WIDTH, HALF_HEIGHT ));
 	mPlayer->GetSpacetime()->Setup(DURATION_SECONDS * ESTIMATED_FPS);
 }
 

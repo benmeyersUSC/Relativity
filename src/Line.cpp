@@ -13,23 +13,23 @@ Line::Line() : Actor() {
 void Line::HandleRender() {
     bool steep = Math::Abs(mSlope.y) > Math::Abs(mSlope.x);
 
+    float x1, y1, x2, y2;
     if (steep) {
-        // step along y, compute x
         float ratio = Math::NearlyZero(mSlope.y) ? 0.0f : mSlope.x / mSlope.y;
-        for (float y = 0.0f; y < Game::WINDOW_HEIGHT; y += 1.0f) {
-            float x = mOrigin.x + ratio * (y - mOrigin.y);
-            mDraw->AddRect(x - HALF_POINT_SIZE, y - HALF_POINT_SIZE, POINT_SIZE, POINT_SIZE,
-                           Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR);
-        }
+        y1 = 0.0f;
+        x1 = mOrigin.x + ratio * (y1 - mOrigin.y);
+        y2 = Game::WINDOW_HEIGHT;
+        x2 = mOrigin.x + ratio * (y2 - mOrigin.y);
     } else {
-        // step along x, compute y
         float ratio = Math::NearlyZero(mSlope.x) ? 0.0f : mSlope.y / mSlope.x;
-        for (float x = 0.0f; x < Game::WINDOW_WIDTH; x += 1.0f) {
-            float y = mOrigin.y + ratio * (x - mOrigin.x);
-            mDraw->AddRect(x - HALF_POINT_SIZE, y - HALF_POINT_SIZE, POINT_SIZE, POINT_SIZE,
-                           Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR);
-        }
+        x1 = 0.0f;
+        y1 = mOrigin.y + ratio * (x1 - mOrigin.x);
+        x2 = Game::WINDOW_WIDTH;
+        y2 = mOrigin.y + ratio * (x2 - mOrigin.x);
     }
+
+    mDraw->AddLine(x1, y1, x2, y2,
+                   Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR);
 
     Actor::HandleRender();
 }

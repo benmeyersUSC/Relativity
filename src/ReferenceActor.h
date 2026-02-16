@@ -7,8 +7,6 @@
 #include "Actor.h"
 
 class ImageComponent;
-static constexpr const char* IMAGE_FILE = "../src/Assets/Buddha.webp";
-
 
 class ReferenceActor : public Actor{
     ImageComponent* mImage = nullptr;

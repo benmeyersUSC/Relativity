@@ -12,7 +12,6 @@ void Player::HandleRender() {
     float radius = GetTransform().GetSize().x / 2.0f;
     mDraw->AddFilledCircle(pos.x, pos.y, radius, 0, 0, Game::MAX_COLOR, Game::MAX_COLOR);
 
-    Actor::HandleRender();
     // now we type in the score onto the paddle
     Vector2 paddleRect = GetTransform().GetPosition();
 
@@ -28,7 +27,7 @@ void Player::HandleRender() {
     // time remaining
     float timeBarWid = Game::WINDOW_WIDTH;
     mDraw->AddScaledWidthRect(Game::HALF_WIDTH - timeBarWid/2.0f, Game::WINDOW_HEIGHT - 27.0f, timeBarWid, 27.0f, (1.0f - mSpacetime->LifePct()),  135, Game::MAX_COLOR, 135, Game::MAX_COLOR,
-        DrawComponent::FormatString("%i remaining...", static_cast<int>(Game::DURATION_SECONDS - gGame.GetDT())), Game::CHAR_PIXELS, 2.7f);
+        DrawComponent::FormatString("%.2f remaining...", Game::DURATION_SECONDS - gGame.GetDT()), Game::CHAR_PIXELS, 2.7f);
 
 }
 

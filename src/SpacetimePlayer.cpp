@@ -12,7 +12,7 @@
 SpacetimePlayer::SpacetimePlayer() {
     mDraw = CreateComponent<DrawComponent>();
     mImage = CreateComponent<ImageComponent>();
-    mImage->SetTexture(gGame.GetTexture("../src/Assets/Arrow.png"));
+    mImage->SetTexture(gGame.GetTexture(Game::ARROW_FILE));
     mImage->GetTransform().SetScale(0.1f);
 }
 
@@ -24,7 +24,6 @@ void SpacetimePlayer::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseB
     auto rotationSign = gGame.GetSpacetimeDisplay()->GetMouseBasedVelo() >= 0.0f ? 1.0f : -1.0f;
     mImage->GetTransform().SetRotation(rotationSign * Math::ToDegrees(Math::Acos(gGame.GetSpacetimeDisplay()->GetMouseBasedTime()/100.0f)));
     mImage->GetTransform().SetPosition({gGame.GetSpacetimeDisplay()->GetMouseBasedPos() + Game::HALF_WIDTH, gGame.GetMousePos().y });
-    mImage->Draw();
 }
 
 void SpacetimePlayer::HandleRender() {
@@ -34,4 +33,6 @@ void SpacetimePlayer::HandleRender() {
     gGame.GetSpacetimeDisplay()->GetMouseBasedPos() + Game::HALF_WIDTH, gGame.GetMousePos().y, playerRadius,
     0, 0, Game::MAX_COLOR, Game::MAX_COLOR
     );
+
+    mImage->Draw();
 }

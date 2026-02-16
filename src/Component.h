@@ -16,11 +16,14 @@ class Component
     friend class Actor;
 
 public:
-    Actor* GetOwner() const;
+    [[nodiscard]] Actor* GetOwner() const;
 
     void Update(float deltaTime);
     void Render();
     void Input(const bool keys[], SDL_MouseButtonFlags mouseButtons, const Math::Vector2& posMouse);
+
+    int GetDrawOrder() const { return mDrawOrder; }
+    void SetDrawOrder(int order);
 
 protected:
     explicit Component(Actor* owner);
@@ -33,6 +36,7 @@ protected:
 
 private:
     Actor* mOwner;
+    int mDrawOrder = 100;
 };
 
 #endif //RELATIVITY_COMPONENT_H

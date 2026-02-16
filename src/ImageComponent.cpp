@@ -57,6 +57,11 @@ Transform & ImageComponent::GetTransform() {
 
 ImageComponent::ImageComponent(class Actor *owner) : Component(owner) {
     mRenderer = gGame.GetRenderer();
+    gGame.AddRenderable(this);
+}
+
+ImageComponent::~ImageComponent() {
+    gGame.RemoveRenderable(this);
 }
 
 void ImageComponent::HandleRender() {

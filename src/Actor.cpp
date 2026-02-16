@@ -26,11 +26,9 @@ void Actor::Update(float deltaTime)
 }
 
 void Actor::Render() {
-    // actor makes its rendering updates (adding shapes)
+    // actor populates its draw components with shapes
+    // actual component rendering is handled by Game's sorted render pass
     HandleRender();
-    for (auto& comp : mComponents) {
-        comp->Render();
-    }
 }
 void Actor::HandleRender() {
 }

@@ -17,6 +17,7 @@ class SpacetimeReference;
 class SpacetimePlayer;
 
 class SpacetimeDisplay;
+class Component;
 class DrawComponent;
 class ReferenceActor;
 using Math::Vector2;
@@ -26,9 +27,12 @@ class Game
 {
 public:
 
-    static constexpr const char* BUDDHA_FILE = "../src/Assets/Buddha.webp";
+	static constexpr const char* BUDDHA_FILE = "../src/Assets/Buddha.webp";
+	static constexpr const char* ARROW_FILE = "../src/Assets/Arrow.png";
 
-	static constexpr float DURATION_SECONDS = 3.0f;
+	static constexpr float DURATION_SECONDS = 5.0f;
+	static constexpr float MAX_VELO = 1000.0f;
+
 	static constexpr unsigned ESTIMATED_FPS = 60;
 
 	static constexpr float PLOT_POINT_SIZE = 5.0f;
@@ -52,11 +56,7 @@ public:
 	// constant for 1000 ms in one s
 	static constexpr float MS_PER_SEC = 1000.0f;
 
-	// just covering all my bases w these constants!
-	static constexpr float FLIP_SIGN = -1.0f;
-	static constexpr float HALF_DIVISOR = 2.0f;
 
-	static constexpr float MAX_VELO = 1000.0f;
 
 	Game();
 
@@ -83,6 +83,9 @@ public:
 	}
 	void AddPendingDestroy(class Actor* actor);
 
+	void AddRenderable(Component* comp);
+	void RemoveRenderable(Component* comp);
+
 	[[nodiscard]] const Vector2& GetMousePos()const{return mMousePos;}
 
 	SDL_Texture* GetTexture(std::string_view filename);
@@ -106,6 +109,7 @@ private:
 	std::vector<Actor*> mActors;
 	std::vector<Actor*> mPendingCreate;
 	std::vector<Actor*> mPendingDestroy;
+	std::vector<Component*> mRenderables;
 	Player* mPlayer;
 	ReferenceActor* mReferenceActor = nullptr;
 

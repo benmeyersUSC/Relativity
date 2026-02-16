@@ -20,6 +20,6 @@ void ReferenceActor::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseBu
 
 void ReferenceActor::Setup() {
     mImage = CreateComponent<ImageComponent>();
-    mImage->SetTexture(gGame.GetTexture(IMAGE_FILE));
+    mImage->SetTexture(gGame.GetTexture(Game::BUDDHA_FILE));
 }
 

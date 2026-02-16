@@ -10,8 +10,6 @@
 class DrawComponent;
 
 class Line : public  Actor{
-    static constexpr float POINT_SIZE = 1.0f;
-    static constexpr float HALF_POINT_SIZE = POINT_SIZE / 2.0f;
     Vector2 mSlope;
     Vector2 mOrigin;
     DrawComponent* mDraw = nullptr;

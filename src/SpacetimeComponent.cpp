@@ -16,7 +16,8 @@ void SpacetimeComponent::Setup(size_t frameLife) {
 }
 
 float SpacetimeComponent::LifePct() const {
-    return static_cast<float>(mPositions.size()) / static_cast<float>(mPositions.capacity());
+    // return static_cast<float>(mPositions.size()) / static_cast<float>(mPositions.capacity());
+    return gGame.GetDT() / Game::DURATION_SECONDS;
 }
 
 SpacetimeComponent::SpacetimeComponent(class Actor *owner)

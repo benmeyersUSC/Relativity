@@ -95,8 +95,8 @@ void SpacetimeDisplay::DrawVelocityMeter( ) {
 	constexpr float barThickness = 6.0f;
 
 	// center of the half-circle base, to the left of the life bars
-	float centerX = 1050.0f;
-	float centerY = Game::WINDOW_HEIGHT - 55.0f;
+	float centerX = Game::HALF_WIDTH + Game::HALF_WIDTH/2.0f;
+	float centerY = Game::WINDOW_HEIGHT - 9.0f;
 
 	// half circle
 	SDL_SetRenderDrawColor(gGame.GetRenderer(), Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, 128);
@@ -154,7 +154,7 @@ void SpacetimeDisplay::DrawVelocityMeter( ) {
 
 	// set arrow position to center of circle and rotate about that
 	float scaledW = 0.0f, scaledH = 0.0f;
-	SDL_GetTextureSize(gGame.GetTexture(ARROW_FILE), &scaledW, &scaledH);
+	SDL_GetTextureSize(gGame.GetTexture(Game::ARROW_FILE), &scaledW, &scaledH);
 	float meterScale = mVeloArrow->GetTransform().GetScale();
 	scaledW *= meterScale;
 	scaledH *= meterScale;
@@ -167,7 +167,7 @@ void SpacetimeDisplay::DrawAgingBars(size_t mouseHeightIndex, float coordinateTi
 	float barMaxH = 270.0f;
 	float barW = 36.0f;
 	float barGap = 18.0f;
-	float barPad = 21.0f;
+	float barPad = 27.0f;
 	float barBaseY = Game::WINDOW_HEIGHT - barPad;
 	float barRightEdge = Game::WINDOW_WIDTH - barPad;
 
@@ -238,7 +238,7 @@ SpacetimeDisplay::SpacetimeDisplay() {
 	mVeloArrow = CreateComponent<ImageComponent>();
 	mVeloArrow->SetUseLocalTransform(true);
 	mVeloArrow->GetTransform().SetScale(0.24f);
-	mVeloArrow->SetTexture(gGame.GetTexture(ARROW_FILE));
+	mVeloArrow->SetTexture(gGame.GetTexture(Game::ARROW_FILE));
 }
 
 size_t SpacetimeDisplay::GetTimestepIndex() const {
