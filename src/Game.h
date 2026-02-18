@@ -27,7 +27,7 @@ class Game
 {
 public:
 
-	static constexpr auto BUDDHA_FILE = "Assets/Buddha.webp";
+	static constexpr auto BUDDHA_FILE = "Assets/Buddha.png";
 	static constexpr auto ARROW_FILE = "Assets/Arrow.png";
 
 	static constexpr float DURATION_SECONDS = 10.0f;
