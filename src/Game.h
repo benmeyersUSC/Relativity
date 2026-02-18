@@ -27,10 +27,10 @@ class Game
 {
 public:
 
-	static constexpr const char* BUDDHA_FILE = "../src/Assets/Buddha.webp";
-	static constexpr const char* ARROW_FILE = "../src/Assets/Arrow.png";
+	static constexpr auto BUDDHA_FILE = "../src/Assets/Buddha.webp";
+	static constexpr auto ARROW_FILE = "../src/Assets/Arrow.png";
 
-	static constexpr float DURATION_SECONDS = 5.0f;
+	static constexpr float DURATION_SECONDS = 10.0f;
 	static constexpr float MAX_VELO = 1000.0f;
 
 	static constexpr unsigned ESTIMATED_FPS = 60;
@@ -38,9 +38,11 @@ public:
 	static constexpr float PLOT_POINT_SIZE = 5.0f;
 	static constexpr float HALF_PLOT_POINT = PLOT_POINT_SIZE/2.0f;
 	// window constants
-	static constexpr float WINDOW_WIDTH = 1305.0f;
+	static constexpr float PLOT_WIDTH = 1107.0f;
+	static constexpr float SIDEBAR_WIDTH = 363.0f;
+	static constexpr float WINDOW_WIDTH = PLOT_WIDTH + SIDEBAR_WIDTH;
 	static constexpr float WINDOW_HEIGHT = 855.0f;
-	static constexpr float HALF_WIDTH = WINDOW_WIDTH/2.0f;
+	static constexpr float HALF_WIDTH = PLOT_WIDTH/2.0f;
 	static constexpr float HALF_HEIGHT = WINDOW_HEIGHT/2.0f;
 
 	// max deltaTime for update
@@ -131,13 +133,13 @@ private:
 	static void TransformPoints(const std::vector<float>& src, std::vector<float>& dest, const std::function<float(float)>& transformFunc, unsigned frameAgg, bool notTime=true) ;
 	// these should return [-WIDTH/2, WIDTH/2]
 	std::function<float(float)> mTransformPosition = [](const float position) {
-		return position - WINDOW_WIDTH/2.0f;
+		return position - PLOT_WIDTH/2.0f;
 	};
 
 	// lowkey this should be scaled to something else
 	std::function<float(float)> mTransformVelocity = [](const float velo) {
 		// percentage of max velo, scaled to WIDTH/2
-		return velo * WINDOW_WIDTH / (MAX_VELO * 2.0f);
+		return velo * PLOT_WIDTH / (MAX_VELO * 2.0f);
 	};
 	std::function<float(float)> mTransformTimeVelocity = [](float f){
 		// this will be a percentage (out of 100)!

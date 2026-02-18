@@ -25,7 +25,7 @@ void Player::HandleRender() {
     mDraw->AddText(Game::HALF_WIDTH - Game::CHAR_PIXELS*27, timeY, DrawComponent::FormatString("Aging at %.2f%% speed", GetSpacetime()->GetTimeFactor() * 100.0f), 2.0f);
 
     // time remaining
-    float timeBarWid = Game::WINDOW_WIDTH;
+    float timeBarWid = Game::PLOT_WIDTH;
     mDraw->AddScaledWidthRect(Game::HALF_WIDTH - timeBarWid/2.0f, Game::WINDOW_HEIGHT - 27.0f, timeBarWid, 27.0f, (1.0f - mSpacetime->LifePct()),  135, Game::MAX_COLOR, 135, Game::MAX_COLOR,
         DrawComponent::FormatString("%.2f remaining...", Game::DURATION_SECONDS - gGame.GetDT()), Game::CHAR_PIXELS, 2.7f);
 
@@ -64,7 +64,7 @@ void Player::FixPosition() {
     float x = GetTransform().GetPosition().x;
     float halfW = GetTransform().GetSize().x / 2.0f;
     float minX = halfW;
-    float maxX = Game::WINDOW_WIDTH - halfW;
+    float maxX = Game::PLOT_WIDTH - halfW;
 
     if (x >= maxX || x <= minX) {
         mSpacetime->GetVelocity() = 0.0f;

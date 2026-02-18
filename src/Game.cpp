@@ -42,7 +42,7 @@ bool Game::Initialize()
 		return false;
 	}
 	// use window constants
-	mSdlWindow = SDL_CreateWindow("SPECIAL RELATIVITY", WINDOW_WIDTH, WINDOW_HEIGHT, 0);
+	mSdlWindow = SDL_CreateWindow("SPECIAL RELATIVITY", PLOT_WIDTH, WINDOW_HEIGHT, 0);
 	if (mSdlWindow == nullptr)
 	{
 		return false;
@@ -187,6 +187,10 @@ void Game::EndGame() {
 	mPlayer = nullptr;
 	mReferenceActor = nullptr;
 
+
+	// expand window to fit sidebar and re-center on screen
+	SDL_SetWindowSize(mSdlWindow, WINDOW_WIDTH, WINDOW_HEIGHT);
+	SDL_SetWindowPosition(mSdlWindow, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
 
 	mSpacetimeDisplay = CreateActor<SpacetimeDisplay>();
 

@@ -24,7 +24,7 @@ void Line::HandleRender() {
         float ratio = Math::NearlyZero(mSlope.x) ? 0.0f : mSlope.y / mSlope.x;
         x1 = 0.0f;
         y1 = mOrigin.y + ratio * (x1 - mOrigin.x);
-        x2 = Game::WINDOW_WIDTH;
+        x2 = Game::PLOT_WIDTH;
         y2 = mOrigin.y + ratio * (x2 - mOrigin.x);
     }
 

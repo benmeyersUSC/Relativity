@@ -58,17 +58,17 @@ void SpacetimeDisplay::DrawPoints() {
 }
 
 void SpacetimeDisplay::DrawMouse(size_t mouseHeightIndex, float coordinateTimeAtMouse) {
-	// text box in bottom-left corner, scaled 1.5x
+	// text box in sidebar, near the bottom
 	float scale = 1.5f;
 	float lineStep = (Game::CHAR_PIXELS + 4.0f) * scale;
-	float textW = Game::CHAR_PIXELS * 27 * scale;
 	float textH = lineStep * 4;
-	float pad = 12.0f;
-	float mouseTextX = pad * 2;
+	float pad = 16.0f;
+	float mouseTextX = Game::PLOT_WIDTH + pad * 2;
 	float mouseTextY = Game::WINDOW_HEIGHT - textH - pad * 2;
 
 	// outlined box
-	mDraw->AddOutlineRect(mouseTextX - pad, mouseTextY - pad, textW + pad * 3, textH + pad * 2,
+	float boxW = Game::WINDOW_WIDTH - pad - (mouseTextX - pad);
+	mDraw->AddOutlineRect(mouseTextX - pad, mouseTextY - pad, boxW, textH + pad * 2,
 		Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR);
 
 	// draw text
@@ -76,16 +76,14 @@ void SpacetimeDisplay::DrawMouse(size_t mouseHeightIndex, float coordinateTimeAt
 		mouseTextX, mouseTextY, DrawComponent::FormatString("Space Position: %.1f px", mMousePos), scale
 	);
 	mDraw->AddText(
-	mouseTextX, mouseTextY + lineStep, DrawComponent::FormatString("Space Velocity: %.1f px/s", mMouseVelo), scale
+		mouseTextX, mouseTextY + lineStep, DrawComponent::FormatString("Space Velocity: %.1f px/s", mMouseVelo), scale
 	);
 	mDraw->AddText(
-	mouseTextX, mouseTextY + lineStep * 2,DrawComponent::FormatString ("Aging at %.1f%% speed", mMouseTime), scale
+		mouseTextX, mouseTextY + lineStep * 2, DrawComponent::FormatString("Aging at %.1f%% speed", mMouseTime), scale
 	);
 	mDraw->AddText(
-	mouseTextX, mouseTextY + lineStep * 3, DrawComponent::FormatString("Age Difference: %.2fs", Math::Abs(coordinateTimeAtMouse - mCumulativeProperTime[mouseHeightIndex])), scale
+		mouseTextX, mouseTextY + lineStep * 3, DrawComponent::FormatString("Age Difference: %.2fs", Math::Abs(coordinateTimeAtMouse - mCumulativeProperTime[mouseHeightIndex])), scale
 	);
-
-
 }
 
 void SpacetimeDisplay::DrawVelocityMeter( ) {
@@ -94,9 +92,13 @@ void SpacetimeDisplay::DrawVelocityMeter( ) {
 	constexpr int NUM_SEGMENTS = 50;
 	constexpr float barThickness = 6.0f;
 
-	// center of the half-circle base, to the left of the life bars
-	float centerX = Game::HALF_WIDTH + Game::HALF_WIDTH/2.0f;
-	float centerY = Game::WINDOW_HEIGHT - 9.0f;
+	// center in sidebar, above the text box
+	float pad = 16.0f;
+	float sidebarCenterX = Game::PLOT_WIDTH + Game::SIDEBAR_WIDTH / 2.0f;
+	// text box occupies roughly bottom 120px of sidebar
+	float textBoxTop = Game::WINDOW_HEIGHT - 120.0f;
+	float centerX = sidebarCenterX;
+	float centerY = textBoxTop - pad - radius;
 
 	// half circle
 	SDL_SetRenderDrawColor(gGame.GetRenderer(), Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, 128);
@@ -163,35 +165,43 @@ void SpacetimeDisplay::DrawVelocityMeter( ) {
 }
 
 void SpacetimeDisplay::DrawAgingBars(size_t mouseHeightIndex, float coordinateTimeAtMouse) {
-	// --- cumulative time bars (bottom-right) ---
-	float barMaxH = 270.0f;
-	float barW = 36.0f;
+	// --- cumulative time bars (sidebar, top area, horizontal) ---
+	float pad = 16.0f;
+	float barMaxW = Game::SIDEBAR_WIDTH - pad * 4;
+	float barH = 36.0f;
 	float barGap = 18.0f;
-	float barPad = 27.0f;
-	float barBaseY = Game::WINDOW_HEIGHT - barPad;
-	float barRightEdge = Game::WINDOW_WIDTH - barPad;
+	float barBaseX = Game::PLOT_WIDTH + pad * 2;
+	float barTopY = pad * 3;
 
 	// buddha = index/size
 	float buddhaFrac = static_cast<float>(mouseHeightIndex + 1) / static_cast<float>(mActorPositions.size());
 	// player = cumulative time / total dur
 	float playerFrac = mCumulativeProperTime[mouseHeightIndex] / Game::DURATION_SECONDS;
 
-	// buddha bar rightmost
-	float buddhaX = barRightEdge - barW;
-	mDraw->AddScaledHeightRect(
-		buddhaX, barBaseY - barMaxH, barW, barMaxH, buddhaFrac, 135, 108, 32, Game::MAX_COLOR,
-		DrawComponent::FormatString("%.2fs", coordinateTimeAtMouse), 2.0f
+	// textbox label
+	std::string txt("Cumulative aging");
+	const auto mul = 1.35f;
+	float txtW = static_cast<float>(txt.size()) * Game::CHAR_PIXELS * mul;
+	float sidebarCenterX = Game::PLOT_WIDTH + Game::SIDEBAR_WIDTH / 2.0f;
+	mDraw->AddText(sidebarCenterX - txtW / 2.0f, barTopY, txt, mul);
+
+	// player bar (top)
+	float playerY = barTopY + Game::CHAR_PIXELS * mul + pad;
+	mDraw->AddScaledWidthRect(
+		barBaseX, playerY, barMaxW, barH, playerFrac, 0, 0, Game::MAX_COLOR, Game::MAX_COLOR,
+		DrawComponent::FormatString("%.2fs", mCumulativeProperTime[mouseHeightIndex]), 2.0f, 1.35f
 	);
 
-	// player bar left of buddha
-	float playerX = buddhaX - barGap - barW;
-	mDraw->AddScaledHeightRect(
-		playerX, barBaseY - barMaxH, barW, barMaxH, playerFrac, 0, 0, Game::MAX_COLOR, Game::MAX_COLOR,
-		DrawComponent::FormatString("%.2fs", mCumulativeProperTime[mouseHeightIndex]), 2.0f
+	// buddha bar (below player)
+	float buddhaY = playerY + barH + barGap;
+	mDraw->AddScaledWidthRect(
+		barBaseX, buddhaY, barMaxW, barH, buddhaFrac, 135, 108, 32, Game::MAX_COLOR,
+		DrawComponent::FormatString("%.2fs", coordinateTimeAtMouse), 2.0f, 1.35f
 	);
 
 	// outline around bar area
-	mDraw->AddOutlineRect(playerX - barPad / 2, barBaseY - barMaxH - barPad / 2, (barW * 2 + barGap) + barPad, barMaxH + barPad,
+	float outlineY = playerY - pad / 2;
+	mDraw->AddOutlineRect(barBaseX - pad / 2, outlineY, barMaxW + pad, (barH * 2 + barGap) + pad,
 		Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR);
 }
 
@@ -210,9 +220,14 @@ void SpacetimeDisplay::HandleRender() {
 
 
     DrawPoints();
-    DrawMouse(mouseHeightIndex,  coordinateTimeAtMouse);
-	// spacetime velocity meter
-	DrawVelocityMeter( );
+
+	// sidebar separator
+	mDraw->AddLine(Game::PLOT_WIDTH, 0.0f, Game::PLOT_WIDTH, Game::WINDOW_HEIGHT,
+		Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR);
+
+	// sidebar widgets
+    DrawMouse(mouseHeightIndex, coordinateTimeAtMouse);
+	DrawVelocityMeter();
 	DrawAgingBars(mouseHeightIndex, coordinateTimeAtMouse);
 }
 
