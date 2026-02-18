@@ -102,6 +102,11 @@ namespace Math {
         return acosf(value);
     }
 
+    [[nodiscard]] inline float Pow(float base, float exp)
+    {
+        return powf(base, exp);
+    }
+
     [[nodiscard]] inline float ToDegrees(float radians)
 {
     return radians * 180.0f / 3.14159265f;

@@ -16,13 +16,13 @@ class Player : public Actor
 public:
 	static constexpr float PLAYER_HEIGHT = 54.0f;
 	static constexpr float PLAYER_WIDTH = 54.0f;
-	static constexpr float PLAYER_ACCEL = 1000.0f;
+	static constexpr float PLAYER_ACCEL = 500.0f;
 
 	void HandleRender() override;
 	void HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
 							 const Vector2& posMouse) override;
 	void HandleUpdate(float deltaTime) override;
-	SpacetimeComponent* GetSpacetime(){return mSpacetime;}
+	[[nodiscard]] SpacetimeComponent* GetSpacetime() const {return mSpacetime;}
 protected:
 	explicit Player();
 	friend class Game;

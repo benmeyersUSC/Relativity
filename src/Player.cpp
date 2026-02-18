@@ -41,17 +41,16 @@ void Player::HandleUpdate(float deltaTime) {
 
     // increasing velocity becomes asymptotically hard as you approach max!
     // (and this obviates clamping!)
-    float realAcceleration = static_cast<float>(mVeloSign) * PLAYER_ACCEL * (
-        1.0f -          std::abs(mSpacetime->GetVelocity()) /
-                                        Game::MAX_VELO
-        );
+    float veloRatio = std::abs(mSpacetime->GetVelocity()) / Game::MAX_VELO;
+    float realAcceleration = static_cast<float>(mVeloSign) * PLAYER_ACCEL *
+        Math::Pow(1.0f - veloRatio, 3.0f);
 
     // integrate velocity by accel
     mSpacetime->GetVelocity() = mSpacetime->GetVelocity() + realAcceleration * deltaTime;
     // apply brake factor for no or (net)negative accel
     auto zeroAccel = Math::NearlyZero(realAcceleration);
     auto turningAround = realAcceleration * mSpacetime->GetVelocity() < 0.0f;
-    mSpacetime->GetVelocity() *= zeroAccel || turningAround ? BRAKE_FACTOR : 1.0f;
+    mSpacetime->GetVelocity() *= turningAround ? BRAKE_FACTOR : 1.0f;
 
     // integrate position by velo
     GetTransform().PositionDelta(mSpacetime->GetVelocity() * deltaTime, 0.0f);
@@ -67,7 +66,7 @@ void Player::FixPosition() {
     float maxX = Game::PLOT_WIDTH - halfW;
 
     if (x >= maxX || x <= minX) {
-        mSpacetime->GetVelocity() = 0.0f;
+        mSpacetime->GetVelocity() = -mSpacetime->GetVelocity();
         float clampedX = std::clamp(x, minX, maxX);
         GetTransform().PositionDelta(clampedX - x, 0.0f);
     }
