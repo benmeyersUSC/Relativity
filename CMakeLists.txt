@@ -39,3 +39,19 @@ add_executable(Relativity src/main.cpp
 
 target_link_libraries(Relativity PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)
 
+# Copy assets next to the executable so relative paths work everywhere
+add_custom_command(TARGET Relativity POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/src/Assets
+        $<TARGET_FILE_DIR:Relativity>/Assets
+)
+
+if(EMSCRIPTEN)
+    set_target_properties(Relativity PROPERTIES SUFFIX ".html")
+    target_link_options(Relativity PRIVATE
+            --preload-file ${CMAKE_SOURCE_DIR}/src/Assets@/Assets
+            --shell-file ${CMAKE_SOURCE_DIR}/web/shell.html
+            -sALLOW_MEMORY_GROWTH=1
+            -sUSE_WEBP=1
+    )
+endif()

@@ -158,7 +158,8 @@ SDL_Texture * Game::GetTexture(std::string_view filename) {
 	{
 		return it->second;
 	}
-	SDL_Surface* imgSurface = IMG_Load(filename.data());
+	std::string fullPath = std::string(SDL_GetBasePath()) + std::string(filename);
+	SDL_Surface* imgSurface = IMG_Load(fullPath.c_str());
 	if (imgSurface == nullptr)
 	{
 		SDL_Log("Image file: %s failed to load!", filename.data());
