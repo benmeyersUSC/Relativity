@@ -52,5 +52,6 @@ if(EMSCRIPTEN)
             --preload-file ${CMAKE_SOURCE_DIR}/src/Assets@/Assets
             --shell-file ${CMAKE_SOURCE_DIR}/web/shell.html
             -sALLOW_MEMORY_GROWTH=1
+            -sGL_ENABLE_GET_PROC_ADDRESS=1
     )
 endif()
