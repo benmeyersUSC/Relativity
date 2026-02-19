@@ -21,12 +21,12 @@ void Player::HandleRender() {
     float veloY = paddleRect.y - 10.0f / Game::HALF_CHAR_PIXELS - GetTransform().GetSize().y * 2 - 36.0f;
     float timeY = paddleRect.y - 10.0f / Game::HALF_CHAR_PIXELS - GetTransform().GetSize().y - 36.0f;
     mDraw->AddText(Game::HALF_WIDTH - Game::CHAR_PIXELS*27, posY, DrawComponent::FormatString("Space Position: %.0f px", GetTransform().GetPosition().x - Game::HALF_WIDTH), 2.0f);
-    mDraw->AddText(Game::HALF_WIDTH - Game::CHAR_PIXELS*27, veloY, DrawComponent::FormatString("Space Velocity: %.0f px/s", GetSpacetime()->GetVelocity()), 2.0f);
-    mDraw->AddText(Game::HALF_WIDTH - Game::CHAR_PIXELS*27, timeY, DrawComponent::FormatString("Aging at %.2f%% speed", GetSpacetime()->GetTimeFactor() * 100.0f), 2.0f);
+    mDraw->AddText(Game::HALF_WIDTH - Game::CHAR_PIXELS*27, veloY, DrawComponent::FormatString("Space Velocity: %.0f px/s", GetSpacetime()->GetSpatialVelocity()), 2.0f);
+    mDraw->AddText(Game::HALF_WIDTH - Game::CHAR_PIXELS*27, timeY, DrawComponent::FormatString("Aging at %.2f%% speed", GetSpacetime()->GetProperOverCoordinateTime() * 100.0f), 2.0f);
 
     // time remaining
     float timeBarWid = Game::PLOT_WIDTH;
-    mDraw->AddScaledWidthRect(Game::HALF_WIDTH - timeBarWid/2.0f, Game::WINDOW_HEIGHT - 27.0f, timeBarWid, 27.0f, (1.0f - mSpacetime->LifePct()),  135, Game::MAX_COLOR, 135, Game::MAX_COLOR,
+    mDraw->AddScaledWidthRect(Game::HALF_WIDTH - timeBarWid/2.0f, Game::WINDOW_HEIGHT - 27.0f, timeBarWid, 27.0f, (1.0f - mSpacetime->ElapsedPct()),  135, Game::MAX_COLOR, 135, Game::MAX_COLOR,
         DrawComponent::FormatString("%.2fs remaining...", Game::DURATION_SECONDS - gGame.GetDT()), Game::CHAR_PIXELS, 2.7f);
 
 }
@@ -41,19 +41,19 @@ void Player::HandleUpdate(float deltaTime) {
 
     // increasing velocity becomes asymptotically hard as you approach max!
     // (and this obviates clamping!)
-    float veloRatio = std::abs(mSpacetime->GetVelocity()) / Game::MAX_VELO;
+    float veloRatio = std::abs(mSpacetime->GetSpatialVelocity()) / Game::MAX_VELO;
     float realAcceleration = static_cast<float>(mVeloSign) * PLAYER_ACCEL *
-        Math::Pow(1.0f - veloRatio, 3.0f);
+        Math::Pow(1.0f - veloRatio, 2.0f);
 
     // integrate velocity by accel
-    mSpacetime->GetVelocity() = mSpacetime->GetVelocity() + realAcceleration * deltaTime;
+    mSpacetime->GetSpatialVelocity() = mSpacetime->GetSpatialVelocity() + realAcceleration * deltaTime;
     // apply brake factor for no or (net)negative accel
     auto zeroAccel = Math::NearlyZero(realAcceleration);
-    auto turningAround = realAcceleration * mSpacetime->GetVelocity() < 0.0f;
-    mSpacetime->GetVelocity() *= turningAround ? BRAKE_FACTOR : 1.0f;
+    auto turningAround = realAcceleration * mSpacetime->GetSpatialVelocity() < 0.0f;
+    mSpacetime->GetSpatialVelocity() *= turningAround ? BRAKE_FACTOR : 1.0f;
 
     // integrate position by velo
-    GetTransform().PositionDelta(mSpacetime->GetVelocity() * deltaTime, 0.0f);
+    GetTransform().PositionDelta(mSpacetime->GetSpatialVelocity() * deltaTime, 0.0f);
 
     FixPosition();
 }
@@ -66,7 +66,7 @@ void Player::FixPosition() {
     float maxX = Game::PLOT_WIDTH - halfW;
 
     if (x >= maxX || x <= minX) {
-        mSpacetime->GetVelocity() = -mSpacetime->GetVelocity();
+        mSpacetime->GetSpatialVelocity() = -mSpacetime->GetSpatialVelocity();
         float clampedX = std::clamp(x, minX, maxX);
         GetTransform().PositionDelta(clampedX - x, 0.0f);
     }

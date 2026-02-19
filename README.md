@@ -55,7 +55,9 @@ Some more notes on discrete time dilation
 /*
 
 proper time elapsed by mover:
+
 coordinate (rest) DURATION * average_of(√(1 - (v_i / MAX_VELO)²))
+
 this makes sense. coordinate duration * the average of (Z)...what is Z?
 
 Z = √(1 - (v_i / MAX_VELO)²)
@@ -107,8 +109,6 @@ c²dτ² = c²dt² - dx²          // divide both sides by c²dt²
 (dτ/dt)² = 1 - (dx/dt)²/c²   // recognize dx/dt = v
 (dτ/dt)² = 1 - v²/c²
 dτ/dt   = √(1 - v²/c²)       // that's Z
-
-
 
 */
 ```

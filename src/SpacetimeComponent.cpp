@@ -5,17 +5,17 @@
 #include "Actor.h"
 #include "Game.h"
 
-float SpacetimeComponent::GetTimeFactor() const {
-    return mTimeVelocities.back()/Game::MAX_VELO;
+float SpacetimeComponent::GetProperOverCoordinateTime() const {
+    return mProperTimes.back()/Game::MAX_VELO;
 }
 
 void SpacetimeComponent::Setup(size_t frameLife) {
-    mPositions.reserve(frameLife);
-    mVelocities.reserve(frameLife);
-    mTimeVelocities.reserve(frameLife);
+    mSpatialPositions.reserve(frameLife);
+    mSpatialVelocities.reserve(frameLife);
+    mProperTimes.reserve(frameLife);
 }
 
-float SpacetimeComponent::LifePct() const {
+float SpacetimeComponent::ElapsedPct() const {
     return gGame.GetDT() / Game::DURATION_SECONDS;
 }
 
@@ -26,17 +26,17 @@ SpacetimeComponent::SpacetimeComponent(class Actor *owner)
 void SpacetimeComponent::HandleUpdate(float deltaTime) {
     Component::HandleUpdate(deltaTime);
 
-    mVelocities.push_back(mVelo);
-    mPositions.push_back(GetOwner()->GetTransform().GetPosition().x);
+    mSpatialVelocities.push_back(mSpatialVelo);
+    mSpatialPositions.push_back(GetOwner()->GetTransform().GetPosition().x);
 
     // LORENTZ
     // mVelo^2 + timeVelo^2 = MAX_VELO^2
     // timeVelo = SQRT(
     //      MAX_VELO^2 - mVelo^2
     // )
-    mTimeVelocities.push_back(
+    mProperTimes.push_back(
         Math::Sqrt(
-            Game::MAX_VELO * Game::MAX_VELO - mVelo * mVelo
+            Game::MAX_VELO * Game::MAX_VELO - mSpatialVelo * mSpatialVelo
         )
     );
 }

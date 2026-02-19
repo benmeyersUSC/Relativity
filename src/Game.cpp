@@ -176,9 +176,9 @@ SDL_Texture * Game::GetTexture(std::string_view filename) {
 
 
 void Game::EndGame() {
-	auto ppos = std::move(mPlayer->GetSpacetime()->GetPositions());
-	auto pv = std::move(mPlayer->GetSpacetime()->GetVelocities());
-	auto ptv = std::move(mPlayer->GetSpacetime()->GetTimeVelocities());
+	auto ppos = std::move(mPlayer->GetSpacetime()->GetSpatialPositions());
+	auto pv = std::move(mPlayer->GetSpacetime()->GetSpatialVelocities());
+	auto ptv = std::move(mPlayer->GetSpacetime()->GetProperTimes());
 	unsigned numSamples = ppos.size();
 	auto maxPlotPoints = static_cast<unsigned>(WINDOW_HEIGHT / PLOT_POINT_SIZE);
 	// how many samples will we average to meet the ideal/max plot points
@@ -200,7 +200,7 @@ void Game::EndGame() {
 	// - mapped via aggregation to vertical plotting space!
 	TransformPoints(ppos, mSpacetimeDisplay->GetPositions(), mTransformPosition, frameAgg);
 	TransformPoints(pv, mSpacetimeDisplay->GetVelocities(), mTransformVelocity, frameAgg);
-	TransformPoints(ptv, mSpacetimeDisplay->GetTimeVelocities(), mTransformTimeVelocity,frameAgg, false);
+	TransformPoints(ptv, mSpacetimeDisplay->GetProperTimes(), mTransformTimeVelocity,frameAgg, false);
 
 	mSpacetimeDisplay->Setup();
 

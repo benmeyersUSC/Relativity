@@ -40,7 +40,7 @@ void SpacetimeDisplay::DrawPoints() {
             float shift = static_cast<float>(negativePosition - !negativePosition) * (shiftMag * Game::PLOT_POINT_SIZE);
             mDraw->AddText(
             mSpacetimePos - Game::HALF_PLOT_POINT - Game::HALF_CHAR_PIXELS + shift,
-                          y - Game::HALF_PLOT_POINT, DrawComponent::FormatString("%.2f%%", mActorTimeVelocities[i] * 100.0f),
+                          y - Game::HALF_PLOT_POINT, DrawComponent::FormatString("%.2f%%", mActorProperTimes[i] * 100.0f),
                           1.35f
             );
         }
@@ -212,7 +212,7 @@ void SpacetimeDisplay::HandleRender() {
 	// mouse-height(time)-gauged information
 	// index is inverse height (sdl convention), quantized by datapoints, clamped at 0 and max-index
 	auto mouseHeightIndex = static_cast<size_t>(std::clamp((Game::WINDOW_HEIGHT - gGame.GetMousePos().y) / mYStep, 0.0f, static_cast<float>(mActorPositions.size() - 1)));
-	mMouseTime = mActorTimeVelocities[mouseHeightIndex];
+	mMouseTime = mActorProperTimes[mouseHeightIndex];
 	// de-transforming values so centered in middle of plot
 	mMousePos = mActorPositions[mouseHeightIndex] - Game::HALF_WIDTH;
 	mMouseVelo = mActorVelocities[mouseHeightIndex] - Game::HALF_WIDTH;
@@ -235,7 +235,7 @@ SpacetimeDisplay::SpacetimeDisplay() {
     constexpr auto samples = static_cast<unsigned>(Game::WINDOW_HEIGHT / Game::PLOT_POINT_SIZE);
     mActorPositions.reserve(samples);
     mActorVelocities.reserve(samples);
-    mActorTimeVelocities.reserve(samples);
+    mActorProperTimes.reserve(samples);
 
     auto xAxis = gGame.CreateActor<Line>();
     xAxis->SetOrigin(Line::X_AXIS_ORIGIN);
@@ -264,12 +264,19 @@ void SpacetimeDisplay::Setup(){
     mTimePrintInterval = std::max(1u, static_cast<unsigned>(static_cast<float>(mActorPositions.size()) / NUM_TIME_PRINTS));
     mYStep = Game::WINDOW_HEIGHT / static_cast<float>(mActorPositions.size());
 
-    mDt = Game::DURATION_SECONDS / static_cast<float>(mActorTimeVelocities.size());
-    mCumulativeProperTime.resize(mActorTimeVelocities.size());
+    mDt = Game::DURATION_SECONDS / static_cast<float>(mActorProperTimes.size());
+    mCumulativeProperTime.resize(mActorProperTimes.size());
 
-    mCumulativeProperTime[0] = mDt * mActorTimeVelocities[0];
+	// discretely integrating over time to compute net cumulative proper time aged by mover
+	// we average out differences in frame durations by simply distributing net duration.
+	// net duration (coordinate time) is divided evenly among the transformed-relative-aging-rates
+	// mActorTimeVelocities contains the dTau/dT for each slice/observation.
+
+	// thus, each successive cumulative time aged is:
+	//		cumulativeProperTime[i-1] + dT * dTau/dT
+    mCumulativeProperTime[0] = mDt * mActorProperTimes[0];
     for (size_t i = 1; i < mCumulativeProperTime.size(); ++i) {
-        mCumulativeProperTime[i] = mCumulativeProperTime[i-1] + mDt * mActorTimeVelocities[i];
+        mCumulativeProperTime[i] = mCumulativeProperTime[i-1] + mDt * mActorProperTimes[i];
     }
 }
 

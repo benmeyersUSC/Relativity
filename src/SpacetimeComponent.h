@@ -7,22 +7,21 @@
 
 class SpacetimeComponent : public Component {
 public:
-	[[nodiscard]] std::vector<float>& GetPositions() {return mPositions;}
-	[[nodiscard]] std::vector<float>& GetVelocities() {return mVelocities;}
-	[[nodiscard]] std::vector<float>& GetTimeVelocities() {return mTimeVelocities;}
-	[[nodiscard]] float GetVelocity()const{return mVelo;}
-	float& GetVelocity(){return mVelo;}
-	[[nodiscard]] float GetTimeFactor()const;
+	[[nodiscard]] std::vector<float>& GetSpatialPositions() {return mSpatialPositions;}
+	[[nodiscard]] std::vector<float>& GetSpatialVelocities() {return mSpatialVelocities;}
+	[[nodiscard]] std::vector<float>& GetProperTimes() {return mProperTimes;}
+	float& GetSpatialVelocity(){return mSpatialVelo;}
+	[[nodiscard]] float GetProperOverCoordinateTime()const;
 	void Setup(size_t frameLife);
-	[[nodiscard]] float LifePct()const;
+	[[nodiscard]] float ElapsedPct()const;
 protected:
 	explicit SpacetimeComponent(class Actor *owner);
 	void HandleUpdate(float deltaTime) override;
 
 	friend class Actor;
 private:
-	float mVelo = 0.0f;
-	std::vector<float> mPositions;
-	std::vector<float> mVelocities;
-	std::vector<float> mTimeVelocities;
+	float mSpatialVelo = 0.0f;
+	std::vector<float> mSpatialPositions;
+	std::vector<float> mSpatialVelocities;
+	std::vector<float> mProperTimes;
 };

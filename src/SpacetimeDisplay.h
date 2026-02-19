@@ -18,7 +18,7 @@ class SpacetimeDisplay : public  Actor{
     Line* yLevel = nullptr;
     std::vector<float> mActorPositions;
     std::vector<float> mActorVelocities;
-    std::vector<float> mActorTimeVelocities;
+    std::vector<float> mActorProperTimes;
     std::vector<float> mCumulativeProperTime;
 
     float mDt = 0.0f;
@@ -43,7 +43,7 @@ public:
 
     std::vector<float>& GetPositions(){return mActorPositions;}
     std::vector<float>& GetVelocities(){return mActorVelocities;}
-    std::vector<float>& GetTimeVelocities(){return mActorTimeVelocities;}
+    std::vector<float>& GetProperTimes(){return mActorProperTimes;}
     SpacetimeDisplay();
     [[nodiscard]] size_t GetTimestepIndex() const;
     void Setup();

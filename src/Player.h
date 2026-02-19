@@ -16,7 +16,7 @@ class Player : public Actor
 public:
 	static constexpr float PLAYER_HEIGHT = 54.0f;
 	static constexpr float PLAYER_WIDTH = 54.0f;
-	static constexpr float PLAYER_ACCEL = 500.0f;
+	static constexpr float PLAYER_ACCEL = 810.0f;
 
 	void HandleRender() override;
 	void HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons,
