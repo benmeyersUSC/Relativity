@@ -27,7 +27,7 @@ void Player::HandleRender() {
     // time remaining
     float timeBarWid = Game::PLOT_WIDTH;
     mDraw->AddScaledWidthRect(Game::HALF_WIDTH - timeBarWid/2.0f, Game::WINDOW_HEIGHT - 27.0f, timeBarWid, 27.0f, (1.0f - mSpacetime->LifePct()),  135, Game::MAX_COLOR, 135, Game::MAX_COLOR,
-        DrawComponent::FormatString("%.2f remaining...", Game::DURATION_SECONDS - gGame.GetDT()), Game::CHAR_PIXELS, 2.7f);
+        DrawComponent::FormatString("%.2fs remaining...", Game::DURATION_SECONDS - gGame.GetDT()), Game::CHAR_PIXELS, 2.7f);
 
 }
 

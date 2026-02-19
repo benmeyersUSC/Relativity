@@ -40,7 +40,7 @@ void SpacetimeDisplay::DrawPoints() {
             float shift = static_cast<float>(negativePosition - !negativePosition) * (shiftMag * Game::PLOT_POINT_SIZE);
             mDraw->AddText(
             mSpacetimePos - Game::HALF_PLOT_POINT - Game::HALF_CHAR_PIXELS + shift,
-                          y - Game::HALF_PLOT_POINT, DrawComponent::FormatString("%.2f%%", mActorTimeVelocities[i]),
+                          y - Game::HALF_PLOT_POINT, DrawComponent::FormatString("%.2f%%", mActorTimeVelocities[i] * 100.0f),
                           1.35f
             );
         }
@@ -79,7 +79,7 @@ void SpacetimeDisplay::DrawMouse(size_t mouseHeightIndex, float coordinateTimeAt
 		mouseTextX, mouseTextY + lineStep, DrawComponent::FormatString("Space Velocity: %.1f px/s", mMouseVelo), scale
 	);
 	mDraw->AddText(
-		mouseTextX, mouseTextY + lineStep * 2, DrawComponent::FormatString("Aging at %.1f%% speed", mMouseTime), scale
+		mouseTextX, mouseTextY + lineStep * 2, DrawComponent::FormatString("Aging at %.1f%% speed", mMouseTime * 100.0f), scale
 	);
 	mDraw->AddText(
 		mouseTextX, mouseTextY + lineStep * 3, DrawComponent::FormatString("Age Difference: %.2fs", Math::Abs(coordinateTimeAtMouse - mCumulativeProperTime[mouseHeightIndex])), scale
@@ -144,13 +144,13 @@ void SpacetimeDisplay::DrawVelocityMeter( ) {
 		Math::Abs(spatialFrac), veloR, veloG, veloB, veloA, "v", 2.0f, 2.0f, negVelo);
 
 	// time component
-	float timeFrac = mMouseTime / 100.0f; // mouseTime was a full percentage
+	float timeFrac = mMouseTime;
 	mDraw->AddScaledHeightRect(centerX - barThickness / 2.0f, centerY - radius, barThickness, radius, timeFrac,
 		255, 255, 32, Game::MAX_COLOR, "t", 3.0f, 2.0f);
 
 	// arrow itself
 	auto rotationSign = mMouseVelo >= 0.0f ? 1.0f : -1.0f;
-	float angle = rotationSign * Math::ToDegrees(Math::Acos(mMouseTime / 100.0f));
+	float angle = rotationSign * Math::ToDegrees(Math::Acos(mMouseTime));
 	mVeloArrow->GetTransform().SetPosition({centerX, centerY});
 	mVeloArrow->GetTransform().SetRotation(angle);
 
@@ -267,9 +267,9 @@ void SpacetimeDisplay::Setup(){
     mDt = Game::DURATION_SECONDS / static_cast<float>(mActorTimeVelocities.size());
     mCumulativeProperTime.resize(mActorTimeVelocities.size());
 
-    mCumulativeProperTime[0] = mDt * mActorTimeVelocities[0] / 100.0f;
+    mCumulativeProperTime[0] = mDt * mActorTimeVelocities[0];
     for (size_t i = 1; i < mCumulativeProperTime.size(); ++i) {
-        mCumulativeProperTime[i] = mCumulativeProperTime[i-1] + mDt * mActorTimeVelocities[i] / 100.0f;
+        mCumulativeProperTime[i] = mCumulativeProperTime[i-1] + mDt * mActorTimeVelocities[i];
     }
 }
 

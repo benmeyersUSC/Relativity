@@ -142,8 +142,8 @@ private:
 		return velo * PLOT_WIDTH / (MAX_VELO * 2.0f);
 	};
 	std::function<float(float)> mTransformTimeVelocity = [](float f){
-		// this will be a percentage (out of 100)!
-		return f * 100.0f / MAX_VELO;
+		// dτ/dt ratio [0, 1]
+		return f / MAX_VELO;
 	};
 
 	float mDT = 0.0f;
