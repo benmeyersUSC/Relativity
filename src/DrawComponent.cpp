@@ -80,7 +80,7 @@ void DrawComponent::AddScaledHeightRect(float x, float y, float w, float maxH, f
         const float realY = y + maxH - len;
         AddRect(x, realY, w, len, r, g, b, a);
         // text's y needs to shift up by pad * text scale
-        AddText(textStartX, realY - textScale * (pad - Game::CHAR_PIXELS), endMarker, textScale);
+        AddText(textStartX, realY - textScale * (pad + Game::CHAR_PIXELS), endMarker, textScale);
     }
 }
 
