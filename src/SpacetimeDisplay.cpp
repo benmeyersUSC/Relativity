@@ -249,6 +249,7 @@ void SpacetimeDisplay::HandleRender() {
     DrawMouseGaugedTextBox(mouseHeightQuantized, coordinateTimeAtMouse);
 	DrawVelocityMeter();
 	DrawAgingBars(mouseHeightQuantized, coordinateTimeAtMouse);
+	DrawRestartButton();
 }
 
 SpacetimeDisplay::SpacetimeDisplay() {
@@ -311,4 +312,29 @@ float SpacetimeDisplay::GetCumulativeAgeDiff(size_t i) const {
 
 float SpacetimeDisplay::GetCumulativeAgeDiff() const {
     return mCumulativeProperTime.back();
+}
+
+void SpacetimeDisplay::DrawRestartButton() const {
+    constexpr float textScale = 1.35f;
+    constexpr float textW = 7.0f * Game::CHAR_PIXELS * textScale; // "RESTART"
+    constexpr float textH = Game::CHAR_PIXELS * textScale;
+
+    const auto& mouse = gGame.GetMousePos();
+    const bool hovered = mouse.x >= BTN_X && mouse.x <= BTN_X + BTN_W &&
+                         mouse.y >= BTN_Y && mouse.y <= BTN_Y + BTN_H;
+
+    mDraw->AddRect(BTN_X, BTN_Y, BTN_W, BTN_H, 30, 80, 180, hovered ? 255 : 180);
+    mDraw->AddOutlineRect(BTN_X, BTN_Y, BTN_W, BTN_H,
+        100, 160, Game::MAX_COLOR, Game::MAX_COLOR);
+    mDraw->AddText(
+        BTN_X + (BTN_W - textW) / 2.0f,
+        BTN_Y + (BTN_H - textH) / 2.0f,
+        "RESTART", textScale
+    );
+}
+
+void SpacetimeDisplay::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseButtons, const Vector2& posMouse) {
+    const bool inBounds = posMouse.x >= BTN_X && posMouse.x <= BTN_X + BTN_W &&
+                          posMouse.y >= BTN_Y && posMouse.y <= BTN_Y + BTN_H;
+    Game::LeadingEdge(static_cast<bool>(mouseButtons & SDL_BUTTON_LMASK) && inBounds, mLastClick, mOnRestartClick);
 }

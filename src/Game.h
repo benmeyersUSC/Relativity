@@ -78,11 +78,14 @@ public:
 
 	template<typename A>
 	A* CreateActor() {
-		// create actor on heap, save pointer to vector
 		A* a = new A();
-		mActors.push_back(a);
+		mPendingCreate.push_back(a);
 		return a;
 	}
+
+	void Restart();
+	void RequestRestart();
+	static void LeadingEdge(bool cur, bool& last, const std::function<void()>& fn, bool condition = true);
 	void AddPendingDestroy(class Actor* actor);
 
 	void AddRenderable(Component* comp);
@@ -105,6 +108,10 @@ private:
 	// keep the game going
 	bool mContinueRunning;
 	bool mGameDone = false;
+	bool mRestartPending = false;
+	bool mLastR = false;
+
+	std::function<void()> mOnRestart = [this]{ mRestartPending = true; };
 
 	// aggregation factor, computed after simulation ends
 	unsigned mFrameAgg = 1;

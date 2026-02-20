@@ -105,6 +105,8 @@ void Game::ProcessInput()
 		mContinueRunning = false;
 	}
 
+	LeadingEdge(keyboardState[SDL_SCANCODE_R], mLastR, mOnRestart, mGameDone);
+
 	// mouse
 	SDL_MouseButtonFlags mouseButtons = SDL_GetMouseState(&mMousePos.x, &mMousePos.y);
 
@@ -214,6 +216,9 @@ void Game::EndGame() {
 
 void Game::UpdateGame()
 {
+	if (mRestartPending)
+		return Restart();
+
 	// calculate deltatime
 	Uint64 currTimeMs = SDL_GetTicks();
 	Uint64 uIntDiff = currTimeMs - mPreviousTime;
@@ -279,11 +284,46 @@ void Game::LoadData()
 
 void Game::UnloadData()
 {
-	// delete objects and clear vector
 	for (auto& actor : mActors)
-	{
 		delete actor;
-	}
 	mActors.clear();
+
+	for (auto& actor : mPendingCreate)
+		delete actor;
+	mPendingCreate.clear();
+}
+
+void Game::RequestRestart()
+{
+	mRestartPending = true;
+}
+
+void Game::LeadingEdge(bool cur, bool& last, const std::function<void()>& fn, bool condition)
+{
+	if (!last && cur && condition)
+		fn();
+	last = cur;
+}
+
+void Game::Restart()
+{
+	mRestartPending = false;
+	UnloadData();
+
+	mPlayer = nullptr;
+	mSpacetimeDisplay = nullptr;
+	mSpacetimeBuddha = nullptr;
+	mSpacetimePlayer = nullptr;
+	mDT = 0.0f;
+	mGameDone = false;
+	mTimestepIndex = 0;
+	mPendingDestroy.clear();
+	mPreviousTime = SDL_GetTicks();
+
+	// shrink window back to game width
+	SDL_SetWindowSize(mSdlWindow, static_cast<int>(PLOT_WIDTH), static_cast<int>(WINDOW_HEIGHT));
+	SDL_SetWindowPosition(mSdlWindow, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
+
+	LoadData();
 }
 
