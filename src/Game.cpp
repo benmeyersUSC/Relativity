@@ -1,7 +1,6 @@
 #include "Game.h"
 
 #include <iostream>
-#include "ReferenceActor.h"
 #include "Actor.h"
 #include "Player.h"
 #include <functional>
@@ -173,6 +172,9 @@ SDL_Texture * Game::GetTexture(std::string_view filename) {
 	return imgTexture;
 }
 
+float Game::ElapsedPct() const {
+	return mDT / DURATION_SECONDS;
+}
 
 
 void Game::EndGame() {
@@ -186,7 +188,6 @@ void Game::EndGame() {
 	// destroy actors and ditch paddle
 	UnloadData();
 	mPlayer = nullptr;
-	mReferenceActor = nullptr;
 
 
 	// expand window to fit sidebar and re-center on screen
@@ -203,6 +204,9 @@ void Game::EndGame() {
 	TransformPoints(ptv, mSpacetimeDisplay->GetProperTimes(), mTransformTimeVelocity,frameAgg, false);
 
 	mSpacetimeDisplay->Setup();
+	auto sidebar = CreateActor<Line>();
+	sidebar->SetOrigin({PLOT_WIDTH, HALF_HEIGHT});
+	sidebar->SetSlope(Line::Y_AXIS_SLOPE);
 
 	mSpacetimeBuddha = CreateActor<SpacetimeReference>();
 	mSpacetimePlayer = CreateActor<SpacetimePlayer>();
@@ -262,10 +266,11 @@ void Game::LoadData()
 	xAxis->SetOrigin(Line::X_AXIS_ORIGIN);
 	xAxis->SetSlope(Line::X_AXIS_SLOPE);
 
-	mReferenceActor = CreateActor<ReferenceActor>();
-	mReferenceActor->GetTransform().SetScale(0.1f);
-	mReferenceActor->GetTransform().SetPosition({Game::HALF_WIDTH, Game::HALF_HEIGHT});
-	mReferenceActor->Setup();
+	auto refActor = CreateActor<Actor>();
+	refActor->GetTransform().SetScale(0.1f);
+	refActor->GetTransform().SetPosition({Game::HALF_WIDTH, Game::HALF_HEIGHT});
+	auto refImage = refActor->CreateComponent<ImageComponent>();
+	refImage->SetTexture(gGame.GetTexture(Game::BUDDHA_FILE));
 
 	mPlayer = CreateActor<Player>();
 	mPlayer->GetTransform().SetPosition(Vector2(HALF_WIDTH, HALF_HEIGHT ));

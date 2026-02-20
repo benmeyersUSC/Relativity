@@ -28,10 +28,13 @@ class SpacetimeDisplay : public  Actor{
 
     unsigned mTimePrintInterval{};
     float mYStep{};
-    void DrawPoints();
-    void DrawMouse(size_t mouseHeightIndex, float coordinateTimeAtMouse);
-    void DrawVelocityMeter();
-    void DrawAgingBars(size_t mouseHeightIndex, float coordinateTimeAtMouse);
+    void DrawPoints() const;
+    void DrawMouseGaugedTextBox(size_t mouseHeightIndex, float coordinateTimeAtMouse) const;
+    void DrawVelocityMeter() const;
+    void DrawAgingBars(size_t mouseHeightIndex, float coordinateTimeAtMouse) const;
+    void DrawMeterCircle( float centerX,  float centerY,  float radius) const;
+    void DrawMeterArrow(float centerX, float centerY) const;
+    void DrawMeterComponentProjections( float centerX,  float centerY,  float radius) const;
 
 protected:
     void HandleRender() override;

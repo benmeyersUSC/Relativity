@@ -25,8 +25,6 @@ add_executable(Relativity src/main.cpp
         src/ImageComponent.h
         src/DrawComponent.cpp
         src/DrawComponent.h
-        src/ReferenceActor.cpp
-        src/ReferenceActor.h
         src/Line.cpp
         src/Line.h
         src/SpacetimeDisplay.cpp

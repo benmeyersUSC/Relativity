@@ -21,17 +21,17 @@ void SpacetimePlayer::HandleInput(const bool keys[], SDL_MouseButtonFlags mouseB
 
     // player circle following pos
     // velo angle
-    auto rotationSign = gGame.GetSpacetimeDisplay()->GetMouseBasedVelo() >= 0.0f ? 1.0f : -1.0f;
+    const auto rotationSign = gGame.GetSpacetimeDisplay()->GetMouseBasedVelo() >= 0.0f ? 1.0f : -1.0f;
     mImage->GetTransform().SetRotation(rotationSign * Math::ToDegrees(Math::Acos(gGame.GetSpacetimeDisplay()->GetMouseBasedTime())));
     mImage->GetTransform().SetPosition({gGame.GetSpacetimeDisplay()->GetMouseBasedPos() + Game::HALF_WIDTH, gGame.GetMousePos().y });
 }
 
 void SpacetimePlayer::HandleRender() {
     Actor::HandleRender();
-    float playerRadius = 27.0f;
     mDraw->AddFilledCircle(
-    gGame.GetSpacetimeDisplay()->GetMouseBasedPos() + Game::HALF_WIDTH, gGame.GetMousePos().y, playerRadius,
-    0, 0, Game::MAX_COLOR, Game::MAX_COLOR
+        gGame.GetSpacetimeDisplay()->GetMouseBasedPos() + Game::HALF_WIDTH, gGame.GetMousePos().y,
+        27.0f,
+        0, 0, Game::MAX_COLOR, Game::MAX_COLOR
     );
 
     mImage->Draw();

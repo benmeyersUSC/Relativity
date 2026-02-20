@@ -9,7 +9,7 @@ class DrawComponent;
 class Player : public Actor
 {
 	static constexpr float BRAKE_FACTOR = 0.9f;
-	short mVeloSign = 0.0f;
+	int mVeloSign = 0;
 	SpacetimeComponent* mSpacetime;
 	DrawComponent* mDraw;
 	void FixPosition();

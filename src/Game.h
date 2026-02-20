@@ -36,7 +36,7 @@ public:
 	static constexpr unsigned ESTIMATED_FPS = 60;
 
 	static constexpr float PLOT_POINT_SIZE = 5.0f;
-	static constexpr float HALF_PLOT_POINT = PLOT_POINT_SIZE/2.0f;
+	static constexpr float HALF_PLOT_POINT_SIZE = PLOT_POINT_SIZE/2.0f;
 	// window constants
 	static constexpr float PLOT_WIDTH = 1107.0f;
 	static constexpr float SIDEBAR_WIDTH = 363.0f;
@@ -94,6 +94,8 @@ public:
 	SDL_Renderer* GetRenderer(){return mSdlRenderer;}
 	[[nodiscard]] float GetDT()const{return mDT;}
 	SpacetimeDisplay* GetSpacetimeDisplay(){return mSpacetimeDisplay;}
+
+	[[nodiscard]] float ElapsedPct()const;
 private:
 	// window and renderer
 	SDL_Window* mSdlWindow;
@@ -113,7 +115,6 @@ private:
 	std::vector<Actor*> mPendingDestroy;
 	std::vector<Component*> mRenderables;
 	Player* mPlayer;
-	ReferenceActor* mReferenceActor = nullptr;
 
 	void DestroyActor(Actor* actor);
 

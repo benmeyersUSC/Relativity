@@ -13,9 +13,9 @@ public:
 	float& GetSpatialVelocity(){return mSpatialVelo;}
 	[[nodiscard]] float GetProperOverCoordinateTime()const;
 	void Setup(size_t frameLife);
-	[[nodiscard]] float ElapsedPct()const;
+	explicit SpacetimeComponent(Actor* owner);
+
 protected:
-	explicit SpacetimeComponent(class Actor *owner);
 	void HandleUpdate(float deltaTime) override;
 
 	friend class Actor;

@@ -15,13 +15,7 @@ void SpacetimeComponent::Setup(size_t frameLife) {
     mProperTimes.reserve(frameLife);
 }
 
-float SpacetimeComponent::ElapsedPct() const {
-    return gGame.GetDT() / Game::DURATION_SECONDS;
-}
-
-SpacetimeComponent::SpacetimeComponent(class Actor *owner)
-    : Component(owner) {
-}
+SpacetimeComponent::SpacetimeComponent( Actor *owner): Component(owner) {}
 
 void SpacetimeComponent::HandleUpdate(float deltaTime) {
     Component::HandleUpdate(deltaTime);
@@ -30,6 +24,8 @@ void SpacetimeComponent::HandleUpdate(float deltaTime) {
     mSpatialPositions.push_back(GetOwner()->GetTransform().GetPosition().x);
 
     // LORENTZ
+    // Spacetime Vector Magnitude must always equal MAX_VELO
+
     // mVelo^2 + timeVelo^2 = MAX_VELO^2
     // timeVelo = SQRT(
     //      MAX_VELO^2 - mVelo^2
