@@ -8,27 +8,26 @@
 #include <SDL3/SDL.h>
 #include "Transform.h"
 
-class ImageComponent : public  Component{
+class ImageComponent : public Component {
     SDL_Texture* mTexture = nullptr;
     SDL_Renderer* mRenderer = nullptr;
     Transform mLocalTransform;
     bool mUseLocalTransform = false;
-    bool mHasPivot = false;
+    bool mHasCustomPivot = false;
+    // pivot is object space from top left origin
     SDL_FPoint mPivot{};
 public:
     void Draw();
-    void DrawWithPivot(SDL_FPoint pivot);
     void SetTexture(SDL_Texture* texture);
     void SetUseLocalTransform(bool use) { mUseLocalTransform = use; }
-    void SetPivot(SDL_FPoint pivot) { mHasPivot = true; mPivot = pivot; }
+    void SetPivot(SDL_FPoint pivot) { mHasCustomPivot = true; mPivot = pivot; }
+    void ClearPivot() { mHasCustomPivot = false; }
     [[nodiscard]] Transform& GetTransform();
 protected:
-    explicit ImageComponent(class Actor *owner);
+    explicit ImageComponent(class Actor* owner);
     ~ImageComponent() override;
     void HandleRender() override;
-
     friend class Actor;
 };
 
-
-#endif //RELATIVITY_IMAGECOMPONENT_H
+#endif

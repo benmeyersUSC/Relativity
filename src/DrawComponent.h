@@ -31,9 +31,11 @@ public:
     void AddScaledWidthRect(float x, float y, float maxW, float h, float pct, Uint8 r, Uint8 g,Uint8 b,Uint8 a, std::string_view endMarker = "", float pad = 0.0f, float textScale = 1.0f, bool reversed = false);
     void AddScaledHeightRect(float x, float y, float w, float maxH, float pct, Uint8 r, Uint8 g,Uint8 b,Uint8 a, std::string_view endMarker = "", float pad = 0.0f, float textScale = 1.0f, bool reversed = false);
 
-    void SetColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a) const;
 
+    // shape record classes that can be added by Actor or components that will all be rendered in one
+    // (sorted) fell swoop
     struct Shape {
+        // all shapes have (x,y), colors, and Draw() method
         virtual ~Shape() = default;
         float _x, _y;
         Uint8 _r, _g, _b, _a;
@@ -43,13 +45,16 @@ public:
         {}
     };
     struct Rect : Shape {
+        // rect has a width and a filledness
         float _w, _h;
-        Rect(float x, float y, float w, float h, Uint8 r, Uint8 g, Uint8 b, Uint8 a):
-        Shape(x, y, r, g, b, a), _w(w), _h(h)
+        bool _filled;
+        Rect(float x, float y, float w, float h, Uint8 r, Uint8 g, Uint8 b, Uint8 a, bool filled=true):
+        Shape(x, y, r, g, b, a), _w(w), _h(h), _filled(filled)
         {}
         void Draw(SDL_Renderer* renderer) override;
     };
     struct Text : Shape {
+        // text adds a scale and string content
         float _scale;
         std::string _text;
         Text(float x, float y, float scale, std::string txt, Uint8 r, Uint8 g, Uint8 b, Uint8 a):
@@ -57,14 +62,8 @@ public:
         {}
         void Draw(SDL_Renderer* renderer) override;
     };
-    struct OutlineRect : Shape {
-        float _w, _h;
-        OutlineRect(float x, float y, float w, float h, Uint8 r, Uint8 g, Uint8 b, Uint8 a):
-        Shape(x, y, r, g, b, a), _w(w), _h(h)
-        {}
-        void Draw(SDL_Renderer* renderer) override;
-    };
     struct LineSegment : Shape {
+        // lines add endpoints!
         float _x2, _y2;
         LineSegment(float x1, float y1, float x2, float y2, Uint8 r, Uint8 g, Uint8 b, Uint8 a):
         Shape(x1, y1, r, g, b, a), _x2(x2), _y2(y2)
@@ -72,6 +71,7 @@ public:
         void Draw(SDL_Renderer* renderer) override;
     };
     struct Circle : Shape {
+        // circle adds radius
         float _radius;
         Circle(float cx, float cy, float radius, Uint8 r, Uint8 g, Uint8 b, Uint8 a):
         Shape(cx, cy, r, g, b, a), _radius(radius)

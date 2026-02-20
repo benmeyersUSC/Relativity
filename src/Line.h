@@ -9,6 +9,8 @@
 #include "Game.h"
 class DrawComponent;
 
+// this class defines Lines in the true sense; not segments.
+// they span the entire screen and intersect at some point with some slope
 class Line : public  Actor{
     Vector2 mSlope;
     Vector2 mOrigin;

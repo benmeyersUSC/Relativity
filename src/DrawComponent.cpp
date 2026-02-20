@@ -20,6 +20,7 @@ void DrawComponent::HandleUpdate(float deltaTime) {
 
 void DrawComponent::HandleRender() {
     Component::HandleRender();
+    // deal with blend mode just once
     SDL_SetRenderDrawBlendMode(mRenderer, SDL_BLENDMODE_BLEND);
     for (const auto& shape : mShapes) {
         shape->Draw(mRenderer);
@@ -31,7 +32,6 @@ void DrawComponent::HandleRender() {
 void DrawComponent::AddText(float x, float y, std::string_view txt, float scale) {
     mShapes.push_back(std::make_unique<Text>(x, y, scale, std::string(txt), Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR));
 }
-
 
 void DrawComponent::AddFilledCircle(float cx, float cy, float radius, Uint8 r, Uint8 g,Uint8 b,Uint8 a) {
     mShapes.push_back(std::make_unique<Circle>(cx, cy, radius, r, g, b, a));
@@ -46,17 +46,18 @@ void DrawComponent::AddRect(float x, float y, float w, float h, Uint8 r, Uint8 g
 }
 
 void DrawComponent::AddOutlineRect(float x, float y, float w, float h, Uint8 r, Uint8 g, Uint8 b, Uint8 a) {
-    mShapes.push_back(std::make_unique<OutlineRect>(x, y, w, h, r, g, b, a));
+    mShapes.push_back(std::make_unique<Rect>(x, y, w, h, r, g, b, a, false));
 }
 
 void DrawComponent::AddScaledWidthRect(float x, float y, float maxW, float h, float pct, Uint8 r, Uint8 g,
     Uint8 b, Uint8 a, std::string_view endMarker, float pad, float textScale, bool reversed) {
-    float len = maxW * pct;
-    float textCenterY = y - Game::HALF_CHAR_PIXELS * textScale + h / 2.0f;
+    const float len = maxW * pct;
+    const float textCenterY = y - Game::HALF_CHAR_PIXELS * textScale + h / 2.0f;
     if (reversed) {
         // bar grows left from x, text on left end
         AddRect(x - len, y, len, h, r, g, b, a);
-        float markerW = Game::CHAR_PIXELS * textScale * static_cast<float>(endMarker.size());
+        // if we're growing out left, we need to account for where to start the text
+        const float markerW = Game::CHAR_PIXELS * textScale * static_cast<float>(endMarker.size());
         AddText(x - len - pad * textScale - markerW, textCenterY, endMarker, textScale);
     } else {
         // bar grows right from x, text on right end
@@ -65,48 +66,41 @@ void DrawComponent::AddScaledWidthRect(float x, float y, float maxW, float h, fl
     }
 }
 
-void DrawComponent::AddScaledHeightRect(float x, float y, float w, float maxH, float pct, Uint8 r, Uint8 g,
-    Uint8 b, Uint8 a, std::string_view endMarker, float pad, float textScale, bool reversed) {
-    float len = maxH * pct;
-    float textCenterX = x - Game::HALF_CHAR_PIXELS * textScale * static_cast<float>(endMarker.size()) + w / 2.0f;
+void DrawComponent::AddScaledHeightRect(float x, float y, float w, float maxH, float pct, Uint8 r, Uint8 g, Uint8 b, Uint8 a, std::string_view endMarker, float pad, float textScale, bool reversed) {
+    // true length to render
+    const float len = maxH * pct;
+    // center of bar - half the text width
+    const float textStartX = x + w / 2.0f - Game::HALF_CHAR_PIXELS * textScale * static_cast<float>(endMarker.size());
     if (reversed) {
         // bar grows down from y, text below bottom of bar
         AddRect(x, y, w, len, r, g, b, a);
-        AddText(textCenterX, y + len + pad * textScale, endMarker, textScale);
+        AddText(textStartX, y + len + pad * textScale, endMarker, textScale);
     } else {
         // bar grows up from bottom (y + maxH), text above top of bar
-        float realY = y + maxH - len;
+        const float realY = y + maxH - len;
         AddRect(x, realY, w, len, r, g, b, a);
-        AddText(textCenterX, realY - pad * textScale - Game::CHAR_PIXELS * textScale, endMarker, textScale);
+        // text's y needs to shift up by pad * text scale
+        AddText(textStartX, realY - textScale * (pad - Game::CHAR_PIXELS), endMarker, textScale);
     }
 }
 
-
-void DrawComponent::SetColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a) const {
-    SDL_SetRenderDrawColor(mRenderer, r, g, b, a);
-}
 
 void DrawComponent::Rect::Draw(SDL_Renderer* renderer) {
     SDL_SetRenderDrawColor(renderer, _r, _g, _b, _a);
     SDL_FRect rct{_x, _y, _w, _h};
-    SDL_RenderFillRect(renderer, &rct);
+    if (_filled) {
+        SDL_RenderFillRect(renderer, &rct);
+    }
+    else {
+        SDL_RenderRect(renderer, &rct);
+    }
 }
 
 void DrawComponent::Text::Draw(SDL_Renderer* renderer) {
     SDL_SetRenderDrawColor(renderer, _r, _g, _b, _a);
-    if (_scale != 1.0f) {
-        SDL_SetRenderScale(renderer, _scale, _scale);
-    }
+    SDL_SetRenderScale(renderer, _scale, _scale);
     SDL_RenderDebugTextFormat(renderer, _x / _scale, _y / _scale, "%s", _text.c_str());
-    if (_scale != 1.0f) {
-        SDL_SetRenderScale(renderer, 1.0f, 1.0f);
-    }
-}
-
-void DrawComponent::OutlineRect::Draw(SDL_Renderer* renderer) {
-    SDL_SetRenderDrawColor(renderer, _r, _g, _b, _a);
-    SDL_FRect rct{_x, _y, _w, _h};
-    SDL_RenderRect(renderer, &rct);
+    SDL_SetRenderScale(renderer, 1.0f, 1.0f);
 }
 
 void DrawComponent::LineSegment::Draw(SDL_Renderer* renderer) {
@@ -116,10 +110,13 @@ void DrawComponent::LineSegment::Draw(SDL_Renderer* renderer) {
 
 void DrawComponent::Circle::Draw(SDL_Renderer* renderer) {
     SDL_SetRenderDrawColor(renderer, _r, _g, _b, _a);
-    float r2 = _radius * _radius;
-    for (float dy = -_radius; dy <= _radius; dy += 1.0f) {
-        float dx = Math::Sqrt(r2 - dy * dy);
-        SDL_FRect rct{_x - dx, _y + dy, dx * 2.0f, 1.0f};
+    // x^2 + y^2 = r^2
+    const float r2 = _radius * _radius;
+    for (float dy = -_radius; dy <= _radius; dy += 0.5f) {
+        // x = +/- sqrt(r^2 - y^2)
+        // so if we start it at -sqrt(r^2 - y^2) and make width 2*dx, we reach + sqrt(r^2 - y^2)
+        const float dx = Math::Sqrt(r2 - dy * dy);
+        SDL_FRect rct{_x - dx, _y + dy, dx * 2.0f, 0.5f};
         SDL_RenderFillRect(renderer, &rct);
     }
 }
