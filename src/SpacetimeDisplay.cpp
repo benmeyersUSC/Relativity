@@ -201,7 +201,7 @@ void SpacetimeDisplay::DrawAgingBars(const size_t mouseHeightIndex, const float 
 	const float playerFrac = mCumulativeProperTime[mouseHeightIndex] / Game::DURATION_SECONDS;
 
 	// textbox label
-	constexpr std::string txt("Cumulative aging");
+	const std::string txt("Cumulative aging");
 	constexpr auto mul = 1.35f;
 	const float txtW = static_cast<float>(txt.size()) * Game::CHAR_PIXELS * mul;
 	constexpr float sidebarCenterX = Game::PLOT_WIDTH + Game::SIDEBAR_WIDTH / 2.0f;
