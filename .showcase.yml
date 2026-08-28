@@ -1,2 +1,3 @@
 title: Relativity
 tagline: Visualizing the invariance of traversal through spacetime
+description: Game written in C++ (SDL3 for graphics) displaying time dilaton as defined by special relativity. Play the simple game, then observe its spacetime footprint, with instantaneous and cumulative dilation displayed at all points from your run. By no means a rigorous physics project, more of a coding project meant to pump basic mathematical intuition about the mechanism of time dilation. Fixed budget in spacetime --> relative velocity in spatial directions drains relative velocity in time direction!

@@ -174,6 +174,46 @@ void SpacetimeDisplay::DrawMeterComponentProjections(const float centerX, const 
 		255, 255, 32, Game::MAX_COLOR, "t", 3.0f, 2.0f);
 }
 
+void SpacetimeDisplay::DrawMeterReferenceArrows(const float centerX, const float centerY, const float radius) const {
+	constexpr float headSize = 7.0f;
+	constexpr Uint8 alpha = 140;
+	constexpr float labelScale = 1.1f;
+	constexpr int thickness = 2;
+
+	// vertical arrow to show ST vector at rest
+	const float vx      = centerX - radius - 28.0f;
+	const float vBottom = centerY;
+	const float vTop    = centerY - radius;
+
+	mDraw->AddLine(vx, vBottom, vx, vTop,
+		Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, alpha, thickness);
+	// upward arrowhead
+	mDraw->AddLine(vx - headSize, vTop + headSize, vx, vTop,
+		Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, alpha, thickness);
+	mDraw->AddLine(vx + headSize, vTop + headSize, vx, vTop,
+		Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, alpha, thickness);
+
+	// 'rest' label
+	constexpr float restW = 4.0f * Game::CHAR_PIXELS * labelScale;
+	mDraw->AddText(vx - restW / 2.0f, vTop - Game::CHAR_PIXELS * labelScale - 4.0f, "Rest", labelScale);
+
+	// horizontal arrow to show ST vector of C
+	const float hy     = centerY + 22.0f;
+	const float hLeft  = centerX;
+	const float hRight = centerX + radius;
+
+	mDraw->AddLine(hLeft, hy, hRight, hy,
+		Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, alpha, thickness);
+	// rightward arrowhead
+	mDraw->AddLine(hRight - headSize, hy - headSize, hRight, hy,
+		Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, alpha, thickness);
+	mDraw->AddLine(hRight - headSize, hy + headSize, hRight, hy,
+		Game::MAX_COLOR, Game::MAX_COLOR, Game::MAX_COLOR, alpha, thickness);
+
+	// "c" label just right of the tip
+	mDraw->AddText(hRight + 5.0f, hy - Game::CHAR_PIXELS * labelScale / 2.0f, "C", labelScale);
+}
+
 void SpacetimeDisplay::DrawVelocityMeter() const {
 	constexpr float radius = 100.0f;
 	// center in sidebar, above the text box
@@ -185,6 +225,7 @@ void SpacetimeDisplay::DrawVelocityMeter() const {
 	DrawMeterCircle(centerX, centerY, radius);
 	DrawMeterComponentProjections(centerX, centerY, radius);
 	DrawMeterArrow(centerX, centerY);
+	DrawMeterReferenceArrows(centerX, centerY, radius);
 }
 
 void SpacetimeDisplay::DrawAgingBars(const size_t mouseHeightIndex, const float coordinateTimeAtMouse) const {

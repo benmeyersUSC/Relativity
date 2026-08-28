@@ -44,6 +44,7 @@ class SpacetimeDisplay : public  Actor{
     void DrawMeterCircle( float centerX,  float centerY,  float radius) const;
     void DrawMeterArrow(float centerX, float centerY) const;
     void DrawMeterComponentProjections( float centerX,  float centerY,  float radius) const;
+    void DrawMeterReferenceArrows(float centerX, float centerY, float radius) const;
     void DrawRestartButton() const;
 
 protected:
